@@ -1,6 +1,7 @@
 EslJobs::Application.routes.draw do
   get "job_posts/index"
   resources :job_posts
+  resources :comments
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

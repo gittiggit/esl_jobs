@@ -1,2 +1,2 @@
-class JobPosts < ActiveRecord::Base
+class JobPost < ActiveRecord::Base
 end

@@ -1,6 +1,8 @@
 EslJobs::Application.routes.draw do
+  get "countries/index"
   get "job_posts/index"
   resources :job_posts
+  resources :countries
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

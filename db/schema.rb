@@ -13,12 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20131103105231) do
 
-  create_table "countries", force: true do |t|
-    t.string   "countryname"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "job_posts", force: true do |t|
     t.string   "title"
     t.text     "description"
@@ -28,9 +22,6 @@ ActiveRecord::Schema.define(version: 20131103105231) do
     t.string   "company"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "country_id"
   end
-
-  add_index "job_posts", ["country_id"], name: "index_job_posts_on_country_id", using: :btree
 
 end

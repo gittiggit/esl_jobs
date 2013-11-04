@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131104012358) do
+ActiveRecord::Schema.define(version: 20131104021219) do
 
   create_table "countries", force: true do |t|
     t.string   "countryname"
@@ -28,6 +28,9 @@ ActiveRecord::Schema.define(version: 20131104012358) do
     t.string   "company"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "countries_id"
   end
+
+  add_index "job_posts", ["countries_id"], name: "index_job_posts_on_countries_id", using: :btree
 
 end

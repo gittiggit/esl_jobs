@@ -1,4 +1,5 @@
-<%= form_for :job_post, url: job_posts_path do |f| %>
+<p>Edit Posts</p>
+<%= form_for :job_post, url: job_post_path(@job_post), method: :patch do |f| %>
   <% if @job_post.errors.any? %>
   <div id="error_explanation">
     <p><%= pluralize(@job_post.errors.count, "error") %> prohibited

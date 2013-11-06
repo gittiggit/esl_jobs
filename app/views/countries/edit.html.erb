@@ -1,10 +1,11 @@
-<%= form_for :job_post, url: job_posts_path do |f| %>
-  <% if @job_post.errors.any? %>
+<p>Edit Countries</p>
+<%= form_for :country, url: country_path(@country), method: :patch do |f| %>
+  <% if @country.errors.any? %>
   <div id="error_explanation">
-    <p><%= pluralize(@job_post.errors.count, "error") %> prohibited
+    <p><%= pluralize(@country.errors.count, "error") %> prohibited
       this post from being saved:</p>
     <ul>
-    <% @job_post.errors.full_messages.each do |msg| %>
+    <% @country.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
     <% end %>
     </ul>

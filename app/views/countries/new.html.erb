@@ -1,4 +1,15 @@
 <%= form_for :country, url: countries_path do |f| %>
+  <% if @country.errors.any? %>
+  <div id="error_explanation">
+    <p><%= pluralize(@country.errors.count, "error") %> prohibited
+      this post from being saved:</p>
+    <ul>
+    <% @country.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
 <p>
 	<%=f.label :CountryName%> <br />
 	<%=f.text_field :countryname%>

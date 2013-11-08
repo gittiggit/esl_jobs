@@ -1,3 +1,4 @@
+
 	<div class="span9">
 		
 		<div class="row-fluid">
@@ -6,52 +7,16 @@
 				<h2>featured jobs</h2>
 				<table class="table table-striped">
 					<tbody>
-						<tr class="success">
-							<td> <span class="label label-warning">TOFEL JOBS</span> </td>
-							<td><strong><a href="http://esljobs.herokuapp.com/view-job.html">Mobile Software Engineer</a></strong><br>
-								<a href="http://esljobs.herokuapp.com/#">Teleworm Corp</a> – Posted by <a href="http://esljobs.herokuapp.com/#">Teleworm</a>
-							</td>
-							<td>Austin<br>Texas, United States</td>
-							<td> 10 Jan 2013</td>
-						</tr>	                
-						<tr class="success">
-							<td><span class="label label-success">ESL JOBS</span></td>
-							<td><strong><a href="http://esljobs.herokuapp.com/view-job.html">Lead UI Programmer</a></strong><br>
-								<a href="http://esljobs.herokuapp.com/#">ArmySpy Corp</a> – Posted by <a href="http://esljobs.herokuapp.com/#">ArmySpy</a>
-							</td>
-							<td>New York<br>NY, United States</td>
-							<td> 12 Jan 2013</td>
-						</tr>	                
+                  <% @job_posts.each do |job_post| %>
 						<tr class="">
-							<td><span class="label label-info">TESL JOBS</span></td>
-							<td><strong><a href="http://esljobs.herokuapp.com/view-job.html">PHP (Zend, Magento) Developer (Permanent)</a></strong><br>
-								<a href="http://esljobs.herokuapp.com/#">DayRep Corp</a> – Posted by <a href="http://esljobs.herokuapp.com/#">DayRep</a>
+							<td><span class="label label-success">TESL JOBS</span></td>
+							<td><strong><a href="http://esljobs.herokuapp.com/view-job.html"><%= job_post.title %></a></strong><br>
+								<a href="http://esljobs.herokuapp.com/#"><%= job_post.company %></a> – Posted by <a href="http://esljobs.herokuapp.com/#">DayRep</a>
 							</td>
 							<td>Montreal<br>QC, Canada</td>
 							<td> 17 Jan 2013</td>
 						</tr>	                
-						<tr class="">
-							<td><span class="label label-info">TESL JOBS</span></td>
-							<td><strong><a href="http://esljobs.herokuapp.com/view-job.html">Node.js developer (6+ month project)</a></strong><br>
-								<a href="http://esljobs.herokuapp.com/#">BioWare</a> – Posted by <a href="http://esljobs.herokuapp.com/#">RevivalToys</a>
-							</td>
-							<td>London<br>Tottenham, Great Britain</td>
-							<td> 23 Jan 2013</td>
-							</tr>	                <tr class="">
-							<td><span class="label label-inverse">IELTS JOBS</span></td>
-							<td><strong><a href="http://esljobs.herokuapp.com/view-job.html">Refrigeration Repair Technician</a></strong><br>
-								<a href="http://esljobs.herokuapp.com/#">DietDisorder Corp</a> – Posted by <a href="http://esljobs.herokuapp.com/#">DietDisorder</a>
-							</td>
-							<td>Cambridge<br>Cambridge, Great Britain</td>
-							<td> 23 Jan 2013</td>
-							</tr>	                <tr class="">
-							<td><span class="label label-inverse">IELTS JOBS</span></td>
-							<td><strong><a href="http://esljobs.herokuapp.com/view-job.html">Senior Windows Administrator</a></strong><br>
-								<a href="http://esljobs.herokuapp.com/#">BioWare</a> – Posted by <a href="http://esljobs.herokuapp.com/#">RevivalToys</a>
-							</td>
-							<td>Hong Kong, China</td>
-							<td> 23 Jan 2013</td>
-						</tr>
+					<% end %>
 					</tbody>
 				</table>
 			</div>

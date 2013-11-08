@@ -9,8 +9,7 @@
     <tr>
       <td><%= country.countryname %></td>
             <td><%= link_to 'Edit', edit_country_path(country) %></td>
-      <td><%= link_to 'Destroy', country_path(country),
-                    method: :delete, data: { confirm: 'Are you sure?' } %></td>
+       <td> <%= button_to "delete", country, :method=>:delete, :class=>:destroy %></td>
     </tr>
   <% end %>
 </table>

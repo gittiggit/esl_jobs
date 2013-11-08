@@ -23,12 +23,16 @@
 										</div>
 										
 										<div class="span4">
-											<select class="home_select">
-												<option value="0">London</option>
-												<option value="0">Paris</option>
-											</select>							
+									          <select class="home_select">
+									          	 <% @countries.each do |country| %>
+                                              <option value="0"> <%= country.countryname %></option>
+                                              <%end%>	
+                                              </select>   						
 										</div>
-										
+																			 
+ 
+  
+	
 										<div class="span2">
 											<a class="btn btn-primary btn-success search_btn" href="http://esljobs.herokuapp.com/browse.html">Search</a>
 										</div>

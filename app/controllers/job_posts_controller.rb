@@ -2,6 +2,7 @@ class JobPostsController < ApplicationController
   def index
     @job_posts = JobPost.all
     @job_posts = JobPost.search(params[:search])
+    @countries = Country.all
   end
 
   def new
@@ -24,6 +25,7 @@ class JobPostsController < ApplicationController
   end
   
   def show
+  @countries = Country.all
   @job_post = JobPost.find(params[:id])
   end
 

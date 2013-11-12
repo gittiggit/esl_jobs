@@ -1,3 +1,18 @@
+<%= render 'home/header'%>	
+	<div class="home_wrapper">
+
+	<div class="container-fluid home_main_content">
+	<div class="row-fluid">
+		
+		
+	<div class="span9">
+		
+		<div class="row-fluid">
+			
+			<div class="span12">
+				<h2>Individual Jobs</h2>
+				<table class="table table-striped">
+					<tbody>
 <p>
   <strong>Title:</strong>
   <%= @job_post.title %>
@@ -29,3 +44,16 @@
   <strong>company:</strong>
   <%= @job_post.company %>
 </p>
+					</tbody>
+				</table>
+			</div>
+			
+		</div>
+	</div>
+
+<%= render 'home/leftsidebar'%>
+	</div>
+	</div>
+	</div> <!-- /container -->
+		<%= render 'home/subheader'%>
+<%= render 'home/footer'%>

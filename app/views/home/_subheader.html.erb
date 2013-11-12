@@ -15,11 +15,11 @@
 											<h3>Location</h3>
 										</div>
 									</div>
-									
+									<%= form_tag job_posts_path, :method => 'get' do %>
 									<div class="row-fluid">
 										
 										<div class="span5">
-											<input type="text" class="span12 search_input" placeholder="What type of job are you looking for?">
+											 <%= text_field_tag :search, params[:search], class: "span12 search_input", placeholder: "What type of job are you looking for?" %>
 										</div>
 										
 										<div class="span4">
@@ -29,15 +29,13 @@
                                               <%end%>	
                                               </select>   						
 										</div>
-																			 
- 
-  
-	
-										<div class="span2">
-											<a class="btn btn-primary btn-success search_btn" href="http://esljobs.herokuapp.com/browse.html">Search</a>
+
+										<div style="padding-left:10px" class="span3">
+										  <%= submit_tag "Search", :class=>"btn btn-primary btn-success" ,:title => nil %> 
 										</div>
-										
+									
 									</div>
+									<% end %>	
 								</div>
 							</div>
 							<br>
@@ -61,17 +59,8 @@
 									
 								</div>
 							</div>
-						</div>
-						
-						
-						
-						
-					</div>
-					
-					
-					
+						</div>		
+					</div>				
 				</div>
-				
-				
-			</div>
+	</div>
 		</div><!-- end hero -->

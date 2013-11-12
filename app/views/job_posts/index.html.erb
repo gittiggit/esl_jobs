@@ -1,28 +1,16 @@
+<body>
+<%= render 'home/header'%>	
+	<div class="home_wrapper">
+	<div class="container-fluid home_main_content">
+	<div class="row-fluid">
+	
 <h1>Listing posts</h1>
  
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Text</th>
-  </tr>
- 
-  <% @job_posts.each do |job_post| %>
-    <tr>
-      <td><%= job_post.title %></td>
-      <td><%= job_post.description %></td>
-      <td><%= link_to 'Show', job_post_path(job_post) %></td>
-      <td><%= link_to 'Edit', edit_job_post_path(job_post) %></td>
-      <td> <%= button_to "delete", job_post, :method=>:delete, :class=>:destroy %></td>
-                   
-  </tr>
-    </tr>
-  <% end %>
-</table>
-
-<%= form_tag job_posts_path, :method => 'get' do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :title => nil %>
-  </p>
-<% end %>
-
+<%= render 'home/container'%>
+	
+<%= render 'home/leftsidebar'%>
+	</div>
+	</div>
+	</div> <!-- /container -->
+<%= render 'home/footer'%>
+</body></html>

@@ -1,6 +1,7 @@
 class JobPostsController < ApplicationController
   def index
     @job_posts = JobPost.all
+    @job_posts = JobPost.search(params[:search])
   end
 
   def new

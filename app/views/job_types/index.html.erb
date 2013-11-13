@@ -1,0 +1,15 @@
+<h1>Listing job types</h1>
+ 
+<table>
+  <tr>
+    <th>Country</th>
+  </tr>
+ 
+  <% @job_types.each do |job_type| %>
+    <tr>
+      <td><%= job_type.type_title %></td>
+            <td><%= link_to 'Edit', edit_job_type_path(job_type) %></td>
+       <td> <%= button_to "delete", job_type, :method=>:delete, :class=>:destroy %></td>
+    </tr>
+  <% end %>
+</table>

@@ -26,6 +26,7 @@ class JobPostsController < ApplicationController
   
   def show
   @countries = Country.all
+  @job_types = JobType.all
   @job_post = JobPost.find(params[:id])
   end
 
@@ -46,7 +47,7 @@ class JobPostsController < ApplicationController
 
   private
   def job_post_params
-  params.require(:job_post).permit(:title, :description, :city, :jobslink, :salary, :company, :country_id)
+  params.require(:job_post).permit(:title, :description, :city, :jobslink, :salary, :company, :country_id , :job_type_id)
   end
   
 end

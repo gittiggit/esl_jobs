@@ -9,7 +9,7 @@
 					<tbody>
                   <% @job_posts.each do |job_post| %>
 						<tr class="">
-							<td><span class="label label-success">TESL JOBS</span></td>
+							<td><span class="label label-success"> <%= job_post.job_type.type_title %></span></td>
 							  
 							<td><strong><%= link_to job_post.title, job_post %></strong><br>
 								<a href="http://esljobs.herokuapp.com/#"><%= job_post.company %></a> – Posted by <a href="http://esljobs.herokuapp.com/#">Admin</a>

@@ -1,6 +1,6 @@
 class JobPost < ActiveRecord::Base
   belongs_to :country
-  belongs_to :job_post
+  belongs_to :job_type
    validates :title, presence: true,
                     length: { minimum: 5 }
                     

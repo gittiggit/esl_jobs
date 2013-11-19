@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131116152321) do
+ActiveRecord::Schema.define(version: 20131119101347) do
 
   create_table "countries", force: true do |t|
     t.string   "countryname"
@@ -35,7 +35,6 @@ ActiveRecord::Schema.define(version: 20131116152321) do
   create_table "job_posts", force: true do |t|
     t.string   "title"
     t.text     "description"
-    t.string   "city"
     t.string   "jobslink"
     t.string   "salary"
     t.string   "company"
@@ -48,6 +47,7 @@ ActiveRecord::Schema.define(version: 20131116152321) do
 
   add_index "job_posts", ["country_id"], name: "index_job_posts_on_country_id", using: :btree
   add_index "job_posts", ["job_type_id"], name: "index_job_posts_on_job_type_id", using: :btree
+  add_index "job_posts", ["slug"], name: "index_job_posts_on_slug", using: :btree
 
   create_table "job_types", force: true do |t|
     t.string   "type_title"

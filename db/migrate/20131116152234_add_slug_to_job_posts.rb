@@ -3,3 +3,4 @@ class AddSlugToJobPosts < ActiveRecord::Migration
     add_column :job_posts, :slug, :string
     add_index :job_posts, :slug
 end
+end

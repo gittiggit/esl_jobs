@@ -6,6 +6,7 @@ class JobPostsController < ApplicationController
   end
 
   def new
+     @countries = Country.all
   @title="Add Jobs"
    @job_post = JobPost.new
   end

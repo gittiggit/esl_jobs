@@ -1,0 +1,45 @@
+<%= form_for :job_post, url: job_posts_path do |f| %>
+  <% if @job_post.errors.any? %>
+  <div id="error_explanation">
+    <p><%= pluralize(@job_post.errors.count, "error") %> prohibited
+      this post from being saved:</p>
+    <ul>
+    <% @job_post.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+<p>
+	<%=f.label :title%> <br />
+	<%=f.text_field :title%>
+</p>
+<p>
+	<%=f.label :description%> <br />
+	<%=f.text_area :description%>
+</p>
+
+<p>
+	<%=f.label :jobslink%> <br />
+	<%=f.text_field :jobslink%>
+</p>
+<p>
+	<%=f.label :salary%> <br />
+	<%=f.text_field :salary%>
+</p>
+<p>
+    <%= f.label :CountryName %><br />
+<%= f.collection_select(:country_id, Country.all, :id, :countryname, include_blank: false) %>
+</p>
+<p>
+    <%= f.label :JobType %><br />
+<%= f.collection_select(:job_type_id, JobType.all, :id, :type_title, include_blank: false) %>
+</p>
+
+<p>
+	<%=f.label :company%> <br />
+	<%=f.text_field :company%>
+<p>
+
+<p><%= f.submit %></p>
+<% end %>

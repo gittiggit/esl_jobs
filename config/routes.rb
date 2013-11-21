@@ -1,4 +1,5 @@
 EslJobs::Application.routes.draw do
+  devise_for :users
   get "job_types/index"
   get "home/index"
   get "countries/index"

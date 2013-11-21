@@ -29,6 +29,8 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'friendly_id', '~> 5.0.1'
 
+gem 'devise'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

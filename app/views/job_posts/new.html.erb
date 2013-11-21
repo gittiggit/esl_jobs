@@ -8,12 +8,18 @@
 		<div class="row-fluid">
 			
 			<div class="span12">
+				<% if user_signed_in? %>
 				<h2>Post A New Job</h2>
 				<table class="table table-striped">
 					<tbody>
 						<%= render 'job_posts/formNew'%>
 					</tbody>
 				</table>
+				<% else %> <br/><br/>
+				<h2>To post a new job you must login.</h2>
+  <%= link_to "Sign up", new_user_registration_path, :class=>"btn btn-large"  %>
+  <%= link_to "Login", new_user_session_path, :class=>"btn btn-large" %>
+<% end %>
 			</div>
 			
 		</div>

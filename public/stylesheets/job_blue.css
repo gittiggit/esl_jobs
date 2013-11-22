@@ -8320,3 +8320,7 @@ a i {
   padding: 0 29px;
   width: 50px;
 }
+
+span.powered_by{
+	display:none;
+}

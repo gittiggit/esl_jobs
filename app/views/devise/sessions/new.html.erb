@@ -6,16 +6,18 @@
 	<div class="span9">
 		
 		<div class="row-fluid">
-			
+			<h2>You can sign in using social account</h2>
+				<%= embed_rpx user_session_url %>
 			<div class="span12">
-				
+				<br />
+				<h2>If you have account in our site login from here</h2>
 					<%= render "devise/sessions/login" %>
 					<%= render "devise/shared/links" %>
 					
 					</tbody>
 				</table>
 			</div>	
-			<%= embed_rpx user_session_url %>		
+				
 		</div>
 	</div>	
 	<%= render 'home/leftsidebar'%>

@@ -34,14 +34,6 @@
                                 
                                 <div class="nav-collapse pull-right">
                                         <ul class="nav nav-pills">
-                                        	<% if user_signed_in? %>
-  <li class=""><a href="#"><%= current_user.email %></a></li>.
-  <li class=""><%= link_to 'Edit profile', edit_user_registration_path %> </li>
-  <li class=""><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-<% else %>
-  <li class=""><%= link_to "Sign up", new_user_registration_path  %> </li>
-  <li class=""><%= link_to "Login", new_user_session_path %> </li>
-<% end %>
                                                 <li class=""><a href="#">About</a></li>
                                                            <li class=""><a href="#">Contact</a></li>
                                         </ul>

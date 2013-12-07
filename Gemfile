@@ -31,7 +31,7 @@ gem 'friendly_id', '~> 5.0.1'
 
 gem 'nokogiri'
 
-gem 'newrelic_rpm'
+gem 'whenever', :require => false
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

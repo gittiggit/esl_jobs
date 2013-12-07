@@ -7,8 +7,7 @@ class JobPost < ActiveRecord::Base
 
   belongs_to :country
   belongs_to :job_type
-  validates :title, presence: true,
-                    length: { minimum: 5 }
+  validates_uniqueness_of :title
                     
   def self.search(search)
     if search

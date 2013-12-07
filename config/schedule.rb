@@ -19,9 +19,9 @@
 
 # Learn more: http://github.com/javan/whenever
 every :hour do
-  rake "fetch_travel"
+  rake "parse_job"
 end
 
 every :reboot do
-  rake "fetch_travel"
+  rake "parse_job"
 end

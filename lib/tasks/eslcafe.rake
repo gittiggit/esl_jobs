@@ -1,15 +1,15 @@
-task :parse_job => :environment do
+task :eslcafe => :environment do
 
 require 'nokogiri'
 require 'open-uri'
 
-url = "http://scrapper.mashpy.me/"
+url = "http://www.eslcafe.com/joblist/"
 doc = Nokogiri::HTML(open(url))
 
 data = []
 #doc.css("strong a").each do |titlecss|
 
-  doc.css("a:nth-child(1)").each do |titlecss|
+  doc.css("dd strong a").each do |titlecss|
 
   country = "1"
   jobtype = "1"
@@ -21,7 +21,7 @@ data = []
 #   :description => titlecss.attr('href'),
     :title => titlecss.text,
     :jobslink => urlnext,
-    :description => detailscss.text,
+    :description => detailscss.inner_html,
     :country_id => country,
     :job_type_id => jobtype
    

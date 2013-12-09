@@ -10,24 +10,23 @@
 		<div class="row-fluid">
 			
 			<div class="span12">
-				<h2>Individual Jobs</h2>
 				<table class="table table-striped">
 					<tbody>
-<td>
-<p>
-  <strong>Title:</strong>
+
+<h1>
   <%= @job_post.title %>
-</p>
- 
+</h1>
+ <td>
 <p>
-  <strong>Text:</strong>
+  <strong>Job details:</strong>
   <%= raw(@job_post.description) %>
 </p>
  
 <p>
-  <strong>jobslink:</strong>
-  <%= link_to "Click here", @job_post.jobslink %>
+  <strong>Jobs Link:</strong>
+  <%= link_to "Click here", @job_post.jobslink, :target => '_blank' %>
 </p>
+<!-- 
 <p>
   <strong>salary:</strong>
   <%= @job_post.salary %>
@@ -45,6 +44,12 @@
   <strong>company:</strong>
   <%= @job_post.company %>
 </p>
+-->
+<br/>
+<h2>
+  <strong><a style="float:right" href="/">Back to homepage</a></strong>
+</h2>
+
 </td>
 					</tbody>
 				</table>

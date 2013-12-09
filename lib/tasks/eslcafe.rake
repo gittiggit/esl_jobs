@@ -9,7 +9,7 @@ doc = Nokogiri::HTML(open(url))
 data = []
 #doc.css("strong a").each do |titlecss|
 
-  doc.css("dd strong a").each do |titlecss|
+  doc.css("dd strong a").first(10).each do |titlecss|
 
   country = "1"
   jobtype = "1"

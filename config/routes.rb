@@ -1,4 +1,6 @@
 EslJobs::Application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   get "job_types/index"
   get "home/index"
   get "countries/index"

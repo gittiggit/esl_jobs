@@ -6,3 +6,4 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Country.create(:id => 1, :countryname => "Canada")
+JobType.create(:id => 1, :type_title => "ESL JOBS")

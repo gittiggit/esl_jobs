@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 20131211123040) do
 
   create_table "job_posts", force: true do |t|
     t.string   "title"
-    t.text     "description", limit: 16777215
+    t.text     "description"
     t.string   "jobslink"
     t.string   "salary"
     t.string   "company"

@@ -9,8 +9,10 @@ ActiveAdmin.register JobPost do
     column :salary
     column :jobslink
     column :country
+    column :job_type
     default_actions
-  end  
+    end  
+ 
   # See permitted parameters documentation:
   # https://github.com/gregbell/active_admin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #

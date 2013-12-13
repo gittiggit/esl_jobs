@@ -46,25 +46,6 @@ require 'open-uri'
   end
   end
   
-    if 3==3
-      url = "http://www.tefl.net/esl-jobs/esl-jobs.pl"
-      doc = Nokogiri::HTML(open(url))
-      data = []
-      doc.css("dd a").first(5).each do |titlecss|
-      country = "1"
-      jobtype = "1"
-      urlnext = titlecss.attr('href')
-      docnext = Nokogiri::HTML(open(urlnext))
-      docnext.css("blockquote").each do |detailscss|
-      data << JobPost.create(
-        :title => titlecss.text,
-        :jobslink => urlnext,
-        :description => detailscss.inner_html,
-        :country_id => country,
-        :job_type_id => jobtype
-       )
-  end
-  end
-  end
+
   
 end

@@ -2,7 +2,7 @@ task :korea => :environment do
 require 'nokogiri'
 require 'open-uri'
 
-  if 1==2
+  if 1==1
       url = "http://www.eslcafe.com/jobs/korea"
       doc = Nokogiri::HTML(open(url))
       data = []
@@ -23,7 +23,7 @@ require 'open-uri'
   end
   end
 
-  if 2==3
+  if 2==2
       url = "http://www.esljobfeed.com/feedviewer/korea"
       doc = Nokogiri::HTML(open(url))
       data = []
@@ -46,11 +46,8 @@ require 'open-uri'
   end
   end
   
-<<<<<<< HEAD
+
     if 3==3
-=======
-    if 3==4
->>>>>>> betatest
       url = "http://www.esljobfind.com/main_job_search_results.php?s_job_country=Korea,South"
       doc = Nokogiri::HTML(open(url))
       data = []

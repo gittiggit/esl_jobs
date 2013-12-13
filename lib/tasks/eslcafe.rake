@@ -23,29 +23,4 @@ require 'open-uri'
   end
   end
 
-  if 2==2
-      url = "http://www.esljobfeed.com/feedviewer/other"
-      doc = Nokogiri::HTML(open(url))
-      data = []
-      doc.css(".rss_item").first(5).each do |titlecss|
-      country = "1"
-      jobtype = "1"
-      urlnext = titlecss.attr('href')
-      docnext = Nokogiri::HTML(open(urlnext))
-      docnext.css(".ContentBlock div:nth-child(7) , div:nth-child(9) a").each do |detailscss|
-      docnext.css("div:nth-child(5) a").each do |nextjoblink|
-      data << JobPost.create(
-      :title => titlecss.text,
-      :jobslink => nextjoblink.attr('href'),
-      :description => detailscss.inner_html,
-      :country_id => country,
-      :job_type_id => jobtype
-      )
-  end
-  end
-  end
-  end
-  
-
-  
 end

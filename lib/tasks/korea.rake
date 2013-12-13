@@ -1,13 +1,13 @@
-task :eslcafe => :environment do
+task :korea => :environment do
 require 'nokogiri'
 require 'open-uri'
 
   if 1==1
-      url = "http://www.eslcafe.com/joblist/"
+      url = "http://www.eslcafe.com/jobs/korea"
       doc = Nokogiri::HTML(open(url))
       data = []
       doc.css("dd strong a").first(5).each do |titlecss|
-      country = "1"
+      country = "2"
       jobtype = "1"
       urlnext = titlecss.attr('href')
       docnext = Nokogiri::HTML(open(urlnext))
@@ -24,11 +24,11 @@ require 'open-uri'
   end
 
   if 2==2
-      url = "http://www.esljobfeed.com/feedviewer/other"
+      url = "http://www.esljobfeed.com/feedviewer/korea"
       doc = Nokogiri::HTML(open(url))
       data = []
       doc.css(".rss_item").first(5).each do |titlecss|
-      country = "1"
+      country = "2"
       jobtype = "1"
       urlnext = titlecss.attr('href')
       docnext = Nokogiri::HTML(open(urlnext))
@@ -42,27 +42,6 @@ require 'open-uri'
       :job_type_id => jobtype
       )
   end
-  end
-  end
-  end
-  
-    if 3==3
-      url = "http://www.tefl.net/esl-jobs/esl-jobs.pl"
-      doc = Nokogiri::HTML(open(url))
-      data = []
-      doc.css("dd a").first(5).each do |titlecss|
-      country = "1"
-      jobtype = "1"
-      urlnext = titlecss.attr('href')
-      docnext = Nokogiri::HTML(open(urlnext))
-      docnext.css("blockquote").each do |detailscss|
-      data << JobPost.create(
-        :title => titlecss.text,
-        :jobslink => urlnext,
-        :description => detailscss.inner_html,
-        :country_id => country,
-        :job_type_id => jobtype
-       )
   end
   end
   end

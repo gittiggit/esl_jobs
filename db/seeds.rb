@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Country.create(:id => 1, :countryname => "International")
-Country.create(:id => 2, :countryname => "Korean")
+Country.create(:id => 2, :countryname => "Korea")
 Country.create(:id => 3, :countryname => "China")
 Country.create(:id => 4, :countryname => "Taiwan")
 Country.create(:id => 5, :countryname => "Thailand")

@@ -46,4 +46,25 @@ require 'open-uri'
   end
   end
   
+    if 3==3
+      url = "http://www.esljobfind.com/main_job_search_results.php?s_job_country=Korea,South"
+      doc = Nokogiri::HTML(open(url))
+      data = []
+      doc.css(".free_school a").first(5).each do |titlecss|
+      country = "2"
+      jobtype = "1"
+      urlnext ="http://www.esljobfind.com" +titlecss.attr('href')
+      docnext = Nokogiri::HTML(open(urlnext))
+      docnext.css("tr:nth-child(8) .free_preview_data").each do |detailscss|
+      data << JobPost.create(
+        :title => titlecss.text,
+        :jobslink => urlnext,
+        :description => detailscss.inner_html,
+        :country_id => country,
+        :job_type_id => jobtype
+       )
+  end
+  end
+  end
+  
 end

@@ -1,13 +1,13 @@
-task :korea => :environment do
+task :china => :environment do
 require 'nokogiri'
 require 'open-uri'
 
   if 1==1
-      url = "http://www.eslcafe.com/jobs/korea"
+      url = "http://www.eslcafe.com/jobs/china"
       doc = Nokogiri::HTML(open(url))
       data = []
       doc.css("dd strong a").first(5).each do |titlecss|
-      country = "2"
+      country = "3"
       jobtype = "1"
       urlnext = titlecss.attr('href')
       docnext = Nokogiri::HTML(open(urlnext))
@@ -24,11 +24,11 @@ require 'open-uri'
   end
   
   if 2==2
-      url = "http://www.esljobfind.com/main_job_search_results.php?s_job_country=Korea,South"
+      url = "http://www.esljobfind.com/main_job_search_results.php?s_job_country=China"
       doc = Nokogiri::HTML(open(url))
       data = []
       doc.css(".free_school a").first(5).each do |titlecss|
-      country = "2"
+      country = "3"
       jobtype = "1"
       urlnext ="http://www.esljobfind.com" +titlecss.attr('href')
       docnext = Nokogiri::HTML(open(urlnext))
@@ -48,11 +48,11 @@ require 'open-uri'
   
   
   if 3==3
-      url = "http://www.esljobfeed.com/feedviewer/korea"
+      url = "http://www.esljobfeed.com/feedviewer/china"
       doc = Nokogiri::HTML(open(url))
       data = []
       doc.css(".rss_item").first(5).each do |titlecss|
-      country = "2"
+      country = "3"
       jobtype = "1"
       urlnext = titlecss.attr('href')
       docnext = Nokogiri::HTML(open(urlnext))
@@ -72,11 +72,11 @@ require 'open-uri'
   
 
   if 4==4
-      url = "http://www.eslemployment.com/esl-jobs/korea/"
+      url = "http://www.eslemployment.com/country/esl-jobs-China.html"
       doc = Nokogiri::HTML(open(url))
       data = []
       doc.css("#joblist td:nth-child(1) a").first(5).each do |titlecss|
-      country = "2"
+      country = "3"
       jobtype = "1"
       urlnext = titlecss.attr('href')
       docnext = Nokogiri::HTML(open(urlnext))

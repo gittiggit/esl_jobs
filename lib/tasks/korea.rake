@@ -80,7 +80,8 @@ require 'open-uri'
       jobtype = "1"
       urlnext = titlecss.attr('href')
       docnext = Nokogiri::HTML(open(urlnext))
-      docnext.css("#detailjob , #job-summary").each do |detailscss|
+      docnext.css('#jobdescription div').remove
+      docnext.css('#detailjob , #job-summary').each do |detailscss|
       data << JobPost.create(
         :title => titlecss.text,
         :jobslink => urlnext,

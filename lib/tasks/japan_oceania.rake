@@ -1,67 +1,45 @@
-task :taiwan_thailand => :environment do
+task :japan_oceania => :environment do
 require 'nokogiri'
 require 'open-uri'
 
-  if 1==1
-      url = "http://www.esljobfind.com/main_job_search_results.php?s_job_country=Taiwan"
+ if 1==1
+      url = "http://www.esljobfeed.com/feedviewer/japan"
       doc = Nokogiri::HTML(open(url))
       data = []
-      doc.css(".free_school a").first(5).each do |titlecss|
-      country = "4"
+      doc.css(".rss_item").first(5).each do |titlecss|
+      country = "6"
       jobtype = "1"
-      urlnext ="http://www.esljobfind.com" +titlecss.attr('href')
+      urlnext = titlecss.attr('href')
       docnext = Nokogiri::HTML(open(urlnext))
-      docnext.css("tr:nth-child(8) .free_preview_data").each do |detailscss|
-      docnext.css(".basic .basic tr:nth-child(2) .free_preview_data").each do |titlenextcss|
+      docnext.css(".ContentBlock div:nth-child(7) , div:nth-child(9) a").each do |detailscss|
+      docnext.css("div:nth-child(5) a").each do |nextjoblink|
       data << JobPost.create(
-        :title => titlenextcss.inner_html+", "+titlecss.text,
-        :jobslink => urlnext,
-        :description => detailscss.inner_html,
-        :country_id => country,
-        :job_type_id => jobtype
-       )
+      :title => titlecss.text,
+      :jobslink => nextjoblink.attr('href'),
+      :description => detailscss.inner_html,
+      :country_id => country,
+      :job_type_id => jobtype
+      )
   end
   end
   end
   end
   
-  
+
   if 2==2
-      url = "http://www.esljobfeed.com/feedviewer/taiwan"
+      url = "http://www.eslemployment.com/country/esl-jobs-Japan.html"
       doc = Nokogiri::HTML(open(url))
       data = []
-      doc.css(".rss_item").first(5).each do |titlecss|
-      country = "4"
+      doc.css("#joblist td:nth-child(1) a").first(5).each do |titlecss|
+      country = "6"
       jobtype = "1"
       urlnext = titlecss.attr('href')
       docnext = Nokogiri::HTML(open(urlnext))
-      docnext.css(".ContentBlock div:nth-child(7) , div:nth-child(9) a").each do |detailscss|
-      docnext.css("div:nth-child(5) a").each do |nextjoblink|
+      docnext.css('#jobdescription div').remove
+      docnext.css('#detailjob , #job-summary').each do |detailscss|
+      docnext.css('#pagemsg h1').each do |titlenextcss|  
       data << JobPost.create(
-      :title => titlecss.text,
-      :jobslink => nextjoblink.attr('href'),
-      :description => detailscss.inner_html,
-      :country_id => country,
-      :job_type_id => jobtype
-      )
-  end
-  end
-  end
-  end
-  
-    if 3==3
-      url = "http://www.esljobfind.com/main_job_search_results.php?s_job_country=Thailand"
-      doc = Nokogiri::HTML(open(url))
-      data = []
-      doc.css(".free_school a").first(5).each do |titlecss|
-      country = "5"
-      jobtype = "1"
-      urlnext ="http://www.esljobfind.com" +titlecss.attr('href')
-      docnext = Nokogiri::HTML(open(urlnext))
-      docnext.css("tr:nth-child(8) .free_preview_data").each do |detailscss|
-      docnext.css(".basic .basic tr:nth-child(2) .free_preview_data").each do |titlenextcss|
-      data << JobPost.create(
-        :title => titlenextcss.inner_html+", "+titlecss.text,
+        :title => titlenextcss.text,
         :jobslink => urlnext,
         :description => detailscss.inner_html,
         :country_id => country,
@@ -71,14 +49,13 @@ require 'open-uri'
   end
   end
   end
-  
-  
-  if 4==4
-      url = "http://www.esljobfeed.com/feedviewer/thailand"
+
+ if 3==3
+      url = "http://www.esljobfeed.com/feedviewer/oceania"
       doc = Nokogiri::HTML(open(url))
       data = []
       doc.css(".rss_item").first(5).each do |titlecss|
-      country = "5"
+      country = "7"
       jobtype = "1"
       urlnext = titlecss.attr('href')
       docnext = Nokogiri::HTML(open(urlnext))
@@ -96,4 +73,29 @@ require 'open-uri'
   end
   end
   
+
+  if 4==4
+      url = "http://www.eslemployment.com/esl-jobs/oceania/"
+      doc = Nokogiri::HTML(open(url))
+      data = []
+      doc.css("#joblist td:nth-child(1) a").first(5).each do |titlecss|
+      country = "7"
+      jobtype = "1"
+      urlnext = titlecss.attr('href')
+      docnext = Nokogiri::HTML(open(urlnext))
+      docnext.css('#jobdescription div').remove
+      docnext.css('#detailjob , #job-summary').each do |detailscss|
+      docnext.css('#pagemsg h1').each do |titlenextcss|  
+      data << JobPost.create(
+        :title => titlenextcss.text,
+        :jobslink => urlnext,
+        :description => detailscss.inner_html,
+        :country_id => country,
+        :job_type_id => jobtype
+       )
+  end
+  end
+  end
+  end
+
 end

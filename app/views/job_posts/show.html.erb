@@ -21,6 +21,38 @@
   <strong>Job details:</strong><br/>
   <%= raw(@job_post.description) %>
 </p>
+<p>
+
+<% if @job_post.salary.blank? %>
+<% else %>
+     <strong>Salary: </strong>
+  <%= @job_post.salary %>
+</p>
+<% end %>
+
+<% if @job_post.company.blank? %>
+<% else %>
+<p>
+  <strong>Company:</strong>
+  <%= @job_post.company %>
+</p>
+<% end %>
+
+<% if @job_post.job_type.type_title.blank? %>
+<% else %>
+<p>
+  <strong>Job Types: </strong>
+  <%= @job_post.job_type.type_title %>
+</p>
+<% end %>
+
+<% if @job_post.country.countryname.blank? %>
+<% else %>
+<p>
+  <strong>Country: </strong>
+  <%= @job_post.country.countryname %>
+</p>
+<% end %>
  
 <p>
   <strong>For More information</strong>

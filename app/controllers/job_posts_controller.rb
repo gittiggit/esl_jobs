@@ -1,6 +1,6 @@
 class JobPostsController < ApplicationController
   def index
-    @job_posts = JobPost.search(params[:search]).paginate(:page => params[:page], :per_page => 15)
+    @job_posts = JobPost.search(params[:search]).paginate(:page => params[:page], :per_page => 10,:order => "updated_at DESC")
 
     @countries = Country.all
   end

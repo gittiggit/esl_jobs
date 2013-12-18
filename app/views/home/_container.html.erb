@@ -15,7 +15,7 @@
 								<a href="http://esljobs.herokuapp.com/#"><%= job_post.company %></a> – Posted by <a href="http://esljobs.herokuapp.com/#">Admin</a>
 							</td>
 							<td><%= job_post.country.countryname %></td>
-							<td> 17 Jan 2013</td>
+							<td><%= job_post.created_at.strftime("%d %b. %Y") %></td>
 						</tr>	                
 					<% end %>
 					</tbody>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131211123040) do
+ActiveRecord::Schema.define(version: 20131218164218) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20131211123040) do
     t.string   "countryname", default: "bangladesh"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
 
   create_table "friendly_id_slugs", force: true do |t|
@@ -67,7 +68,7 @@ ActiveRecord::Schema.define(version: 20131211123040) do
 
   create_table "job_posts", force: true do |t|
     t.string   "title"
-    t.text     "description"
+    t.text     "description", limit: 16777215, null: false
     t.string   "jobslink"
     t.string   "salary"
     t.string   "company"

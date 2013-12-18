@@ -7,7 +7,7 @@
  
   <% @countries.each do |country| %>
     <tr>
-      <td><%= country.countryname %></td>
+      <td><%=link_to country.countryname,country %></td>
             <td><%= link_to 'Edit', edit_country_path(country) %></td>
        <td> <%= button_to "delete", country, :method=>:delete, :class=>:destroy %></td>
     </tr>

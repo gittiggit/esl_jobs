@@ -17,15 +17,15 @@ class CountriesController < ApplicationController
   end
     
   def show
-  @country = Country.find(params[:id])
+  @country = Country.friendly.find(params[:id])
   end
   
   def edit
-  @country = Country.find(params[:id])
+  @country = Country.friendly.find(params[:id])
   end
   
   def update
-  @country = Country.find(params[:id])
+  @country = Country.friendly.find(params[:id])
   if @country.update(country_params)
     redirect_to @country
   else
@@ -34,7 +34,7 @@ class CountriesController < ApplicationController
   end
 
   def destroy
-  @country = Country.find(params[:id])
+  @country = Country.friendly.find(params[:id])
   @country.destroy
   redirect_to countries_path
   end

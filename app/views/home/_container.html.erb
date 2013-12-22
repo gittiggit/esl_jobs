@@ -12,7 +12,7 @@
 							<td><span class="label label-success"> <%= job_post.job_type.type_title %></span></td>
 							  
 							<td><strong><%= link_to job_post.title, job_post %></strong><br>
-								<a href="http://esljobs.herokuapp.com/#"><%= job_post.company %></a> – Posted by <a href="http://esljobs.herokuapp.com/#">Admin</a>
+		                       <div style="text-align:justify"><%= raw(strip_tags(job_post.description)[0,450]) + "... " %></div> <div style="float:right; padding-top:1%"><strong><%=link_to "Read more", job_post %></strong></div> 
 							</td>
 							<td><%= job_post.country.countryname %></td>
 							<td><%= job_post.created_at.strftime("%d %b. %Y") %></td>

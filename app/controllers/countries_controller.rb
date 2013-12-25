@@ -17,7 +17,9 @@ class CountriesController < ApplicationController
   end
     
   def show
+  @countries = Country.all
   @country = Country.friendly.find(params[:id])
+  @job_posts= @country.job_posts.paginate(:page => params[:page], :per_page => 10,:order => "updated_at DESC")
   end
   
   def edit

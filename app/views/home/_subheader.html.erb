@@ -23,13 +23,18 @@
 										</div>
 										
 										<div class="span4">
-									          <select class="home_select">
-									          	 <% @countries.each do |country| %>
-                                              <option value="0"> <%= country.countryname %></option>
-                                              <%end%>	
-                                              </select>   						
+											<form>
+											<select class="home_select"
+											onChange="if(this.selectedIndex!=0)
+											self.location=this.options[this.selectedIndex].value">
+											<option value="" selected>Select a page
+												 <% @countries.each do |country| %>
+											<option value="<%= url_for(country)%>"><%= country.countryname %>
+												<%end%>	
+											</select>
+											</form> 						
 										</div>
-
+										
 										<div style="padding-left:10px" class="span3">
 										  <%= submit_tag "Search", :class=>"btn btn-primary btn-success" ,:title => nil %> 
 										</div>

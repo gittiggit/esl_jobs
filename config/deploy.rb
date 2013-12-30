@@ -1,7 +1,8 @@
 set :stages, %w[staging production]
 set :default_stage, 'staging'
 require "bundler/capistrano"
-
+require "rvm/capistrano"
+require "bundler/capistrano"
 server "162.243.21.171", :web, :app, :db, primary: true
 
 set :application, "esl_jobs"

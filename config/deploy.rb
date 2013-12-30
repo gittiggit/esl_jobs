@@ -38,10 +38,10 @@ ssh_options[:paranoid] = false
 set :use_sudo, true
 
 
-role :web, "176.9.216.148" # Your HTTP server, Apache/etc
-role :app, "176.9.216.148" # This may be the same as your `Web` server
-role :db, "176.9.216.148", :primary => true # This is where Rails migrations will run
-role :db, "176.9.216.148"
+role :web, "162.243.21.171" # Your HTTP server, Apache/etc
+role :app, "162.243.21.171" # This may be the same as your `Web` server
+role :db, "162.243.21.171", :primary => true # This is where Rails migrations will run
+role :db, "162.243.21.171"
 
 
 #before 'deploy:update', :create_log_share

@@ -12,10 +12,10 @@ set -e
 
 # Feel free to change any of the following variables for your app:
 TIMEOUT=${TIMEOUT-60}
-APP_ROOT=/rails_projects/esl_jobs
+APP_ROOT=/home/mashpy/apps/esl_jobs/current
 PID=$APP_ROOT/tmp/pids/unicorn.pid
 CMD="cd $APP_ROOT; bundle exec unicorn -D -c $APP_ROOT/config/unicorn.rb -E production"
-AS_USER=deployer
+AS_USER=mashpy
 set -u
 
 OLD_PIN="$PID.oldbin"
@@ -82,3 +82,4 @@ reopen-logs)
   exit 1
   ;;
 esac
+

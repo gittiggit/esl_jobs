@@ -18,3 +18,4 @@
  $ rails s
  
  Browse http://localhost:3000
+ Testing alpha test in desktop

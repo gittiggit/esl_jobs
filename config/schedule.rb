@@ -18,10 +18,17 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
-every 5.minutes do
-  command "rake international"
+every :hour do
+  rake "international"
 end
 
 every :reboot do
-  command "rake japan_oceania"
+  rake "japan_oceania"
+end
+every :hour do
+  rake "korea"
+end
+
+every :reboot do
+  rake "sfp"
 end

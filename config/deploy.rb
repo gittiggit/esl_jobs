@@ -1,5 +1,5 @@
 require "bundler/capistrano"
-
+require "whenever/capistrano"
 server "162.243.21.171", :web, :app, :db, primary: true
 
 set :application, "esl_jobs"
@@ -51,14 +51,10 @@ namespace :deploy do
   after "deploy", "deploy:migrate"
   
   
-
-after "deploy:symlink", "deploy:update_crontab"
-
 namespace :deploy do
   desc "Update the crontab file"
   task :update_crontab, :roles => :db do
     run "cd #{release_path} && whenever --update-crontab #{application}"
   end
 end
-
 end

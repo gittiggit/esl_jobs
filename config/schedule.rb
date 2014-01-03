@@ -22,13 +22,22 @@ every 5.minutes do
   rake "international"
 end
 
-every :reboot do
+every 6.minutes do
   rake "japan_oceania"
 end
-every 5.minutes do
+
+every 7.minutes do
   rake "korea"
 end
 
-every :reboot do
+every 8.minutes do
   rake "sfp"
+end
+
+every 9.minutes do
+  rake "taiwan_thailand"
+end
+
+every 11.minutes do
+  rake "vmi"
 end

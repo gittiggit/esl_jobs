@@ -18,14 +18,14 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
-every :hour do
+every 5.minutes do
   rake "international"
 end
 
 every :reboot do
   rake "japan_oceania"
 end
-every :hour do
+every 5.minutes do
   rake "korea"
 end
 

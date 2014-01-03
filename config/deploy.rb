@@ -50,7 +50,9 @@ namespace :deploy do
   before "deploy", "deploy:check_revision"
   after "deploy", "deploy:migrate"
   
-  
+set :keep_releases, 1
+after "deploy:update", "deploy:cleanup" 
+
 namespace :deploy do
   desc "Update the crontab file"
   task :update_crontab, :roles => :db do

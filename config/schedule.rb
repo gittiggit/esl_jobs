@@ -19,9 +19,16 @@
 
 # Learn more: http://github.com/javan/whenever
 every :hour do
-  rake "parse_job"
+  rake "international"
 end
 
 every :reboot do
-  rake "parse_job"
+  rake "japan_oceania"
+end
+every :hour do
+  rake "korea"
+end
+
+every :reboot do
+  rake "sfp"
 end

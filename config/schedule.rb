@@ -18,26 +18,29 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
-every 5.minutes do
+every 51.minutes do
+  rake "china"
+end
+every 53.minutes do
   rake "international"
 end
- 
-every 6.minutes do
+
+every 55.minutes do
   rake "japan_oceania"
 end
 
-every 7.minutes do
+every 56.minutes do
   rake "korea"
 end
 
-every 8.minutes do
+every 57.minutes do
   rake "sfp"
 end
 
-every 9.minutes do
+every 58.minutes do
   rake "taiwan_thailand"
 end
 
-every 11.minutes do
+every 59.minutes do
   rake "vmi"
 end

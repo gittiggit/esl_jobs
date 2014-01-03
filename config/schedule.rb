@@ -21,7 +21,7 @@
 every 5.minutes do
   rake "international"
 end
-
+ 
 every 6.minutes do
   rake "japan_oceania"
 end

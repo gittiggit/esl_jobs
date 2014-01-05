@@ -7,20 +7,6 @@
 						<div class="span5" >
 							<h2> <%= @page_title %> <h2> 
 						</div>
-					<div class="span5 offset2" >	
-						<h2 style="padding-left: 63px;margin-top:11px;margin-bottom:-18px">
-											<form>
-											<select class="home_select"
-											onChange="if(this.selectedIndex!=0)
-											self.location=this.options[this.selectedIndex].value">
-											<option value="" selected>Select Your country
-												 <% @countries.each do |country| %>
-											<option value="<%= url_for(country)%>"><%= country.countryname %>
-												<%end%>	
-											</select>
-											</form> 
-						</h2>
-					</div>
 				</div>
 				<table class="table table-striped">
 					<tbody>

@@ -53,6 +53,8 @@ ActiveRecord::Schema.define(version: 20131218164218) do
     t.string   "slug"
   end
 
+  add_index "countries", ["slug"], name: "index_countries_on_slug", using: :btree
+
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
     t.integer  "sluggable_id",              null: false

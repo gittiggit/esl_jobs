@@ -1,4 +1,6 @@
 EslJobs::Application.routes.draw do
+  get "advertise/index"
+  get "contact/index"
   get "about/index"
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -10,6 +12,8 @@ EslJobs::Application.routes.draw do
   resources :countries
   resources :job_types
   resources :about
+  resources :contact
+  resources :advertise
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -706,7 +706,7 @@ a.sb.twitter,
 
 a.sb.facebook,
 .sb a.facebook {
-	background-image: url(social/facebook.png);
+	background-image: url(asset_path('social/facebook.png'));
 }
 
 a.sb.heart,
@@ -785,7 +785,7 @@ a.sb.black.facebook,
 .sb.black a.facebook,
 a.sb.gray.facebook,
 .sb.gray a.facebook {
-	background-image: url(social/white_facebook.png);
+	background-image: url(asset_path('social/white_facebook.png'));
 }
 
 a.sb.blue.heart,

@@ -701,7 +701,7 @@ a.sb.flat:before,
 ================================================ */
 a.sb.twitter,
 .sb a.twitter {
-	background-image: url(social/twitter_bird.png);
+	background-image: url(asset_path('social/twitter_bird.png'));
 }
 
 a.sb.facebook,
@@ -711,42 +711,42 @@ a.sb.facebook,
 
 a.sb.heart,
 .sb a.heart {
-	background-image: url(social/heart.png);
+	background-image: url(asset_path('social/heart.png'));
 }
 
 a.sb.linkedin,
 .sb a.linkedin {
-	background-image: url(social/linkedin.png);
+	background-image: url(asset_path('social/linkedin.png'));
 }
 
 a.sb.pinterest,
 .sb a.pinterest {
-	background-image: url(social/pinterest.png);
+	background-image: url(asset_path('social/pinterest.png'));
 }
 
 a.sb.podcast,
 .sb a.podcast {
-	background-image: url(social/podcast.png);
+	background-image: url(asset_path('social/podcast.png'));
 }
 
 a.sb.rss,
 .sb a.rss {
-	background-image: url(social/rss.png);
+	background-image: url(asset_path('social/rss.png'));
 }
 
 a.sb.share_this,
 .sb a.share_this {
-	background-image: url(social/share_this.png);
+	background-image: url(asset_path('social/share_this.png'));
 }
 
 a.sb.star,
 .sb a.star {
-	background-image: url(social/star.png);
+	background-image: url(asset_path('social/star.png'));
 }
 
 a.sb.vimeo,
 .sb a.vimeo {
-	background-image: url(social/vimeo.png);
+	background-image: url(asset_path('social/vimeo.png'));
 }
 
 /* white icons */
@@ -766,7 +766,7 @@ a.sb.black.twitter,
 .sb.black a.twitter,
 a.sb.gray.twitter,
 .sb.gray a.twitter {
-	background-image: url(social/white_twitter_bird.png);
+	background-image: url(asset_path('social/white_twitter_bird.png'));
 }
 
 a.sb.blue.facebook,
@@ -804,7 +804,7 @@ a.sb.black.heart,
 .sb.black a.heart,
 a.sb.gray.heart,
 .sb.gray a.heart {
-	background-image: url(social/white_heart.png);
+	background-image: url(asset_path('social/white_heart.png'));
 }
 
 a.sb.blue.linkedin,
@@ -823,7 +823,7 @@ a.sb.black.linkedin,
 .sb.black a.linkedin,
 a.sb.gray.linkedin,
 .sb.gray a.linkedin {
-	background-image: url(social/white_linkedin.png);
+	background-image: url(asset_path('social/white_linkedin.png'));
 }
 
 a.sb.blue.pinterest,
@@ -842,7 +842,7 @@ a.sb.black.pinterest,
 .sb.black a.pinterest,
 a.sb.gray.pinterest,
 .sb.gray a.pinterest {
-	background-image: url(social/white_pinterest.png);
+	background-image: url(asset_path('social/white_pinterest.png'));
 }
 
 a.sb.blue.podcast,
@@ -861,7 +861,7 @@ a.sb.black.podcast,
 .sb.black a.podcast,
 a.sb.gray.podcast,
 .sb.gray a.podcast {
-	background-image: url(social/white_podcast.png);
+	background-image: url(asset_path('social/white_podcast.png'));
 }
 
 a.sb.blue.rss,
@@ -880,7 +880,7 @@ a.sb.black.rss,
 .sb.black a.rss,
 a.sb.gray.rss,
 .sb.gray a.rss {
-	background-image: url(social/white_rss.png);
+	background-image: url(asset_path('social/white_rss.png'));
 }
 
 a.sb.blue.share_this,
@@ -899,7 +899,7 @@ a.sb.black.share_this,
 .sb.black a.share_this,
 a.sb.gray.share_this,
 .sb.gray a.share_this {
-	background-image: url(social/white_share_this.png);
+	background-image: url(asset_path('social/white_share_this.png'));
 }
 
 a.sb.blue.star,
@@ -918,7 +918,7 @@ a.sb.black.star,
 .sb.black a.star,
 a.sb.gray.star,
 .sb.gray a.star {
-	background-image: url(social/white_star.png);
+	background-image: url(asset_path('social/white_star.png'));
 }
 
 a.sb.blue.vimeo,
@@ -937,17 +937,17 @@ a.sb.black.vimeo,
 .sb.black a.vimeo,
 a.sb.gray.vimeo,
 .sb.gray a.vimeo {
-	background-image: url(social/white_vimeo.png);
+	background-image: url(asset_path('social/white_vimeo.png'));
 }
 
 
 /* ADD YOUR CUSTOM STYLES BELOW
 ================================================ */
 a.sb.youtube {
-	background-image: url(social/youtube.png);
+	background-image: url(asset_path('social/youtube.png'));
 }
 a.sb.email {
-	background-image: url(social/email.png);
+	background-image: url(asset_path('social/email.png'));
 }
 
 /* custom icon */
@@ -960,7 +960,7 @@ a.sb.custom {
 	border-radius: 15px;
 }
 a.sb.custom:after {
-	background-image: url(social/custom-bg.png);
+	background-image: url(asset_path('social/custom-bg.png'));
 
 	-webkit-border-radius: 15px;
 	-moz-border-radius: 15px;
@@ -972,23 +972,23 @@ a.sb.custom.blue {
 	border-color: #96a8af;
 }
 a.sb.custom.blue:after {
-	background-image: url(social/custom-bg-blue.png);
+	background-image: url(asset_path('social/custom-bg-blue.png'));
 }
 /* custom icon pink */
 a.sb.custom.pink {
 	border-color: #b0a1aa;
 }
 a.sb.custom.pink:after {
-	background-image: url(social/custom-bg-pink.png);
+	background-image: url(asset_path('social/custom-bg-pink.png'));
 }
 
 /* custom icon background social */
 a.sb.custom.retweet {
-	background-image: url(social/custom-icon-retweet.png);
+	background-image: url(asset_path('social/custom-icon-retweet.png'));
 }
 a.sb.custom.photo {
-	background-image: url(social/custom-icon-photo.png);
+	background-image: url(asset_path('social/custom-icon-photo.png'));
 }
 a.sb.custom.comment {
-	background-image: url(social/custom-icon-comment.png);
+	background-image: url(asset_path('social/custom-icon-comment.png'));
 }

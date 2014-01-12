@@ -1,3 +1,6 @@
+ <title><%= @job_post.title %>| Esl Teaching Jobs Lounge</title>
+ <meta name="description" content="<%= "ESL JOBS:"+raw(strip_tags(@job_post.description)[0,256])%>">
+ <meta name="keywords" content="esl jobs, esl teaching jobs, esl jobs in <%= @job_post.country.countryname %>, esl jobs lounge,teach english" />
 <%= render 'home/header'%>	
 	<div class="home_wrapper">
 

@@ -1,5 +1,5 @@
 ActiveAdmin.register Country do
-  permit_params :country
+  permit_params :countryname
   controller do
    defaults :finder => :find_by_slug
   end

@@ -2,7 +2,7 @@ task :taiwan_thailand => :environment do
 require 'nokogiri'
 require 'open-uri'
 
-  if 1==1
+  if 1==2
       url = "http://www.esljobfind.com/main_job_search_results.php?s_job_country=Taiwan"
       doc = Nokogiri::HTML(open(url))
       data = []
@@ -49,7 +49,7 @@ require 'open-uri'
   end
   end
   
-    if 3==3
+    if 3==4
       url = "http://www.esljobfind.com/main_job_search_results.php?s_job_country=Thailand"
       doc = Nokogiri::HTML(open(url))
       data = []

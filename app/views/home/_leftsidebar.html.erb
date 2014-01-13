@@ -1,8 +1,7 @@
 	<%= stylesheet_link_tag 'social-buttons' %>
 	<div class="span3">
-  
-  <h2><%= image_tag "youraddhere2.jpeg" %></h2>
-  <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FESL-JOBS%2F242979512528426&amp;width=250&amp;height=290&amp;colorscheme=light&amp;show_faces=true&amp;header=true&amp;stream=false&amp;show_border=true&amp;appId=512613422154240" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:215px; height:200px;" allowTransparency="true"></iframe>
+
+  <h2>  <%= link_to '/advertise' do %><%= image_tag('youraddhere2.jpeg') %><% end %></h2>
 <!--		<h2>Browse jobs</h2>
 		<div class="row-fluid">
 			<div class="span12">
@@ -46,8 +45,8 @@
 			</div>			
 		</div>
 	-->
-		<h2>Stay connected</h2>
-		<div class="row-fluid">
+		<h2>Stay connected with us</h2>
+		<div style="margin-top:-13px" class="row-fluid">
 			<div class="span12">
 				<ul class="social-icons">
 					<a href="#" class="sb orange facebook">Facebook</a>

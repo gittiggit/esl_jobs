@@ -8,8 +8,8 @@ EslJobs::Application.routes.draw do
   get "home/index"
   get "countries/index"
   get "job_posts/index"
-  resources :job_posts
-  resources :countries
+  resources :job_posts, :path => "esl-teaching-jobs"
+  resources :countries, :path => "esl-jobs"
   resources :job_types
   resources :about
   resources :contact

@@ -1724,7 +1724,7 @@ table {
 .table th,
 .table td {
   padding: 4px;
-  line-height: 20px;
+  line-height: 19px;
   text-align: left;
   vertical-align: top;
   border-top: 1px solid #dddddd;
@@ -7250,7 +7250,7 @@ h6 {
   font-weight: bold;
 }
 h1 {
-  font-size: 36px;
+  font-size: 26px;
   line-height: 40px;
   font-weight: normal;
   text-transform: none;
@@ -7904,7 +7904,7 @@ body {
   padding-bottom: 0px;
   color: #333333;
   color: #000000;
-  font-size: 14px;
+  font-size: 13.5px;
   line-height: 1.5em;
   background-position: fixed;
   overflow-x: hidden;

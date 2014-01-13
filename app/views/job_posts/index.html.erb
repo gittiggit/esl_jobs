@@ -7,7 +7,8 @@
 	<![endif]-->
  <title>The Esl Jobs Lounge</title>
 <body>
-	<% @page_title= "Latest ESL Teaching Jobs" %>
+	<% @abc= "Latest ESL Teaching Jobs" %>
+	<% @page_title=(link_to @abc, job_posts_path) %>
 <%= render 'home/header'%>	
 	<div class="home_wrapper">
 	<%= render 'home/subheader'%>

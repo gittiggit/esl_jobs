@@ -1,6 +1,11 @@
- <title><%= @job_post.title %>| Esl Teaching Jobs Lounge</title>
- <meta name="description" content="<%= "ESL JOBS:"+raw(strip_tags(@job_post.description)[0,256])%>">
- <meta name="keywords" content="esl jobs, esl teaching jobs, esl jobs in <%= @job_post.country.countryname %>, esl jobs lounge,teach english" />
+ <%   
+ @page_title= @job_post.title+ " | Esl Teaching Jobs Lounge"
+ @page_keywords="esl jobs, esl teaching jobs, esl jobs in "+ @job_post.country.countryname + ", esl jobs lounge,teach english"
+ @page_description="ESL JOBS:"+ raw(strip_tags(@job_post.description)[0,256])
+ @page_author="ESL Teaching JOBS Lounge"
+ @container_title= ""
+%>
+ 
 <%= render 'home/header'%>	
 	<div class="home_wrapper">
 

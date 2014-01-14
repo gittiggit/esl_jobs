@@ -1,4 +1,5 @@
 class AdvertiseController < ApplicationController
-  def index
+ def index
+     @countries= Country.all
   end
 end

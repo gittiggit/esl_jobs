@@ -7,7 +7,7 @@ EslJobs::Application.routes.draw do
   get "job_types/index"
   get "home/index"
   get "countries/index"
-  get "job_posts/index"
+  get "job_posts/index", :path => "esl-jobs"
   resources :job_posts, :path => "esl-teaching-jobs"
   resources :countries, :path => "esl-jobs"
   resources :job_types

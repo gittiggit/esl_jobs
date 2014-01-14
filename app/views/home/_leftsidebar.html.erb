@@ -58,6 +58,14 @@
 				<p>Stay connected to the latest jobs, events and career advice.</p>
 			</div>			
 		</div>
-				
 		
+   <h2>Browse Jobs by Country</h2>
+   <div style="margin-top:-13px" class="row-fluid">
+    </ul>
+		  <% @countries.each do |country| %>
+    <tr>
+      <td><%=link_to "ESL JOBS in "+ country.countryname,country %></td><br/>
+    </tr>
+   <% end %>
+	</div>	
 	</div>

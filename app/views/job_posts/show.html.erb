@@ -58,7 +58,7 @@
 <% end %>
  
 <p>
-  <strong>For More information</strong>
+  <strong>Original Jobs Link: </strong>
   <%= link_to "Click here", @job_post.jobslink, :target => '_blank' %>
 </p>
 <!-- 
@@ -81,6 +81,9 @@
 </p>
 -->
 <br/>
+<h2>
+  <strong><a style="float:left" href="/esl-jobs/<%= @job_post.country.countryname %>">Back to ESL JOBS in <%= @job_post.country.countryname %></a></strong>
+</h2>
 <h2>
   <strong><a style="float:right" href="/">Back to homepage</a></strong>
 </h2>

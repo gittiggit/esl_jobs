@@ -1,5 +1,7 @@
 require "bundler/capistrano"
 require "whenever/capistrano"
+require 'capistrano/server_definition'
+require 'capistrano/role'
 server "162.243.21.171", :web, :app, :db, primary: true
 
 set :application, "esl_jobs"
@@ -16,6 +18,12 @@ default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 
 after "deploy", "deploy:cleanup" # keep only the last 5 releases
+
+class Capistrano::Configuration
+  def role_names_for_host(host)
+    roles.map {|role_name, role| role_name if role.include?(host) }.compact || []
+  end
+end
 
 namespace :deploy do
   %w[start stop restart].each do |command|

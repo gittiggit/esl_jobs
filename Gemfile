@@ -56,6 +56,7 @@ end
 # Use Capistrano for deployment
 gem "capistrano", "~> 2.9.0"
 
+gem "devise"
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]

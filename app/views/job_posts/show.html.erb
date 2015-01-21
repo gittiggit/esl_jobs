@@ -37,7 +37,7 @@
 </h1>
  <td>
 <p>
-  <strong>Job details:</strong><br/>
+  <strong>Job Details:</strong><br/>
   <%= raw(@job_post.description) %>
 </p>
 <p>
@@ -57,14 +57,6 @@
 </p>
 <% end %>
 
-<% if @job_post.job_type.type_title.blank? %>
-<% else %>
-<p>
-  <strong>Job Types: </strong>
-  <%= @job_post.job_type.type_title %>
-</p>
-<% end %>
-
 <% if @job_post.country.countryname.blank? %>
 <% else %>
 <p>
@@ -74,7 +66,7 @@
 <% end %>
  
 <p>
-  <strong>Original Jobs Link: </strong>
+  <strong>Original Job Link: </strong>
   <%= link_to "Click here", @job_post.jobslink, :target => '_blank' %>
 </p>
 <!-- 

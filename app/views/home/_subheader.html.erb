@@ -22,7 +22,7 @@
 											<select class="home_select"
 											onChange="if(this.selectedIndex!=0)
 											self.location=this.options[this.selectedIndex].value">
-											<option value="" selected>Select Your country
+											<option value="" selected>Select Your Country
 												 <% @countries.each do |country| %>
 											<option value="<%= url_for(country)%>"><%= country.countryname %>
 												<%end%>	

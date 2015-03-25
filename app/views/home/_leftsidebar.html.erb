@@ -33,9 +33,16 @@
 											</ul>
 										</div>
 										<div class="browse-job fix">
-											<h2>Browse job by country</h2>
-											<p>International,Korea,China,Taiwan,Japan,Thailand,Spain,Italy,France,Poland</p>
-											<a href="" class="browse-all-job">All Teacher Job</a>
+											   <h2>Browse Jobs by Country</h2>
+   <div style="margin-top:-13px; margin-bottom:30px" class="row-fluid">
+		  <% @countries.each do |country| %>
+    <tr>
+      <td><%=link_to "ESL JOBS in "+ country.countryname,country %></td><br/>
+    </tr>
+   <% end %>
+   <td><a href="/esl-jobs">All ESL Teacher Job</a></td>
+   
+	</div>	
 										</div>
 									</aside>
 								</div>	

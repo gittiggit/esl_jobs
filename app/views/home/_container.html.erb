@@ -6,281 +6,33 @@
 							<img src="/assets/img/bannar.jpg" alt="" />
 						</div>
 						<section class="job_area fix">
-							<h2>Latest ESL Teaching Jobs</h2>
+							<h2><%= @container_title %> </h2>
 							<div class="row">
 								<div class="col-md-9 col-sm-9 all-job-area">
+                   <% @job_posts.each do |job_post| %>
 									<div class="col-md-4 col-sm-6 single_job_area">
 										<div class="single_job fix">
 											<div class="published_date fix">
-												<p>18,jan,2015</p>
+												<p><%= job_post.created_at.strftime("%d %b. %Y") %></p>
 											</div>
 											<section class="job-descrip fix">
-												<p>Lorem ipsum dolor sit amet quibusdam, ad ab quisquam esse aspernatur</p>
+												<p><%= raw(strip_tags(job_post.title)[0,100]) %></p>
 											</section>
 											<div class="sallery fix">
 												<p>$540 per month</p>
 											</div>
 											<div class="place_apply fix">
-												<p class="place"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Korea</p>
-												<p class="apply"><a href="job.php">APPlY NOW</a></p>
+												<p class="place"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span><%= job_post.country.countryname %></p>
+												<p class="apply"><%=link_to "Read more", job_post %></p>
 											</div>
 										</div>
 									</div>
-									<div class="col-md-4 col-sm-6 single_job_area">
-										<div class="single_job fix">
-											<div class="published_date fix">
-												<p>18,jan,2015</p>
-											</div>
-											<section class="job-descrip fix">
-												<p>Lorem ipsum dolor sit amet, consectetur ad ab quisquam esse aspernatur</p>
-											</section>
-											<div class="sallery fix">
-												<p>$540 per month</p>
-											</div>
-											<div class="place_apply fix">
-												<p class="place"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Korea</p>
-												<p class="apply"><a href="job.php">APPlY NOW</a></p>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-4 col-sm-6 single_job_area">
-										<div class="single_job fix">
-											<div class="published_date fix">
-												<p>18,jan,2015</p>
-											</div>
-											<section class="job-descrip fix">
-												<p>Lorem ipsum dolor sit amet, . Sint, adipisci, quibusdam, ad ab quisquam esse aspernatur</p>
-											</section>
-											<div class="sallery fix">
-												<p>$540 per month</p>
-											</div>
-											<div class="place_apply fix">
-												<p class="place"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Korea</p>
-												<p class="apply"><a href="job.php">APPlY NOW</a></p>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-4 col-sm-6 single_job_area">
-										<div class="single_job fix">
-											<div class="published_date fix">
-												<p>18,jan,2015</p>
-											</div>
-											<section class="job-descrip fix">
-												<p>Lorem ipsum dolor sit amet,. Sint, adipisci, quibusdam, ad ab quisquam esse aspernatur</p>
-											</section>
-											<div class="sallery fix">
-												<p>$540 per month</p>
-											</div>
-											<div class="place_apply fix">
-												<p class="place"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Korea</p>
-												<p class="apply"><a href="job.php">APPlY NOW</a></p>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-4 col-sm-6 single_job_area">
-										<div class="single_job fix">
-											<div class="published_date fix">
-												<p>18,jan,2015</p>
-											</div>
-											<section class="job-descrip fix">
-												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, adipisci, quibusdam, ad ab quisquam esse aspernatur</p>
-											</section>
-											<div class="sallery fix">
-												<p>$540 per month</p>
-											</div>
-											<div class="place_apply fix">
-												<p class="place"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Korea</p>
-												<p class="apply"><a href="job.php">APPlY NOW</a></p>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-4 col-sm-6 single_job_area">
-										<div class="single_job fix">
-											<div class="published_date fix">
-												<p>18,jan,2015</p>
-											</div>
-											<section class="job-descrip fix">
-												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, adipisci, quibusdam, aspernatur</p>
-											</section>
-											<div class="sallery fix">
-												<p>$540 per month</p>
-											</div>
-											<div class="place_apply fix">
-												<p class="place"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Korea</p>
-												<p class="apply"><a href="job.php">APPlY NOW</a></p>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-4 col-sm-6 single_job_area">
-										<div class="single_job fix">
-											<div class="published_date fix">
-												<p>18,jan,2015</p>
-											</div>
-											<section class="job-descrip fix">
-												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, adipisci, quibusdam, ad ab quisquam esse aspernatur</p>
-											</section>
-											<div class="sallery fix">
-												<p>$540 per month</p>
-											</div>
-											<div class="place_apply fix">
-												<p class="place"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Korea</p>
-												<p class="apply"><a href="job.php">APPlY NOW</a></p>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-4 col-sm-6 single_job_area">
-										<div class="single_job fix">
-											<div class="published_date fix">
-												<p>18,jan,2015</p>
-											</div>
-											<section class="job-descrip fix">
-												<p>Lorem ipsum dolor sit amet,  elit. Sint, adipisci, quibusdam, ad ab quisquam esse aspernatur</p>
-											</section>
-											<div class="sallery fix">
-												<p>$540 per month</p>
-											</div>
-											<div class="place_apply fix">
-												<p class="place"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Korea</p>
-												<p class="apply"><a href="job.php">APPlY NOW</a></p>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-4 col-sm-6 single_job_area">
-										<div class="single_job fix">
-											<div class="published_date fix">
-												<p>18,jan,2015</p>
-											</div>
-											<section class="job-descrip fix">
-												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, adipisci, quibusdam, ad ab quisquam esse aspernatur</p>
-											</section>
-											<div class="sallery fix">
-												<p>$540 per month</p>
-											</div>
-											<div class="place_apply fix">
-												<p class="place"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Korea</p>
-												<p class="apply"><a href="job.php">APPlY NOW</a></p>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-4 col-sm-6 single_job_area">
-										<div class="single_job fix">
-											<div class="published_date fix">
-												<p>18,jan,2015</p>
-											</div>
-											<section class="job-descrip fix">
-												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, adipisci, quibusdam, ad ab quisquam esse aspernatur</p>
-											</section>
-											<div class="sallery fix">
-												<p>$540 per month</p>
-											</div>
-											<div class="place_apply fix">
-												<p class="place"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Korea</p>
-												<p class="apply"><a href="job.php">APPlY NOW</a></p>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-4 col-sm-6 single_job_area">
-										<div class="single_job fix">
-											<div class="published_date fix">
-												<p>18,jan,2015</p>
-											</div>
-											<section class="job-descrip fix">
-												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, adipisci, quibusdam, ad ab quisquam esse aspernatur</p>
-											</section>
-											<div class="sallery fix">
-												<p>$540 per month</p>
-											</div>
-											<div class="place_apply fix">
-												<p class="place"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Korea</p>
-												<p class="apply"><a href="job.php">APPlY NOW</a></p>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-4 col-sm-6 single_job_area">
-										<div class="single_job fix">
-											<div class="published_date fix">
-												<p>18,jan,2015</p>
-											</div>
-											<section class="job-descrip fix">
-												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, adipisci, quibusdam, ad ab quisquam esse aspernatur</p>
-											</section>
-											<div class="sallery fix">
-												<p>$540 per month</p>
-											</div>
-											<div class="place_apply fix">
-												<p class="place"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Korea</p>
-												<p class="apply"><a href="job.php">APPlY NOW</a></p>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-4 col-sm-6 single_job_area">
-										<div class="single_job fix">
-											<div class="published_date fix">
-												<p>18,jan,2015</p>
-											</div>
-											<section class="job-descrip fix">
-												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, adipisci, quibusdam, ad ab quisquam esse aspernatur</p>
-											</section>
-											<div class="sallery fix">
-												<p>$540 per month</p>
-											</div>
-											<div class="place_apply fix">
-												<p class="place"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Korea</p>
-												<p class="apply"><a href="job.php">APPlY NOW</a></p>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-4 col-sm-6 single_job_area">
-										<div class="single_job fix">
-											<div class="published_date fix">
-												<p>18,jan,2015</p>
-											</div>
-											<section class="job-descrip fix">
-												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, adipisci, quibusdam, ad ab quisquam esse aspernatur</p>
-											</section>
-											<div class="sallery fix">
-												<p>$540 per month</p>
-											</div>
-											<div class="place_apply fix">
-												<p class="place"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Korea</p>
-												<p class="apply"><a href="job.php">APPlY NOW</a></p>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-4 col-sm-6 single_job_area">
-										<div class="single_job fix">
-											<div class="published_date fix">
-												<p>18,jan,2015</p>
-											</div>
-											<section class="job-descrip fix">
-												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, adipisci, quibusdam, ad ab quisquam esse aspernatur</p>
-											</section>
-											<div class="sallery fix">
-												<p>$540 per month</p>
-											</div>
-											<div class="place_apply fix">
-												<p class="place"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Korea</p>
-												<p class="apply"><a href="job.php">APPlY NOW</a></p>
-											</div>
-										</div>
-									</div>
+                  <% end %>
 									<div class="col-md-12 col-sm-12">
 										<nav class="job-paginition">
 											<ul class="pagination">
 												<li>
-												  <a href="#" aria-label="Previous">
-													<span aria-hidden="true">Previous</span>
-												  </a>
-												</li>
-												<li><a href="#">1</a></li>
-												<li><a href="#">2</a></li>
-												<li><a href="#">3</a></li>
-												<li><a href="#">4</a></li>
-												<li><a href="#">5</a></li>
-												<li>
-												  <a href="#" aria-label="Next">
-													<span aria-hidden="true">Next</span>
-												  </a>
+	<%= will_paginate @job_posts,:inner_window => 2 %> 
 												</li>
 											</ul>
 										</nav>

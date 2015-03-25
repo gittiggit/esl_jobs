@@ -1,0 +1,123 @@
+ <%   
+ @page_title= @job_post.title+ " | Esl Teaching Jobs Lounge"
+ @page_keywords="esl jobs, esl teaching jobs, esl jobs in "+ @job_post.country.countryname + ", esl jobs lounge,teach english"
+ @page_description="ESL JOBS in "+ @job_post.country.countryname+" : " + raw(strip_tags(@job_post.description)[0,256])
+ @page_author="ESL Teaching JOBS Lounge"
+ @container_title= ""
+%>
+ 
+<%= render 'home/header'%>	
+	<div class="home_wrapper">
+
+	<div class="container-fluid home_main_content">
+	<div class="row-fluid">
+		
+		
+	<div class="span9">
+		
+		<div class="row-fluid">
+			
+			<div class="span12">
+				<table class="table table-striped">
+					<tbody>
+<br>
+<div>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- header ad -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:710px;height:90px"
+     data-ad-client="ca-pub-3947968133656454"
+     data-ad-slot="9732614529"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<h1>
+  <%= @job_post.title %>
+</h1>
+ <td>
+<p>
+  <strong>Job Details:</strong><br/>
+  <%= raw(@job_post.description) %>
+</p>
+<p>
+
+<% if @job_post.salary.blank? %>
+<% else %>
+     <strong>Salary: </strong>
+  <%= @job_post.salary %>
+</p>
+<% end %>
+
+<% if @job_post.company.blank? %>
+<% else %>
+<p>
+  <strong>Company:</strong>
+  <%= @job_post.company %>
+</p>
+<% end %>
+
+<% if @job_post.country.countryname.blank? %>
+<% else %>
+<p>
+  <strong>Country: </strong>
+  <%= @job_post.country.countryname %>
+</p>
+<% end %>
+ 
+<p>
+  <strong>Original Job Link: </strong>
+  <%= link_to "Click here", @job_post.jobslink, :target => '_blank' %>
+</p>
+<!-- 
+<p>
+  <strong>salary:</strong>
+  <%= @job_post.salary %>
+</p>
+<p>
+  <strong>Job Types</strong>
+  <%= @job_post.job_type.type_title %>
+</p>
+<p>
+  <strong>Country id</strong>
+  <%= @job_post.country.countryname %>
+</p>
+ 
+<p>
+  <strong>company:</strong>
+  <%= @job_post.company %>
+</p>
+-->
+<br>
+ <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- text ad -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:700px;height:90px"
+     data-ad-client="ca-pub-3947968133656454"
+     data-ad-slot="6328809722"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<br>
+<br/>
+
+<h2>
+  <strong><a style="float:left" href="/esl-jobs/<%= @job_post.country.countryname %>">Back to ESL JOBS in <%= @job_post.country.countryname %></a></strong>
+</h2>
+
+<h2>
+  <strong><a style="float:right" href="/">Back to homepage</a></strong>
+</h2>
+</td>
+					</tbody>
+				</table>
+			</div>
+			
+		</div>
+	</div>
+
+<%= render 'home/leftsidebar'%>
+	</div>
+	</div>
+	</div> <!-- /container -->
+<%= render 'home/footer'%>

@@ -6,16 +6,21 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>ESL</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <meta name="keywords" content="<%= @page_keywords %>" />
+    <meta name="description" content="<%= @page_description %>">
+    <meta name="author" content="<%= @page_author %>">
+	<![endif]-->
+	<title><%= @page_title %></title>
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->		
 
         <link rel="stylesheet" href="/assets/css/normalize.css">
         <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
         <link rel="stylesheet" href="/assets/css/bootstrap-theme.min.css">
 		<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" href="/assets/style.css">
         <link rel="stylesheet" href="/assets/responsive.css">
         <script src="/assets/js/vendor/modernizr-2.6.2.min.js"></script>
 		
@@ -33,15 +38,15 @@
 					<div class="header_area fix">
 						<div class="col-md-6 col-sm-6">
 							<div class="logo fix">
-								<a href=""><img src="/assets/img/logo.png" alt="" /></a>
+								<a href="/"><img src="/assets/img/logo.png" alt="" /></a>
 							</div>
 						</div>
 						<div class="col-md-6 col-sm-6">
 							<nav class="main-menu fix">
 								<ul>
-									<li><a href="">About</a></li>
-									<li><a href="">Advertise</a></li>
-									<li><a href="">Contact</a></li>
+									<li><a href="/about">About</a></li>
+									<li><a href="/advertise">Advertise</a></li>
+									<li><a href="/contact">Contact</a></li>
 								</ul>
 							</nav>
 						</div>

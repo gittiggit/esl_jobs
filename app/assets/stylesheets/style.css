@@ -494,11 +494,7 @@ margin-top: 25px;
 margin-top: 10px !important;
 }
 .browse-job.fix a {
-border: 1.5px solid #10D522;
-color: #000;
-font-size: 18px;
-padding:1px 5px !important;
-overflow: hidden;
+
 }
 a.browse-all-job {
 padding: 2px 10px !important;

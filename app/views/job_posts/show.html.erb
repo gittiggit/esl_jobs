@@ -7,117 +7,77 @@
 %>
  
 <%= render 'home/header'%>	
-	<div class="home_wrapper">
+<%= render 'home/subheader'%>	
 
-	<div class="container-fluid home_main_content">
-	<div class="row-fluid">
-		
-		
-	<div class="span9">
-		
-		<div class="row-fluid">
-			
-			<div class="span12">
-				<table class="table table-striped">
-					<tbody>
-<br>
-<div>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- header ad -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:710px;height:90px"
-     data-ad-client="ca-pub-3947968133656454"
-     data-ad-slot="9732614529"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-</div>
-<h1>
-  <%= @job_post.title %>
-</h1>
- <td>
-<p>
-  <strong>Job Details:</strong><br/>
-  <%= raw(@job_post.description) %>
-</p>
-<p>
-
-<% if @job_post.salary.blank? %>
+		<div class="main-area fix">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-10 col-sm-10 main-area-body fix">
+						<div class="bannar fix">
+							<img src="/assets/img/bannar.jpg" alt="" />
+						</div>
+						<section class="job_area fix">
+							<div class="row">
+								<div class="col-md-9 col-sm-9 job-conditions-area">
+									<div class="job-heading-area-fix">
+										<h2 class="job-page-heaing">  <%= @job_post.title %></h2>
+									</div>
+									<div class="job-details fix">
+										<div class="col-md-4 col-sm-4 job-details-heading">
+											<p>Job Details:</p>
+										</div>
+										<div class="col-md-8 col-sm-8">
+											<div class="col-md-4 col-sm-4">
+												<div class="published_date fix">
+													<p><%= @job_post.created_at.strftime("%d %b. %Y") %></p>
+												</div>
+											</div>
+											<div class="col-md-4 col-sm-4">
+												<div class="place fix">
+													<p style="width:100%;float:none;"><span style="color: #ddd;margin-right: 4px;" class="glyphicon glyphicon-map-marker" aria-hidden="true"></span><%= @job_post.salary %> </p>
+												</div>
+											</div>
+											<div class="col-md-4 col-sm-4">
+												<div class="work_rate fix">
+													<p><% if @job_post.country.countryname.blank? %>
 <% else %>
-     <strong>Salary: </strong>
-  <%= @job_post.salary %>
-</p>
-<% end %>
-
-<% if @job_post.company.blank? %>
-<% else %>
-<p>
-  <strong>Company:</strong>
-  <%= @job_post.company %>
-</p>
-<% end %>
-
-<% if @job_post.country.countryname.blank? %>
-<% else %>
-<p>
-  <strong>Country: </strong>
   <%= @job_post.country.countryname %>
-</p>
-<% end %>
- 
+<% end %></p>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="job_conditions fix">
+                  <%= raw(@job_post.description) %>
+									</div>
 <p>
   <strong>Original Job Link: </strong>
   <%= link_to "Click here", @job_post.jobslink, :target => '_blank' %>
 </p>
-<!-- 
-<p>
-  <strong>salary:</strong>
-  <%= @job_post.salary %>
-</p>
-<p>
-  <strong>Job Types</strong>
-  <%= @job_post.job_type.type_title %>
-</p>
-<p>
-  <strong>Country id</strong>
-  <%= @job_post.country.countryname %>
-</p>
- 
-<p>
-  <strong>company:</strong>
-  <%= @job_post.company %>
-</p>
--->
-<br>
- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- text ad -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:700px;height:90px"
-     data-ad-client="ca-pub-3947968133656454"
-     data-ad-slot="6328809722"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-<br>
-<br/>
+								</div>
+								<!--sidebar start-->
+                <%= render 'home/leftsidebar'%>
+								<!--sidebar start end -->
+							</div>
+							<!--Job in the same country -->
+							<div class="job-same-country fix">
+								<h2>Job in the same country</h2>
+								<div class="col-md-3 col-sm-3">
+									<p class="date"><span class="calander" style="float:left;margin-right:5px;"><img src="img/calander.png" alt="" /></span>16 Jan 2015</p>
+									<p class="job_des">We are looking for Sunday Fun English theme teachers who will teach 2 hours on Sundays in Seoul</p>
+								</div>
+								<div class="col-md-3 col-sm-3">
+									<p class="date"><span class="calander" style="float:left;margin-right:5px;"><img src="img/calander.png" alt="" /></span>16 Jan 2015</p>
+									<p class="job_des">Kindergarten Teacher Needed At Woosong University in Daejeon, Korea, starting March 2015</p>
+								</div>
+								<div class="col-md-3 col-sm-3">
+									<p class="date"><span class="calander" style="float:left;margin-right:5px;"><img src="img/calander.png" alt="" /></span>16 Jan 2015</p>
+									<p class="job_des">We are looking for Sunday Fun English theme teachers who will teach 2 hours on Sundays in Seoul</p>
+								</div>
+								<div class="col-md-3 col-sm-3">
+									<p class="date">Ads by google</p>
+									<p class="job_des">We are looking for Sunday Fun English theme teachers who will teach 2 hours on Sundays in Seoul</p>
+								</div>
 
-<h2>
-  <strong><a style="float:left" href="/esl-jobs/<%= @job_post.country.countryname %>">Back to ESL JOBS in <%= @job_post.country.countryname %></a></strong>
-</h2>
-
-<h2>
-  <strong><a style="float:right" href="/">Back to homepage</a></strong>
-</h2>
-</td>
-					</tbody>
-				</table>
-			</div>
-			
-		</div>
-	</div>
-
-<%= render 'home/leftsidebar'%>
-	</div>
-	</div>
-	</div> <!-- /container -->
+		
 <%= render 'home/footer'%>

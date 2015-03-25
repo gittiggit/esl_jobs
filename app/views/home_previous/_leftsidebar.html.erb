@@ -1,0 +1,90 @@
+	<%= stylesheet_link_tag 'social-buttons' %>
+	<div class="span3">
+
+<!--	
+<h2 style="padding-top: 20px">  <%= link_to 'http://www.uni-prep.com' do %><%= image_tag('uniprep.jpg') %><% end %></h2>
+	<h2>Browse jobs</h2>
+		<div class="row-fluid">
+			<div class="span12">
+				<select class="span12" id="job_term_cat" name="job_term_cat">
+					<option value="">Job category...</option>
+					<option value="38" class="level-0">ESL</option>
+					<option value="20" class="level-0">TOFEL</option>
+					<option value="50" class="level-0">IELTS</option>
+					<option value="23" class="level-0">ENGLISH</option>
+				</select>
+				
+				
+				<select id="job_type" name="job_type" class="span12">
+					<option>Country...</option>
+					<option>&nbsp;&nbsp;&nbsp;London</option>
+					<option>&nbsp;&nbsp;&nbsp;China</option>
+					<option>&nbsp;&nbsp;&nbsp;Paris</option>
+				</select>
+				
+				
+				<select class="span12" id="job_term_salary" name="job_term_salary">
+					<option value="">Job salary...</option>
+					<option value="9" class="level-0">&nbsp;&nbsp;&nbsp;Less than 20,000</option>
+					<option value="10" class="level-0">&nbsp;&nbsp;&nbsp;20,000 – 40,000</option>
+					<option value="11" class="level-0">&nbsp;&nbsp;&nbsp;40,000 – 60,000</option>
+					<option value="12" class="level-0">&nbsp;&nbsp;&nbsp;60,000 – 80,000</option>
+					<option value="13" class="level-0">&nbsp;&nbsp;&nbsp;80,000 – 100,000</option>
+					<option value="14" class="level-0">&nbsp;&nbsp;&nbsp;100,000 and above</option>
+				</select>
+				
+				<select class="span12" id="job_term_salary2" name="job_term_salary2">
+					<option value="">Date posted...</option>
+					<option value="">Today</option>
+					<option value="">This week</option>
+					<option value="">Last week</option>
+					<option value="">This month</option>
+				</select>
+				
+				<a class="btn btn-large pull-right search_btn" href="http://esljobs.herokuapp.com/browse.html">Search</a>
+				
+			</div>			
+		</div>
+	-->
+	     <h2 style="margin-bottom:-1px";>Follow Us On Facebook</h2>
+	     <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FESL-Jobs-Lounge%2F528664423908203&amp;width=215&amp;height=258&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=true" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:215px; height:258px;" allowTransparency="true"></iframe>
+	     
+		<h2>Stay connected with us</h2>
+		<div style="margin-top:-13px" class="row-fluid">
+			<div class="span12">
+				<ul class="social-icons">
+					<a href="https://www.facebook.com/pages/ESL-Jobs-Lounge/528664423908203" class="sb orange facebook">Facebook</a>
+					<a href="https://twitter.com/esljobslounge" class="sb blue twitter">Twitter</a>
+					<a href="https://plus.google.com/114631577984478173601/" class="sb orange vimeo">Google Plus</a>
+					<a href="#" class="sb blue linkedin">Linkedin</a>
+					<a href="#" class="sb orange rss">RSS</a>
+				</ul>
+				<p>Stay connected to the latest jobs, events and career advice.</p>
+			</div>			
+		</div>
+	 
+       <div> 
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- sidebarad -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:220px;height:600px"
+     data-ad-client="ca-pub-3947968133656454"
+     data-ad-slot="9211884122"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    </div>
+    
+   <h2>Browse Jobs by Country</h2>
+   <div style="margin-top:-13px; margin-bottom:30px" class="row-fluid">
+		  <% @countries.each do |country| %>
+    <tr>
+      <td><%=link_to "ESL JOBS in "+ country.countryname,country %></td><br/>
+    </tr>
+   <% end %>
+   <td><a href="/esl-jobs">All ESL Teacher Job</a></td>
+   
+	</div>	
+   
+    
+	</div>

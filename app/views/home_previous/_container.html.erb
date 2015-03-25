@@ -1,0 +1,30 @@
+	<div class="span9">
+		<div style="padding-bottom:0px;width:99%" class="row-fluid hero_bar">
+		<div class="row-fluid">
+			
+			<div class="span12">
+				
+						<div class="span5" >
+							<h1> <%= @container_title %> <h1> 
+						</div>
+				
+				<table class="table table-striped">
+					<tbody>
+                  <% @job_posts.each do |job_post| %>
+						<tr class="">
+					
+							  	<td><span class="label"> <%= job_post.created_at.strftime("%d %b. %Y") %></span></td>
+							<td><strong><%= link_to job_post.title, job_post %></strong><br>
+		                       <div style="text-align:justify"><%= raw(strip_tags(job_post.description)[0,350]) + "... " %></div> <div style="float:right; padding-top:0%"><%=link_to "Read more", job_post %></div> 
+							</td>
+							<td><span class="label label-success"><%= job_post.country.countryname %></span></td>
+						
+						</tr>	                
+					<% end %>
+					</tbody>
+				</table>
+			</div>
+		<%= will_paginate @job_posts,:inner_window => 2 %> 
+		</div>
+		</div>
+	</div>

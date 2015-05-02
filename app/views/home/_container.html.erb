@@ -11,6 +11,8 @@
 								<div class="col-md-9 col-sm-9 all-job-area">
                    <% @job_posts.each do |job_post| %>
 									<div class="col-md-4 col-sm-6 single_job_area">
+                    
+                    <%= link_to job_post_path(job_post) do %>
 										<div class="single_job fix">
 											<div class="published_date fix">
 												<p><%= job_post.created_at.strftime("%d %b. %Y") %></p>
@@ -27,6 +29,7 @@
 											</div>
 										</div>
 									</div>
+                  <% end %>
                   <% end %>
 									<div class="col-md-12 col-sm-12">
 										<nav class="job-paginition">

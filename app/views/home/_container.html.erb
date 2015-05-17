@@ -11,8 +11,13 @@
 								<div class="col-md-9 col-sm-9 all-job-area">
                    <% @job_posts.each do |job_post| %>
 									<div class="col-md-4 col-sm-6 single_job_area">
+                    <% if job_post.jobslink.blank? %>
+                     <% @abc= job_post_path(job_post) %>
+                    <% else %>
+                    <% @abc= job_post.jobslink %>
+                    <% end %>
                     
-                    <%= link_to job_post_path(job_post) do %>
+                    <%= link_to @abc , :target=> "_blank" do %>
 										<div class="single_job fix">
 											<div class="published_date fix">
 												<p><%= job_post.created_at.strftime("%d %b. %Y") %></p>

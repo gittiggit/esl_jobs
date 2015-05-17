@@ -629,3 +629,8 @@ line-height: 1.7;
 .side-bar-job-page {
 padding-right: 15px !important;
 }
+a:focus
+{
+-moz-outline-style: none;
+}
+a:focus { outline:none }

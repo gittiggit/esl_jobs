@@ -62,3 +62,5 @@ gem "devise"
 # gem 'debugger', group: [:development, :test]
 
 gem 'puma'
+gem 'devise'
+gem "cancan"

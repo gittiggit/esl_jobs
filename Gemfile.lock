@@ -51,6 +51,7 @@ GEM
       sass (~> 3.2)
       thor
     builder (3.1.4)
+    cancan (1.6.10)
     capistrano (2.9.0)
       highline
       net-scp (>= 1.0.0)
@@ -199,6 +200,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin!
+  cancan
   capistrano (~> 2.9.0)
   coffee-rails (~> 4.0.0)
   devise

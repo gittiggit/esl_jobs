@@ -1,4 +1,8 @@
 EslJobs::Application.routes.draw do
+  devise_for :users, :controllers => { registrations: 'registrations' }
+  devise_scope :user do  
+   get '/users/sign_out' => 'devise/sessions#destroy'     
+end
   get "advertise/index"
   get "contact/index"
   get "about/index"
@@ -19,6 +23,7 @@ EslJobs::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
    root 'job_posts#index'
+  get '/users/:id', :to => 'users#show', :as => :user
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

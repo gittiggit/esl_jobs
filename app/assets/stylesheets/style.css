@@ -304,8 +304,8 @@ margin-top: 33px;
 display: flex;
 }
 .main-menu ul li a,.main-menu ul li a:hover {
-font-size: 15px;
-text-transform: uppercase;
+font-size: 16px;
+text-transform: inherit;
 color: #fff;
 font-weight: 600;
 }

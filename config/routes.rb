@@ -1,4 +1,5 @@
 EslJobs::Application.routes.draw do
+  default_url_options :host => "/"
   devise_for :users, :controllers => { registrations: 'registrations' }
   devise_scope :user do  
    get '/users/sign_out' => 'devise/sessions#destroy'     
@@ -73,4 +74,18 @@ end
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  
+    # mailbox folder routes
+  get "mailbox/inbox" => "mailbox#inbox", as: :mailbox_inbox
+  get "mailbox/sent" => "mailbox#sent", as: :mailbox_sent
+  get "mailbox/trash" => "mailbox#trash", as: :mailbox_trash
+
+  # conversations
+  resources :conversations do
+    member do
+      post :reply
+      post :trash
+      post :untrash
+    end
+  end  
 end

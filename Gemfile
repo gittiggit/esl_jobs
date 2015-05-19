@@ -51,12 +51,10 @@ end
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use unicorn as the app server
- gem 'unicorn'
+gem 'unicorn'
 
 # Use Capistrano for deployment
 gem "capistrano", "~> 2.9.0"
-
-gem "devise"
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
@@ -64,3 +62,5 @@ gem "devise"
 gem 'puma'
 gem 'devise'
 gem "cancan"
+gem 'mailboxer'
+gem 'chosen-rails'

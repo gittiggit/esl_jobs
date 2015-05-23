@@ -64,3 +64,4 @@ gem 'devise'
 gem "cancan"
 gem 'mailboxer'
 gem 'chosen-rails'
+gem 'carrierwave'

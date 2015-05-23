@@ -3,11 +3,11 @@ private
 
 
   def sign_up_params
-    params.require(:user).permit( :email, :password, :password_confirmation , :role, :name)
+    params.require(:user).permit( :email, :password, :password_confirmation , :role, :name, :avatar)
   end
 
   def account_update_params
-    params.require(:user).permit(:email, :password, :password_confirmation, :current_password , :role , :name)
+    params.require(:user).permit(:email, :password, :password_confirmation, :current_password , :role , :name, :avatar)
   end
   
 end

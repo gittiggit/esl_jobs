@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  reviewpost: MyText
+  review_by: 1
+  review_to: 1
+
+two:
+  reviewpost: MyText
+  review_by: 1
+  review_to: 1

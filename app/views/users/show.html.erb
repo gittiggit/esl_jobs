@@ -10,4 +10,17 @@
   <%= @user.email %>
 </p>
 
+<p>
+  <strong>ID:</strong>
+  <%= @user.id %>
+</p>
+<li><%=  current_user.id %></li>
 <%= image_tag(@user.avatar)  %>
+
+<%= render 'reviews/index' %>
+
+<% if current_user.id == @user.id %>
+<% else %>
+<%= render 'reviews/form' %>
+ <% end %>
+

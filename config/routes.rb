@@ -1,4 +1,6 @@
 EslJobs::Application.routes.draw do
+  resources :reviews
+
   default_url_options :host => "/"
   devise_for :users, :controllers => { registrations: 'registrations' }
   devise_scope :user do  

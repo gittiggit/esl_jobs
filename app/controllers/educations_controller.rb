@@ -47,7 +47,7 @@ class EducationsController < ApplicationController
     respond_to do |format|
       if @education.update(education_params)
         format.html { redirect_to @education, notice: 'Education was successfully updated.' }
-        @educations = Education.find_by_sql ["SELECT * FROM educations WHERE users_id = ?", params[:userid]] 
+        @educations = Education.find_by_sql ["SELECT * FROM educations WHERE users_id = ?", current_user.id] 
         format.js
       else
         format.html { render action: 'edit' }

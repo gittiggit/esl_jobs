@@ -26,10 +26,12 @@
         <td><%= education.present %></td>
         <td><%= education.description %></td>
         <td><%= education.users_id %></td>
+         <% if current_user.id == education.users_id  %>
         <td><%= link_to 'Show', education %></td>
         <td><%= link_to 'Edit', edit_education_path(education), remote: true %></td>
-        <td><%= link_to 'Destroy', education_path(education,:userid=> 15), method: :delete, data: { confirm: 'Are you sure?' }, remote: true %></td>
+        <td><%= link_to 'Destroy', education_path(education,:userid=> current_user.id ), method: :delete, data: { confirm: 'Are you sure?' }, remote: true %></td>
       </tr>
+    <% end %>
     <% end %>
   </tbody>
 </table>

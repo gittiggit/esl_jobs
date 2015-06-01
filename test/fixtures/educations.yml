@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  institute: MyString
+  designation: MyString
+  start: 2015-06-01
+  end: 2015-06-01
+  present: 1
+  description: MyText
+  users_id: 1
+
+two:
+  institute: MyString
+  designation: MyString
+  start: 2015-06-01
+  end: 2015-06-01
+  present: 1
+  description: MyText
+  users_id: 1

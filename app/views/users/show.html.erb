@@ -14,7 +14,7 @@
   <strong>ID:</strong>
   <%= @user.id %>
 </p>
-<li><%=  current_user.id %></li>
+<li><%= current_user.id %></li>
 <%= image_tag(@user.avatar)  %>
 
 <%= render 'reviews/index' %>
@@ -24,3 +24,4 @@
 <%= render 'reviews/form' %>
  <% end %>
 
+<%= render 'users/reload' %>

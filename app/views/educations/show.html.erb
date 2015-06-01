@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Institute:</strong>
+  <%= @education.institute %>
+</p>
+
+<p>
+  <strong>Designation:</strong>
+  <%= @education.designation %>
+</p>
+
+<p>
+  <strong>Start:</strong>
+  <%= @education.start %>
+</p>
+
+<p>
+  <strong>End:</strong>
+  <%= @education.end %>
+</p>
+
+<p>
+  <strong>Present:</strong>
+  <%= @education.present %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @education.description %>
+</p>
+
+<p>
+  <strong>Users:</strong>
+  <%= @education.users_id %>
+</p>
+
+<%= link_to 'Edit', edit_education_path(@education) %> |
+<%= link_to 'Back', educations_path %>

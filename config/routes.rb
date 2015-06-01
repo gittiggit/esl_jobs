@@ -1,4 +1,6 @@
 EslJobs::Application.routes.draw do
+  resources :educations
+
   resources :reviews
 
   default_url_options :host => "/"

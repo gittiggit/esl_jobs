@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150525080353) do
+ActiveRecord::Schema.define(version: 20150601033344) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -54,6 +54,18 @@ ActiveRecord::Schema.define(version: 20150525080353) do
   end
 
   add_index "countries", ["slug"], name: "index_countries_on_slug", using: :btree
+
+  create_table "educations", force: true do |t|
+    t.string   "institute"
+    t.string   "designation"
+    t.date     "start"
+    t.date     "end"
+    t.integer  "present"
+    t.text     "description"
+    t.integer  "users_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false

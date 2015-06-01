@@ -1,0 +1,39 @@
+<h1 class="task_list">Listing educations</h1>
+<%= @getparam %>
+<table class="task_list">
+  <thead>
+    <tr>
+      <th>Institute</th>
+      <th>Designation</th>
+      <th>Start</th>
+      <th>End</th>
+      <th>Present</th>
+      <th>Description</th>
+      <th>Users</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @educations.each do |education| %>
+      <tr class="task_list">
+        <td><%= education.institute %></td>
+        <td><%= education.designation %></td>
+        <td><%= education.start %></td>
+        <td><%= education.end %></td>
+        <td><%= education.present %></td>
+        <td><%= education.description %></td>
+        <td><%= education.users_id %></td>
+        <td><%= link_to 'Show', education %></td>
+        <td><%= link_to 'Edit', edit_education_path(education), remote: true %></td>
+        <td><%= link_to 'Destroy', education_path(education,:userid=> 15), method: :delete, data: { confirm: 'Are you sure?' }, remote: true %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<div id="incomplete_tasks"></div>
+<%= link_to 'New Education', new_education_path, id: "new_link", remote: true %>

@@ -19,9 +19,7 @@
 
 <%= render 'reviews/index' %>
 
-<% if current_user.id == @user.id %>
-<% else %>
-<%= render 'reviews/form' %>
- <% end %>
+<br>
 
 <%= render 'educations/index' %>
+<%= link_to 'New Education', new_education_path, id: "new_link", remote: true %>

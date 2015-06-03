@@ -1,6 +1,6 @@
-<h1>Listing reviews</h1>
+<h1 class="review_list">Listing reviews</h1>
 
-<table>
+<table class="review_list">
   <thead>
     <tr>
       <th>Reviewpost</th>
@@ -14,16 +14,22 @@
 
   <tbody>
     <% @reviews.each do |review| %>
-      <tr>
+      <tr class="review_list">
         <td><%= review.reviewpost %></td>
         <td><%= review.review_by %></td>
         <td><%= review.review_to %></td>
-        <td><%= link_to 'Show', review %></td>
+        <% if review.review_by == current_user.id 
+          @mashpy = "something"
+         end %>
+        <% if current_user.id == review.review_by %>
         <td><%= link_to 'Edit', edit_review_path(review) %></td>
-        <td><%= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', review_path(review, :reviewid=> review.review_to ), method: :delete, data: { confirm: 'Are you sure?' } , remote: true %></td>
       </tr>
+    <% end %>
     <% end %>
   </tbody>
 </table>
-
-<br>
+<div id="incomplete_reviews"></div>
+<% if @mashpy.nil? %> 
+<%= render 'reviews/form' %>
+<% end %>

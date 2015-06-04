@@ -22,7 +22,13 @@
   </div>
   <div class="field">
     <% f.label :review_to %><br>
-    <%= f.hidden_field :review_to, :value=> @userid  %>
+    <% if @userid.nil? 
+        @mainuserid = params[:reviewid]
+        else
+        @mainuserid = @userid
+      end
+    %>
+    <%= f.hidden_field :review_to, :value=> @mainuserid  %>
   </div>
   <div class="actions">
     <%= f.submit %>

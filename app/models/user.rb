@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   mount_uploader :avatar, AvatarUploader
-  
+  validates :name, format: { with: /\A[a-zA-Z0-9]+\Z/ }
   include Mailboxer::Models::Messageable
 
   devise :database_authenticatable, :registerable,

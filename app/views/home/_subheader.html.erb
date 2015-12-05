@@ -1,40 +1,42 @@
-		<!--  Location search area -->
-		<div class="location-search-area fix">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12 main-location fix">
-							<div class="col-md-9 col-sm-10 main-location-area">
-								<%= form_tag job_posts_path, :method => 'get' do %>
-									<div class="col-md-5 col-sm-5">
-										<div class="search-location fix">
-											<p>Location</p>
-                      <form>
-											<select class="home_select"
-											onChange="if(this.selectedIndex!=0)
-											self.location=this.options[this.selectedIndex].value">
-											<option value="" selected>Select Your Country
-												 <% @countries.each do |country| %>
-											<option value="<%= url_for(country)%>"><%= country.countryname %>
-												<%end%>	
-											</select>
-											</form>
-										</div>
-									</div>
-									<div class="col-md-5 col-sm-5">
-										<div class="job-search fix">
-											<p>I'm looking for</p>
-											<input type="text" placeholder="Search job here"/>
-										</div>
-									</div>
-									<div class="col-md-2 col-sm-2 loc-job-submit fix">	
-										<input type="submit" value="SEARCH"/>
-										<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-									</div>
-								</form>
-            <% end %>	
-							</div>
-					</div>
+   <div class="header-cover">
+		<div class="container">
+			<div class="row">
+				
+				<div class="search-form-header">
+                <div class="col-md-12">
+                    <form>
+                        <div class="col-md-5 col-sm-6 col-xs-12 text-field-cover">
+    					   <input type="text" placeholder="Job title keyword">
+                        </div>
+                        <div class="col-md-5 col-sm-6 col-xs-12 text-field-cover">
+                            <input type="text" placeholder="Country">
+
+    					 <!--   <div class="select-country">
+                            <select>
+                                <option value="volvo">Select country</option>
+                                <option value="saab">United Kingdom</option>
+                                <option value="mercedes">United State</option>
+                                <option value="audi">Pakistan</option>
+                            </select> 
+                            <span class="down-arrow">
+                                <i class="fa fa-caret-down"></i>
+                            </span>
+                        </div> -->
+                        </div>
+                    
+                        <div id="buttons" class="col-md-2 search-job-btn">
+                        <button type="submit" class="btn green">Search</button>
+                        <a href="">Advanced Search</a>                                                 
+                        </div>
+                    </form>
+                    </div>
+                    <div class="clearfix"></div>
 				</div>
+				
+			
 			</div>
 		</div>
-		<!--  Location search area  end-->
+	</div>
+   </div>
+       
+    </header>

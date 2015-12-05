@@ -1,0 +1,56 @@
+    <!-- Latest Jobs section -->
+   <section class="latest-jobs-sec">
+   	<div class="container">
+    	<div class="row latest-job">        	
+            <div class="col-md-10 latest-job-left-col">
+            	
+            	<div class="trt-cover">
+                    <h1>Latest <span>Jobs</span></h1>
+                    <div class="heading-border">
+                    	<span class="line-border-left"></span>
+                        <span class="left-circle"></span>
+                        <span class="center-circle"></span>                        
+                        <span class="left-circle"></span>
+                        <span class="line-border-right"></span>
+                    </div>
+                </div>
+            	
+   <% @job_posts.each do |job_post| %>
+                <div class="col-md-4 lates-jobs-single-box">
+                    <a href="<%=job_post_path(job_post) %>">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                        	<h3><%= raw(strip_tags(job_post.title)[0,30]) %></h3>
+                            <p><%= raw(strip_tags(job_post.description)[0,100]) %></p>
+                            <div class="location">
+                            	<i class="fa  fa-map-marker"></i>
+                                <%= job_post.country.countryname %>
+                            </div>
+                            <div class="job-price">
+                            	$500
+                            </div>
+                            <div class="job-apply">
+                            	Apply
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>                        
+                    </div>
+                    </a>
+                </div>
+                       <% end %>  
+ 
+                <div class="clearfix"></div>
+                
+      			<div class="view-all-jobs text-center">
+                	<a href="job-search-result.html" class="viewalljobs-btn col-md-3">View All Jobs</a>
+                </div>
+   
+                
+            </div>
+            <div class="col-md-2 latest-job-right-col text-center">
+            	<img src="assets/googl-ad.jpg" class="img-responsive">            
+            </div>
+            
+        </div>
+    </div>
+   </section>

@@ -1,67 +1,104 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en"><head>
 
-    <meta name="keywords" content="<%= @page_keywords %>" />
-    <meta name="description" content="<%= @page_description %>">
-    <meta name="author" content="<%= @page_author %>">
-	<![endif]-->
-	<title><%= @page_title %></title>
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->		
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-        <link rel="stylesheet" href="/assets/css/normalize.css">
-        <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/assets/css/bootstrap-theme.min.css">
-		<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-        <link rel="stylesheet" href="/assets/style.css">
-        <link rel="stylesheet" href="/assets/responsive.css">
-        <script src="/assets/js/vendor/modernizr-2.6.2.min.js"></script>
-		
-		<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-		
-		<!--  herder area start-->
-		<header>
-			<div class="container">
-				<div class="row">
-					<div class="header_area fix">
-						<div class="col-md-6 col-sm-6">
-							<div class="logo fix">
-								<a href="/"><img src="/assets/img/logo.png" alt="" /></a>
-							</div>
-						</div>
-						<div class="col-md-6 col-sm-6">
-							<nav class="main-menu fix">
-								<ul>
-									<li><a href="/about">About</a></li>
-									<li><a href="/advertise">Advertise</a></li>
-  <% if user_signed_in? %>
-  <li><%= link_to "Profile", current_user %></li>
-  <li><%= link_to "Inbox", mailbox_inbox_path %></li>
-  <li> <%= link_to "Sign out", destroy_user_session_path, :method => :delete %> </li>
-  <% else %>
-  <li>  <%= link_to "Sign up", new_user_registration_path %> </li>
-  <li> <%= link_to "Sign in", new_user_session_path %> </li>
-<% end %>
-  <li><a href="/contact">Contact</a></li>
-								</ul>
-							</nav>
-						</div>
-					</div>
-					
-				</div>
-			</div>
-		</header>
+    <title>ESL Jobs Lounge | Home</title>
 
-		<!--  herder area end-->
+    <!-- Bootstrap Core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link href="assets/css/font-awesome.css" rel="stylesheet">
+    
+     <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,300,700,600italic,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.assets/js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" data-target=".navbar-fixed-top">
+    
+    <!-- Header -->
+    <header class="header">
+
+	<div class="div-top-header">	
+	
+    <!--Branding and Main Navigation-->
+<nav id="primaery-navbar" class="navbar navbar-default" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="container">
+            <div class="col-md-3 col-sm-3 col-xs-12">          
+			     <a class="navbar-brand" href="index.html"><span>ESL</span> Jobs Lounge</a>
+            </div>
+            <div class="col-md-8 col-sm-8 col-xs-12 small-right pull-right">
+               <div class="col-md-2 col-xs-12 col-sm-3 pull-right login-signup-btn">
+                    <a class="sign-in-login-btn green-btn">
+                    <i class="fa fa-user-plus"></i> 
+                    Sign Up                                      
+                    </a>
+
+                </div>
+                <div class="col-md-2 col-xs-12 col-sm-3 pull-right login-signup-btn">
+                    <a class="sign-in-login-btn" href="login.html">
+                    <i class="fa fa-sign-in"></i> 
+                    Login
+                    </a>
+                </div> 
+           <div class="col-md-8 col-xs-12 col-sm-6 pull-right login-signup-btn">
+               <div class="col-md-12 nopadding">
+               <!-- <div class="category-field">
+                 <select name="" id="input" class="form-control" required="required">                         
+                          <option value=""><i class="fa fa-search"></i> <span class="hide-text">Jobs</span></option>
+                          <option value="">Teachers</option>
+                          <option value="">Employers</option>
+                          <option value="">Forum</option>
+                        </select>
+                        <i class="fa fa-angle-down"></i>                        
+               </div> -->
+                <form class="navbar-form pull-right" role="search" method="get" id="searchform" action="#">
+                <div class="input-group cutsominput-group">
+                    <div class="input-group-btn">
+                        <button type="button" id="searchcategory" value="BLOG" class="btn btn-cat" data-toggle="dropdown" aria-expanded="false">Jobs <span class="caret"></span></button>
+        
+                        <ul id="searchdropdown" class="dropdown-menu" role="menu">
+                            <li><a href="javascript:void(0)">Jobs</a></li>
+                            <li><a href="javascript:void(0)">Teachers</a></li>
+                            <li><a href="javascript:void(0)">Employers</a></li>
+                            <li><a href="javascript:void(0)">Forum</a></li>          
+                        </ul>
+                    </div>
+                    <input type="text" class="form-control search-field" value="" placeholder="Search..." name="s" id="s">
+                    <div class="input-group-btn">
+                        <button type="submit" id="searchsubmit" value="Search" class="btn btn-cat btn-green"><span class="glyphicon glyphicon-search"></span></button>
+                    </div>
+                </div>
+            </form> 
+               </div>
+               <!-- <div class="col-md-8 nopl">
+                    <div class="search-filed">
+                    <form>
+                        
+                        <input type="text" name="" id="" placeholder="Search your keyword..">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                    </div>
+                    </div> -->
+               </div>
+    </nav>

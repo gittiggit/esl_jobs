@@ -65,3 +65,9 @@ gem "cancan"
 gem 'mailboxer'
 gem 'chosen-rails'
 gem 'carrierwave'
+
+group :development do
+  gem 'rspec-rails', '~> 3.0'
+  gem 'factory_girl_rails'
+  gem 'guard-rspec'
+end

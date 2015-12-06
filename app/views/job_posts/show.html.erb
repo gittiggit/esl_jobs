@@ -7,77 +7,177 @@
 %>
  
 <%= render 'home/header'%>	
-<%= render 'home/subheader'%>	
+</header>
+    <section class="page-heading-sec job-desc-sec">    
+        <div class="container">
+            <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">     
+            </div>  
+        </div>
+    </div>
 
-		<div class="main-area fix">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-10 col-sm-10 main-area-body fix">
-						<div class="bannar fix">
-							<img src="/assets/img/bannar.jpg" alt="" />
-						</div>
-						<section class="job_area fix">
-							<div class="row">
-								<div class="col-md-9 col-sm-9 job-conditions-area">
-									<div class="job-heading-area-fix">
-										<h2 class="job-page-heaing">  <%= @job_post.title %></h2>
-									</div>
-									<div class="job-details fix">
-										<div class="col-md-4 col-sm-4 job-details-heading">
-											<p>Job Details:</p>
-										</div>
-										<div class="col-md-8 col-sm-8">
-											<div class="col-md-4 col-sm-4">
-												<div class="published_date fix">
-													<p><%= @job_post.created_at.strftime("%d %b. %Y") %></p>
-												</div>
-											</div>
-											<div class="col-md-4 col-sm-4">
-												<div class="place fix">
-													<p style="width:100%;float:none;"><span style="color: #ddd;margin-right: 4px;" class="glyphicon glyphicon-map-marker" aria-hidden="true"></span><%= @job_post.salary %> </p>
-												</div>
-											</div>
-											<div class="col-md-4 col-sm-4">
-												<div class="work_rate fix">
-													<p><% if @job_post.country.countryname.blank? %>
-<% else %>
-  <%= @job_post.country.countryname %>
-<% end %></p>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="job_conditions fix">
-                  <%= raw(@job_post.description) %>
-									</div>
-<p>
-  <strong>Original Job Link: </strong>
-  <%= link_to "Click here", @job_post.jobslink, :target => '_blank' %>
+    </section>
+    
+    <!-- Login form section -->
+    <section class="job-description-sec">
+        <div class="container">
+            <div class="row">
+            <div class="col-md-12">
+            <h1 class="m-t-0"><%= @job_post.title %></h1>
+            </div>
+            <div class="col-md-9 col-sm-9 col-xs-12 col-lg-9">
+               <div class="job-content">
+               <div class="sidebar-job-des">
+               <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="single-field-desc">
+                        <div class="single-box-header">
+                            <i class="fa fa-calendar"></i>
+                            <span class="single-label">Date Posted</span>
+                            <div class="clearfix"></div>
+                        </div>
+                        <p><%= @job_post.created_at.strftime("%d %b. %Y") %></p>
+                    </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="single-field-desc">
+                        <div class="single-box-header">
+                            <i class="fa fa-map-marker"></i>
+                            <span class="single-label">Location</span>
+                            <div class="clearfix"></div>
+                        </div>
+                        <p><%= @job_post.country.countryname  %></p>
+                    </div> 
+                    </div> 
+
+                   <!--  <div class="col-md-4">
+                    <div class="single-field-desc">
+                        <div class="single-box-header">
+                            <i class="fa fa-user"></i>
+                            <span class="single-label">Position</span>
+                            <div class="clearfix"></div>
+                        </div>                
+                        <p>Tutoring Jobs</p>
+                    </div> 
+                    </div> --> 
+                   <!--  <div class="col-md-4">
+                    <div class="single-field-desc">
+                         <div class="single-box-header">
+                            <i class="fa fa-clock-o"></i>
+                            <span class="single-label">Job Status</span>
+                            <div class="clearfix"></div>
+                        </div>
+                        <p>Part-time</p>
+                    </div> 
+                    </div> -->
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="single-field-desc">
+                        <div class="single-box-header">
+                            <i class="fa fa-money"></i>
+                            <span class="single-label">Salary</span>
+                        <div class="clearfix"></div>
+                        </div>                   
+                        <p>Hourly Rate</p>
+                    </div> 
+                    </div>
+                   <!--  <div class="col-md-4">
+                    <div class="single-field-desc">
+                        <div class="single-box-header">
+                            <i class="fa fa-money"></i>
+                            <span class="single-label">Expertise</span>
+                        <div class="clearfix"></div>
+                        </div>                   
+                        <p>Hourly Rate</p>
+                    </div> 
+                    </div> -->
+                </div>
+                </div> 
+                <div class="clearfix"></div>
+                <div class="job-description-box">
+                   <h3>Description</h3>
+                <p><%= raw(@job_post.description) %>
 </p>
-								</div>
-								<!--sidebar start-->
-                <%= render 'home/leftsidebar'%>
-								<!--sidebar start end -->
-							</div>
-							<!--Job in the same country -->
-							<div class="job-same-country fix">
-								<h2>Job in the same country</h2>
-								<div class="col-md-3 col-sm-3">
-									<p class="date"><span class="calander" style="float:left;margin-right:5px;"><img src="img/calander.png" alt="" /></span>16 Jan 2015</p>
-									<p class="job_des">We are looking for Sunday Fun English theme teachers who will teach 2 hours on Sundays in Seoul</p>
-								</div>
-								<div class="col-md-3 col-sm-3">
-									<p class="date"><span class="calander" style="float:left;margin-right:5px;"><img src="img/calander.png" alt="" /></span>16 Jan 2015</p>
-									<p class="job_des">Kindergarten Teacher Needed At Woosong University in Daejeon, Korea, starting March 2015</p>
-								</div>
-								<div class="col-md-3 col-sm-3">
-									<p class="date"><span class="calander" style="float:left;margin-right:5px;"><img src="img/calander.png" alt="" /></span>16 Jan 2015</p>
-									<p class="job_des">We are looking for Sunday Fun English theme teachers who will teach 2 hours on Sundays in Seoul</p>
-								</div>
-								<div class="col-md-3 col-sm-3">
-									<p class="date">Ads by google</p>
-									<p class="job_des">We are looking for Sunday Fun English theme teachers who will teach 2 hours on Sundays in Seoul</p>
-								</div>
+ 
 
-		
+<div class="col-md-4 col-md-offset-4">
+<a href="<%=@job_post.jobslink %>" class="green-button-common">Apply Job</a>
+</div>
+                <div class="clearfix"></div>
+               </div>
+               <div class="job-des-profile">
+                    <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12 nopadding">
+                        <div class="job-profile-img">
+                            <img src="/assets/employe-pic.jpg">
+                        </div>                        
+                    </div>
+                    <div class="col-lg-10 col-md-9 col-sm-8 col-xs-12">
+                        <div class="job-profile-des">
+                            <h3>Stephin</h3>
+                            <span class="designation">Maths Teacher  |  <b> Location:</b> Fremont, California  |  <b>Since:</b> 12, August 2014  </span>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. </p> 
+                            <div class="start-rating-cover">
+        <fieldset class="rating">
+        <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+        <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+        <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+        <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+        <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+        <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+        <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+        <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+        <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+        <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+        </fieldset>
+        <div class="clearfix"></div>
+                                                </div>  
+                        </div>
+                    </div>
+                  <div class="clearfix"></div>      
+               </div>
+
+               <div class="employer-similar-jobs">
+                   <h2>Other job posted by Stephin</h2>
+                   <div class="clearfix"></div>
+                   <div class="list-job-box">
+                       <h5><a href="#">Special Ed Paraeducator, Adaptive </a></h5>
+                       <p> Located in School District 27J, Innovations and Options Brighton Heritage Academy is currently seeking a TOSA to provide ...</p>
+                       <h6>Posted August 20, 2015</h6>
+                       <div class="clearfix"></div>
+                   </div>
+
+                   <div class="list-job-box">
+                       <h5><a href="#">Special Ed Paraeducator, Adaptive Support Center</a> </h5>
+                       <p> Located in School District 27J, Innovations and Options Brighton Heritage Academy is currently...</p>
+                       <h6>Posted August 20, 2015</h6>
+                       <div class="clearfix"></div>
+                   </div>
+
+                   <div class="list-job-box">
+                       <h5><a href="#">Special Ed Paraeducator</a></h5>
+                       <p> Located in School District 27J, Innovations and Options Brighton Heritage Academy is currently seeking a TOSA to ...</p>
+                       <h6>Posted August 20, 2015</h6>
+                       <div class="clearfix"></div>
+                   </div>
+
+                   <div class="list-job-box">
+                       <h5><a href="#">Special Ed Paraeducator, Adaptive Support Center (ASC) 1:1, 7 hours / 9 months -KL1527</a></h5>
+                       <p> Located in School District 27J, Innovations and Options Brighton Heritage Academy is currently seeking a ...</p>
+                       <h6>Posted August 20, 2015</h6>
+                       <div class="clearfix"></div>
+                   </div>
+                
+
+               </div>
+
+
+               </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 img-add">
+                <img src="/assets/google-ad-160.jpg">          
+            </div>
+                
+            </div> 
+              
+        </div>
+    </section>
 <%= render 'home/footer'%>

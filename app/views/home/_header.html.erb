@@ -10,13 +10,13 @@
     <title>ESL Jobs Lounge | Home</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="/assets/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet">
     
     <!-- Custom CSS -->
-    <link href="assets/css/font-awesome.css" rel="stylesheet">
+    <link href="/assets/css/font-awesome.css" rel="stylesheet">
     
      <!-- Google Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,300,700,600italic,300italic,400italic' rel='stylesheet' type='text/css'>
@@ -28,7 +28,7 @@
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.assets/js/1.4.2/respond.min.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond./assets/js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
 </head>
@@ -45,23 +45,51 @@
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="container">
             <div class="col-md-3 col-sm-3 col-xs-12">          
-			     <a class="navbar-brand" href="index.html"><span>ESL</span> Jobs Lounge</a>
+			     <a class="navbar-brand" href="<%= root_path %>"><span>ESL</span> Jobs Lounge</a>
             </div>
             <div class="col-md-8 col-sm-8 col-xs-12 small-right pull-right">
-               <div class="col-md-2 col-xs-12 col-sm-3 pull-right login-signup-btn">
-                    <a class="sign-in-login-btn green-btn">
+            <div class="col-md-2 col-xs-12 col-sm-3 pull-right login-signup-btn">
+                <% if user_signed_in? %>
+                    <a class="sign-in-login-btn green-btn" href="<%= destroy_user_session_path %>">
+                    <i class="fa fa-sign-in"></i> 
+                    Sign out                                      
+                    </a>
+                <% else %>
+                <a class="sign-in-login-btn green-btn" href="<%= new_user_registration_path %>">
                     <i class="fa fa-user-plus"></i> 
                     Sign Up                                      
                     </a>
-
+                <% end %>
+        
                 </div>
+
                 <div class="col-md-2 col-xs-12 col-sm-3 pull-right login-signup-btn">
-                    <a class="sign-in-login-btn" href="login.html">
+                     <% if user_signed_in? %>
+                    <a class="sign-in-login-btn" href="<%= user_path(current_user) %>">
+                    <i class="fa fa-user-plus"></i> 
+                    Profile
+                    </a> 
+                    <% else %>
+                    <a class="sign-in-login-btn" href="<%= new_user_session_path %>">
                     <i class="fa fa-sign-in"></i> 
                     Login
                     </a>
+                    <% end %>
+
                 </div> 
-           <div class="col-md-8 col-xs-12 col-sm-6 pull-right login-signup-btn">
+                
+                <% if user_signed_in? %>
+                   <div class="col-md-2 col-xs-12 col-sm-3 pull-right login-signup-btn">                 
+                    <a class="sign-in-login-btn" href="<%= mailbox_inbox_path %>">
+                    <i class="fa fa-user-plus"></i> 
+                    Inbox
+                    </a> 
+                    </div>
+                    <div class="col-md-6 col-xs-12 col-sm-6 pull-right login-signup-btn">
+                <% else %>
+                <div class="col-md-8 col-xs-12 col-sm-6 pull-right login-signup-btn">
+                <% end %>
+
                <div class="col-md-12 nopadding">
                <!-- <div class="category-field">
                  <select name="" id="input" class="form-control" required="required">                         

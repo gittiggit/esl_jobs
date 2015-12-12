@@ -178,7 +178,7 @@ ActiveRecord::Schema.define(version: 20150601033344) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "role"
-    t.string   "name"
+    t.string   "username"
     t.string   "avatar"
   end
 

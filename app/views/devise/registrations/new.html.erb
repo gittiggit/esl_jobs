@@ -188,14 +188,9 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
-<% if params[:type].to_s == "business"
-@employerid= 1 
-else
-@employerid= 2
-end
- %>
+<% @employerid= RoleType.find_by( :name => params[:type].to_s ).id %>
 <div style="display: none;">
-<%= f.select :role, [@employerid.to_s], :type => "hidden" %>
+<%= f.select :role_type_id, [@employerid.to_s], :type => "hidden" %>
 </div>
   <div class="actions">
     <%= f.submit "Sign up" %>

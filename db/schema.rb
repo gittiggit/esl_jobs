@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150601033344) do
+ActiveRecord::Schema.define(version: 20151212202135) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -164,6 +164,12 @@ ActiveRecord::Schema.define(version: 20150601033344) do
     t.datetime "updated_at"
   end
 
+  create_table "role_types", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -177,13 +183,31 @@ ActiveRecord::Schema.define(version: 20150601033344) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "role"
     t.string   "username"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "businessname"
+    t.string   "city"
+    t.string   "country"
+    t.string   "address"
+    t.text     "about"
+    t.string   "telephone"
+    t.string   "website"
+    t.string   "otherlocation"
+    t.date     "birthdate"
+    t.text     "introduction"
+    t.string   "employees"
+    t.string   "locationmap"
+    t.text     "locationdescription"
+    t.string   "skills"
+    t.string   "language"
     t.string   "avatar"
+    t.integer  "role_type_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["role_type_id"], name: "index_users_on_role_type_id", using: :btree
 
   add_foreign_key "mailboxer_conversation_opt_outs", "mailboxer_conversations", name: "mb_opt_outs_on_conversations_id", column: "conversation_id"
 

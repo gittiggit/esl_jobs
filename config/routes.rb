@@ -1,4 +1,6 @@
 EslJobs::Application.routes.draw do
+  resources :role_types
+
   resources :educations
 
   resources :reviews

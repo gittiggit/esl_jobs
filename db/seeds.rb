@@ -18,5 +18,6 @@ Country.create(:id => 10, :countryname => "Italy")
 Country.create(:id => 11, :countryname => "Spain")
 Country.create(:id => 12, :countryname => "France")
 Country.create(:id => 13, :countryname => "Poland")
-
+RoleType.create(:id => 1, :name => "individual")
+RoleType.create(:id => 2, :name=> "business")
 JobType.create(:id => 1, :type_title => "ESL JOBS")

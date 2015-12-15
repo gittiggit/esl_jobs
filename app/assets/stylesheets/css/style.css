@@ -2878,6 +2878,25 @@ background-color: rgba(0,0,0,0.05) !important;
 max-width: 100%
 }
 
+.top-buffer-1{
+    margin-top: 10px;
+}
+.top-buffer-2{
+    margin-top: 20px;
+}
+.top-buffer-3{
+    margin-top: 30px;
+}
+.bottom-buffer-1{
+    margin-bottom:10px;
+}
+.bottom-buffer-2{
+    margin-bottom:20px;
+}
+.bottom-buffer-3{
+    margin-bottom:30px;
+}
+
 /*======================================
 16 - Responsive Media Quuries
 =======================================*/

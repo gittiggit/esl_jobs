@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151212202135) do
+ActiveRecord::Schema.define(version: 20151213141106) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -83,19 +83,23 @@ ActiveRecord::Schema.define(version: 20151212202135) do
   create_table "job_posts", force: true do |t|
     t.string   "title"
     t.text     "description"
+    t.string   "city"
     t.string   "jobslink"
     t.string   "salary"
     t.string   "company"
+    t.date     "expire_date"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "country_id"
     t.integer  "job_type_id"
     t.string   "slug"
+    t.integer  "user_id"
   end
 
   add_index "job_posts", ["country_id"], name: "index_job_posts_on_country_id", using: :btree
   add_index "job_posts", ["job_type_id"], name: "index_job_posts_on_job_type_id", using: :btree
   add_index "job_posts", ["slug"], name: "index_job_posts_on_slug", using: :btree
+  add_index "job_posts", ["user_id"], name: "index_job_posts_on_user_id", using: :btree
 
   create_table "job_types", force: true do |t|
     t.string   "type_title"

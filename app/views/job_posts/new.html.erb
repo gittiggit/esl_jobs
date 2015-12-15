@@ -1,0 +1,92 @@
+<%= render 'home/header'%>
+</header>
+   <section class="page-heading-sec">    
+        <div class="container">
+            <div class="row">
+            <div class="page-heading">
+                 <h1>Post a New Job</h1>            
+            </div>       
+        </div>
+    </div>
+
+    </section>
+
+  <% if current_user.role_type.name == "business" %>
+    <!-- Login form section -->
+    <section class="post-a-job-sec">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-12 col-xs-12 col-md-offset-2">
+				   <%= form_for :job_post, url: job_posts_path do |f| %>
+				  <% if @job_post.errors.any? %>
+				  <div id="error_explanation">
+				    <p><%= pluralize(@job_post.errors.count, "error") %> prohibited
+				      this post from being saved:</p>
+				    <ul>
+				    <% @job_post.errors.full_messages.each do |msg| %>
+				      <li><%= msg %></li>
+				    <% end %>
+				    </ul>
+				  </div>
+				  <% end %> 
+  
+                <div class="post-job-form">
+                	<div class="single-field">
+	                	<div class="col-md-4"><label>Job Title <span class="required-field">*</span></label></div>
+	                	<div class="col-md-8"><%=f.text_field :title%></div>
+                	</div>
+                	<div class="single-field">
+	                	<div class="col-md-4"><label>City <span class="required-field">*</span></label></div>
+	                	<div class="col-md-8"><%=f.text_field :city%></div>
+                	</div>
+
+                	<div class="single-field">
+	                	<div class="col-md-4"><label>Country <span class="required-field">*</span></label></div>
+	                	<div class="col-md-8"><%= f.collection_select(:country_id, Country.all, :id, :countryname, include_blank: false) %></div>
+                	</div>
+					<div class="clearfix"></div>
+                	<div class="single-field">
+	                	<div class="col-md-4"><label>Salary </label></div>
+	                	<div class="col-md-8"><%=f.text_field :salary%></div>
+                	</div>
+
+                	<div class="single-field">
+	                	<div class="col-md-4"><label>Job Description <span class="required-field">*</span></label></div>
+	                	<div class="col-md-8"><%=f.text_area :description%></div>
+                	</div>
+
+                	<div class="single-field">
+	                	<div class="col-md-4"><label>Start Date</label></div>
+	                	<div class="col-md-8"><input type="text" id="" name=""></div>
+                	</div>
+                	<div class="single-field">
+	                	<div class="col-md-4"><label>Required Skills </label></div>
+	                	<div class="col-md-8"><textarea  id="" name=""></textarea></div>
+                	</div>
+
+                	<div class="single-field">
+	                	<div class="col-md-4"><label>Preferred Skills </label></div>
+	                	<div class="col-md-8"><textarea  id="" name=""></textarea></div>
+                	</div>
+
+					
+					<div class="single-field col-md-4 pull-right full-btn">
+						<button type="submit" class="post-job-btn">Submit</button>
+					</div>
+
+
+
+
+                <div class="clearfix"></div>
+                </div>
+                
+            </div> 
+              
+        </div>
+    </section>
+<% end %>
+<% else %>
+<div class="col-md-offset-3 top-buffer-3 bottom-buffer-3">You are not authorized person to post a job. You must sign up as business account to post a job.</div>
+<div class="clearfix"></div>
+<% end %>
+<%= render 'home/footer'%>

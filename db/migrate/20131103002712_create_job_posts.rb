@@ -7,7 +7,7 @@ class CreateJobPosts < ActiveRecord::Migration
       t.string :jobslink
       t.string :salary
       t.string :company
-
+      t.date   :expire_date
       t.timestamps
     end
   end

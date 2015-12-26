@@ -13,12 +13,7 @@
               <div class="col-md-10">
                   <div class="prof-general-info">
                       <div class="col-md-5">
-
-                           <h3>  
-                               <%= best_in_place @user, :businessname , :as => :input, :place_holder => "Business Name Here", :class => "editable editable-click inline-edit-page"  %><a href="" class="edit-icon"></a>
-                          </h3>  
-                      </p>
-
+                      <h3><%=best_in_place @user, :businessname , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Business Name Here", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%></h3>
                       <p><i class="fa fa-map-marker"></i> <%= @user.city %>, <%= @user.country %></p>
                        <div class="col-md-8 nopadding">
                           <div class="start-rating-cover business-star-rating">

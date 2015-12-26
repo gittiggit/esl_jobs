@@ -34,7 +34,7 @@
                   <div class="prof-general-info">
                       <div class="col-md-5">
                       <h3><%=best_in_place @user, :businessname , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Business Name Here", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%></h3>
-                      <p><i class="fa fa-map-marker"></i> <%= @user.city %>, <%= @user.country %></p>
+                      <p><i class="fa fa-map-marker"></i><%=best_in_place @user, :city , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Add City", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%> ,<%=best_in_place @user, :country , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Add Country", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%></p>
                        <div class="col-md-8 nopadding">
                           <div class="start-rating-cover business-star-rating">
         <fieldset class="rating">
@@ -99,13 +99,13 @@
                       <h3>About Us</h3> 
                       <div class="clearfix"></div>
                       <div class="profile-content-box">
-                      <p><%= best_in_place  @user, :about %></p>
+                      <p><%=best_in_place @user, :about , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Write something about you", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%></p>
                       <div class="about-info-row">  
                         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 nopadding a-t-title">
                             Address:
                         </div>
                         <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 cus-col">
-                          <%=@user.address %>
+                          <%=best_in_place @user, :address , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Can you put your address?", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>
                         </div>
                         <div class="clearfix"></div>
                       </div>
@@ -114,7 +114,7 @@
                             Telephone:
                         </div>
                         <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 cus-col">
-                          <%=@user.telephone  %>
+                          <%=best_in_place @user, :telephone , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Input you phone no here", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>
                         </div>
                         <div class="clearfix"></div>
                       </div>
@@ -123,7 +123,7 @@
                             Website:
                         </div>
                         <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 cus-col">
-                          <%=@user.website  %>
+                          <%=best_in_place @user, :website , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "http://www.example.com", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>
                         </div>
                         <div class="clearfix"></div>
                       </div>
@@ -132,7 +132,7 @@
                            Other Locations:
                         </div>
                         <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 cus-col">
-                          <%=@user.otherlocation  %>
+                          <%=best_in_place @user, :otherlocation , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "If you have other location you can write", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>
                         </div>
                         <div class="clearfix"></div>
                       </div>

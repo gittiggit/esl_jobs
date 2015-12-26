@@ -346,13 +346,14 @@
                        <div style="width:500px;overflow:hidden;height:500px;max-width:100%;">
 
                        <div id="google-maps-canvas" style="height:500px;width:500px;max-width:100%;">
-                       <iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=Ring+Road,+London,+United+Kingdom&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU"></iframe>
+                       <iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://maps.google.com/maps?&amp;q=<%= @user.locationdescription %>&amp;output=embed"></iframe>
                        </div>
                         </div>
                         </div>
                         <div class="col-md-5">
                           <p id="map-location">
-                         <%= @user.locationdescription%>                       
+                        <%=best_in_place @user, :locationdescription , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Write full address", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>    
+                                         
                           </p>                          
                         </div>
 

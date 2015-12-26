@@ -22,12 +22,12 @@ respond_to :html, :json
   @user = User.friendly.find(params[:id])
   @user.update_attributes(device_params)
   respond_with @user
-end 
+  end 
 
  def device_params
     if params[:user]
-      params.require(:user).permit(:about,:email, :businessname , :password, :password_confirmation , :role_type_id, :username, :avatar_cache)  # TODO minimize when update is working 
+      params.require(:user).permit(:email, :username, :first_name, :last_name, :businessname, :city, :country, 	:address, :about, :telephone, :website, :otherlocation, :birthdate, :introduction, :employees, 	:locationmap, :locationdescription, :skills, :language, :avatar) 
     end
-  end
+ end
 
 end

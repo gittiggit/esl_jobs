@@ -1,4 +1,5 @@
 <div id="new_review">
+<div class="comment-box">
 <%= form_for @review, remote: true do |f| %>
   <% if @review.errors.any? %>
     <div id="error_explanation">
@@ -11,11 +12,30 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
+  
+    <div class="field">
     <%= f.label :reviewpost %><br>
-    <%= f.text_area :reviewpost %>
+    <%= f.text_area :reviewpost , :class=>"form-control", :rows=>"5", :id=>"comment" %>
   </div>
+
+        <div class="rate-employee">
+
+<h1>Star Rating</h1>
+
+  <fieldset>
+    <span class="star-cb-group">
+      <%=f.radio_button :rating, '5' , :id=>"rating-5" %><label for="rating-5">5</label>
+      <%=f.radio_button :rating, '4' , :id=>"rating-4" %><label for="rating-4">4</label>
+      <%=f.radio_button :rating, '3' , :id=>"rating-3" %><label for="rating-3">3</label>
+      <%=f.radio_button :rating, '2' , :id=>"rating-2" %><label for="rating-2">2</label>
+      <%=f.radio_button :rating, '1' , :id=>"rating-1" %><label for="rating-1">1</label>
+    </span>
+  </fieldset>
+
+
+ 
+        <div class="clearfix"></div>
+                                                </div> 
   <div class="field">
     <% f.label :review_by %><br>
     <%= f.hidden_field :review_by, :value=> current_user.id %>
@@ -31,7 +51,14 @@
     <%= f.hidden_field :review_to, :value=> @mainuserid  %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Leave a Review" %>
   </div>
+  
+ <div class="clearfix"></div>
+ </div>
+
 <% end %>
+
+
+                          </div> 
 </div>

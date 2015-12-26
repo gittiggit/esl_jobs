@@ -115,50 +115,6 @@ $('.newmsg').on('click',function(){
         $("#searchcategory").val($(this).text());
     });
 
-        $.fn.editable.defaults.mode = 'inline';
-        $('#businessname').editable();
-        $('#country').editable();
-        $('#paragraph').editable();
-        $('#address').editable();
-        $('#telephone').editable();
-        $('#website').editable();
-        $('#other-location').editable();
-        $('#introduction').editable();
-        $('#map-location').editable();
-        $('#employee-name').editable();
-        $('#current-city').editable();
-        $('#current-country').editable();
-        $('#citizenship').editable();
-        $('#age').editable();
-        $('#eduction1').editable();
-        $('#eduction2').editable();
-        $('#eduction3').editable();
-        $('#eduction4').editable();
-        $('#eduction5').editable();
-        $('#eduction6').editable(); 
-       
-
-        $('#experience1').editable();
-        $('#experience2').editable();
-        $('#experience3').editable();
-        $('#experience4').editable();
-        $('#experience5').editable();
-        $('#experience6').editable();   
-        $('#experience7').editable();
-        $('#experience8').editable();
-
-       
-
-        $('#video1').editable();     
-        $('#video2').editable();     
-        $('#video3').editable();     
-        $('#video4').editable();     
-        $('#video5').editable();     
-        $('#video6').editable();     
-              
-
-
-
 
 });
 function showcountry(country_val){

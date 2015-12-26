@@ -281,85 +281,8 @@
                    <div class="profile-box">
                       <h3><i class="fa fa-commenting"></i> Reviews</h3>
                       <div class="profile-content-box">
-                      <!-- Review Single Row Cover -->
-                        <div class="review-row">
-                          <div class="col-md-2">
-                            <div class="comment-img">
-                                <img src="/assets/davene-januszewski.jpg" width="80" height="80">
-                            </div>
-                          </div>
-                          <div class="col-md-10">
-                            <div class="reviews-cover">
-                              <p><img class="quote-left" src="/assets/quote-left.png">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever. <img class="quote-right" src="/assets/quote-right.png"></p>
-                              <div class="user-name">
-                                 <span class="line-left-right"></span>
-                                 <span class="comment-name">Davene Januszewski</span>
-                                 <span class="line-left-right"></span>
-                              </div>
-                              
-                            </div>                            
-                          </div>
-                          <div class="clearfix"></div>
-                          </div>
-
-                          <!-- Review Single Row Cover -->
-                        <div class="review-row">
-                          <div class="col-md-2">
-                            <div class="comment-img">
-                                <img src="/assets/olga-barasoain.jpg" width="80" height="80">
-                            </div>
-                          </div>
-                          <div class="col-md-10">
-                            <div class="reviews-cover">
-                              <p><img class="quote-left" src="/assets/quote-left.png">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.<img class="quote-right" src="/assets/quote-right.png"></p>
-                              <div class="user-name">
-                                 <span class="line-left-right"></span>
-                                 <span class="comment-name">Olga Barasoain</span>
-                                 <span class="line-left-right"></span>
-                              </div>
-                              
-                            </div>                            
-                          </div>
-                          <div class="clearfix"></div>
-                          </div>
-                         <div class="comment-box">
-                              <form>                                  
-                                  <textarea class="form-control" rows="5" id="comment"></textarea>
-                                  <div class="rate-employee">
-                                  <label for="rating">Rate this business by clicking on the number of stars</label>
-                                  <!-- <div class="select-box-cover">
-                                  <select name="" id="input" class="form-control" required="required">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                  </select>
-                                  </div> -->
-                                  <div class="start-rating-cover business-star-rating rate-this">
-        <fieldset class="rating">
-        <input type="radio" value="5" name="rating" id="star6"><label title="Awesome - 5 stars" for="star5" class="full"></label>
-        <input type="radio" value="4 and a half" name="rating" id="star4half"><label title="Pretty good - 4.5 stars" for="star4half" class="half"></label>
-        <input type="radio" value="4" name="rating" id="star7"><label title="Pretty good - 4 stars" for="star4" class="full"></label>
-        <input type="radio" value="3 and a half" name="rating" id="star3half"><label title="Meh - 3.5 stars" for="star3half" class="half"></label>
-        <input type="radio" value="3" name="rating" id="star8"><label title="Meh - 3 stars" for="star3" class="full"></label>
-        <input type="radio" value="2 and a half" name="rating" id="star2half"><label title="Kinda bad - 2.5 stars" for="star2half" class="half"></label>
-        <input type="radio" value="2" name="rating" id="star9"><label title="Kinda bad - 2 stars" for="star2" class="full"></label>
-        <input type="radio" value="1 and a half" name="rating" id="star1half"><label title="Meh - 1.5 stars" for="star1half" class="half"></label>
-        <input type="radio" value="1" name="rating" id="star10"><label title="Sucks big time - 1 star" for="star1" class="full"></label>
-        <input type="radio" value="half" name="rating" id="starhalf"><label title="Sucks big time - 0.5 stars" for="starhalf" class="half"></label>
-        </fieldset>
-        <div class="clearfix"></div>
-                                                </div> 
-
-
-
-
-                                  <div class="clearfix"></div>
-                                  </div>
-                                  <button class="btn leave-button">Leave a Review</button>
-                              </form>
-                          </div> 
+<%= render 'reviews/index' %>
+                       
 
                       </div>
                       <div class="clearfix"></div>
@@ -473,7 +396,7 @@
 <li><%= current_user.id %></li>
 <%= image_tag(@user.avatar)  %>
 
-<%= render 'reviews/index' %>
+
 
 
 <br>

@@ -1,3 +1,26 @@
+     <% @reviews.each do |review| %>
+    <!-- Review Single Row Cover -->
+                        <div class="review-row">
+                          <div class="col-md-2">
+                            <div class="comment-img">
+                                <img src="/assets/davene-januszewski.jpg" width="80" height="80">
+                            </div>
+                          </div>
+                          <div class="col-md-10">
+                            <div class="reviews-cover">
+                              <p><img class="quote-left" src="/assets/quote-left.png"><%= review.reviewpost %> <img class="quote-right" src="/assets/quote-right.png"></p>
+                              <div class="user-name">
+                                 <span class="line-left-right"></span>
+                                 <span class="comment-name"><%= review.review_by %></span>
+                                 <span class="line-left-right"></span>
+                              </div>
+                              
+                            </div>                            
+                          </div>
+                          <div class="clearfix"></div>
+                          </div>
+
+
 <h1 class="review_list">Listing reviews</h1>
 
 <table class="review_list">
@@ -13,7 +36,7 @@
   </thead>
 
   <tbody>
-    <% @reviews.each do |review| %>
+
       <tr class="review_list">
         <td><%= review.reviewpost %></td>
         <td><%= review.review_by %></td>

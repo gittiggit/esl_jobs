@@ -19,7 +19,7 @@
   <tbody>
     <% @educations.each do |education| %>
       <tr class="task_list">
-        <td><%= education.institute %></td>
+        <td><%= best_in_place education, :institute %></td>
         <td><%= education.designation %></td>
         <td><%= education.start %></td>
         <td><%= education.end %></td>

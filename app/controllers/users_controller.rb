@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
     before_filter :authenticate_user!
-
+respond_to :html, :json
 
   def show
     @user = User.friendly.find(params[:id])
@@ -17,4 +17,17 @@ class UsersController < ApplicationController
     render 'users/individual'
     end
   end
+  
+  def update
+  @user = User.friendly.find(params[:id])
+  @user.update_attributes(device_params)
+  respond_with @user
+end 
+
+ def device_params
+    if params[:user]
+      params.require(:user).permit(:about,:email, :businessname , :password, :password_confirmation , :role_type_id, :username, :avatar_cache)  # TODO minimize when update is working 
+    end
+  end
+
 end

@@ -17,9 +17,17 @@
         <div class="container">
             <div class="row">
                <div class="profile-top-sec">
-            <div class="col-md-2">
+            <div class="col-md-2 uploadsection">
                 <div class="ind-prof-pic">
                     <%= image_tag(@user.avatar)  %>
+                </div>
+                <div class="imageupload" >
+                <%= form_for @user, html: { multipart: true } do |f| %>
+                <span><%= f.file_field :avatar %></span>
+                  
+                  <%= f.hidden_field :avatar_cache %>  
+                <span><%= f.submit "upload" %> </span>
+                <% end %>
                 </div>
               </div> 
               <div class="col-md-10">

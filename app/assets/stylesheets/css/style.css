@@ -3450,3 +3450,16 @@ div.bhoechie-tab-menu div.list-group > a.active::after {
   font-size: 2em;
   font-family: Helvetica, arial, sans-serif;
 }
+.imageupload{
+    display:none
+}
+
+.uploadsection:hover .imageupload{
+	display:block;
+}
+#user_avatar {
+  float: left;
+  width: 52%;
+  margin-top: 0px;
+  height: 30px;
+}

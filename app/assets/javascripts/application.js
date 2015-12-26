@@ -22,3 +22,4 @@
 
 }).call(this);
 $('#new_review').hide();
+

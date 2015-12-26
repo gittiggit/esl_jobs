@@ -26,7 +26,7 @@ respond_to :html, :json
 
  def device_params
     if params[:user]
-      params.require(:user).permit(:email, :username, :first_name, :last_name, :businessname, :city, :country, 	:address, :about, :telephone, :website, :otherlocation, :birthdate, :introduction, :employees, 	:locationmap, :locationdescription, :skills, :language, :avatar) 
+      params.require(:user).permit(:email, :username, :first_name, :last_name, :businessname, :city, :country, 	:address, :about, :telephone, :website, :otherlocation, :birthdate, :introduction, :employees, 	:locationmap, :locationdescription, :skills, :language, :avatar, :avatar_cache , :password, :password_confirmation, :current_password) 
     end
  end
 

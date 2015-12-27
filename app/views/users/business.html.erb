@@ -416,9 +416,9 @@
   <%= @user.id %>
 </p>
 <li><%= current_user.id %></li>
-<%= image_tag(@user.avatar)  %>
-
 <br>
+<%= render 'pictures/index' %>
+<%= link_to 'New Pictures', new_picture_path, id: "new_link_picture", remote: true %>
 
 <%= render 'educations/index' %>
 <%= link_to 'New Education', new_education_path, id: "new_link", remote: true %>

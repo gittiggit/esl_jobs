@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+  has_many :pictures
   belongs_to :role_type
   mount_uploader :avatar, AvatarUploader
   validates :username, format: { with: /\A[a-zA-Z0-9]+\Z/ }

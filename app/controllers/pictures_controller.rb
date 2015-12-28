@@ -1,6 +1,6 @@
 class PicturesController < InheritedResources::Base
    def index
-    @pictures = Picture.where(:user_id => current_user.id)
+    @pictures = Picture.where(:user_id => @user.id)
    end
   
    def new

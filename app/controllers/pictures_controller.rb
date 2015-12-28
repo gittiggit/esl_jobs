@@ -13,7 +13,7 @@ class PicturesController < InheritedResources::Base
     respond_to do |format|
       if @picture.save
          params[:picture].each {|param|
-          @pictures = Picture.find_by_sql ["SELECT * FROM pictures"] 
+          @pictures = Picture.where(:user_id => current_user.id)
     }
          
         format.html { redirect_to @picture, notice: 'Picture was successfully created.' }

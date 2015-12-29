@@ -34,7 +34,7 @@ class PicturesController < InheritedResources::Base
   private
 
     def picture_params
-      params.require(:picture).permit(:pic_url, :description, :users_id).merge(:user_id => current_user.id)
+      params.require(:picture).permit(:pic_url, :description, :users_id, :pic_url, :pic_url_cache).merge(:user_id => current_user.id)
     end
 end
 

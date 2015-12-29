@@ -15,6 +15,7 @@
     <% @pictures.each do |picture| %>
     <div class="picture_list">
       <tr>
+        <td><%= image_tag(@picture.pic_url)  %></td>
         <td><%= picture.pic_url %></td>
         <td><%= picture.description %></td>
         <td><%= link_to 'Show', picture %></td>

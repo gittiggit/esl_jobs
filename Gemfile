@@ -66,6 +66,7 @@ gem 'mailboxer'
 gem 'chosen-rails'
 gem 'carrierwave'
 gem 'best_in_place'
+gem 'remotipart'
 
 group :development do
   gem 'rspec-rails', '~> 3.0'

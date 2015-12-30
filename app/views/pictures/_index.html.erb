@@ -1,32 +1,22 @@
-<h1 class="picture_list">Listing pictures</h1>
-
-<table class="picture_list">
-  <thead>
-    <tr>
-      <th>Pic url</th>
-      <th>Description</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
     <% @pictures.each do |picture| %>
     <div class="picture_list">
-      <tr>
-        <td><%= image_tag(@picture.pic_url)  %></td>
-        <td><%= picture.pic_url %></td>
-        <td><%= picture.description %></td>
-        <td><%= link_to 'Show', picture %></td>
-        <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
-        <td><%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' }, remote: true %></td>
-      </tr>
+                             <div class="col-md-3 text-center">                        
+                          <div class="portfolio-box">    
+                          <% if picture.pic_url.blank?
+                          @picurl =  asset_path('no-image.jpg')
+                           else
+                          @picurl = picture.pic_url
+                          end %>
+                          
+                              <img src="<%= @picurl %>">
+                              <div class="clerarfix"></div>                            
+                            <p><%= picture.description %></p>
+                            <a href="/pictures/<%= picture.id %>" data-remote="true" data-method="delete" data-confirm="Are you sure?" class="close-button-x"><span>X</span></a>
+                          </div>
+                        </div>
       </div>
     <% end %>
-  </tbody>
-</table>
-
-<br>
 
 <div id="incomplete_pictures"></div>
+
+

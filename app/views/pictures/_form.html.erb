@@ -1,28 +1,30 @@
-<div id="new_picture">
-<%= form_for @picture, remote: true, authenticity_token: true do |f| %>
-  <% if @picture.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@picture.errors.count, "error") %> prohibited this picture from being saved:</h2>
+<div id="addpic" class="modal fade" role="dialog">
+  <div class="modal-dialog">
 
-      <ul>
-      <% @picture.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-  
- <%= f.label :pic_url do %>
-    <%= f.file_field :pic_url  %>
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Add Picture</h4>
+      </div>
+      <div class="modal-body">
+          <%= form_for @picture, remote: true, authenticity_token: true do |f| %>
+  <div class="form-group">
+    <label for="email">Upload file (.jpg, .png etc)</label>
+    <%= f.file_field :pic_url , :class=>"form-control"  %>
     <%= f.hidden_field :pic_url_cache %>
-  <% end %>
+  </div>
+  <div class="form-group">
+    <label for="pwd">Picture Detail</label>
+    <%= f.text_area :description, :class=>"modal-textarea" %>
+  </div>  
 
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
+      </div>
+      <div class="modal-footer">
+        <%= f.submit :class=>"send-msg" %>
+      </div>
+      <% end %>
+    </div>
+
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
 </div>

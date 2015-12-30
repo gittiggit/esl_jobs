@@ -1,5 +1,9 @@
-    <% @pictures.each do |picture| %>
     <div class="picture_list">
+<% if @pictures.blank? %>
+<a data-target="#addpic" data-toggle="modal" class="btn" href="#">Add Picture</a>
+<% else %>
+    <% @pictures.each do |picture| %>
+
                              <div class="col-md-3 text-center">                        
                           <div class="portfolio-box">    
                           <% if picture.pic_url.blank?
@@ -14,9 +18,9 @@
                             <a href="/pictures/<%= picture.id %>" data-remote="true" data-method="delete" data-confirm="Are you sure?" class="close-button-x"><span>X</span></a>
                           </div>
                         </div>
-      </div>
     <% end %>
-
+<% end %>
+      </div>
 <div id="incomplete_pictures"></div>
 
 

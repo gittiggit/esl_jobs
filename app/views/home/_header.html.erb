@@ -29,7 +29,7 @@
                 </div>
                 <div class="col-md-2 col-xs-12 col-sm-3 pull-right login-signup-btn">
                      <% if user_signed_in? %>
-                    <a class="sign-in-login-btn" href="<%= user_path(current_user) %>">
+                    <a class="sign-in-login-btn" data-no-turbolink href="<%= user_path(current_user) %>">
                     <i class="fa fa-user-plus"></i> 
                     Profile
                     </a> 

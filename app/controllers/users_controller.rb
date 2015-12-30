@@ -6,6 +6,8 @@ class UsersController < ApplicationController
     @user = User.friendly.find(params[:id])
     @pictures = Picture.where(:user_id => @user.id)
     @picture  = Picture.new
+    @videos = Video.where(:user_id => @user.id)
+    @video  = Video.new
     @reviews = Review.find_by_sql ["SELECT * FROM reviews WHERE review_to = ?", @user.id]
     @review = Review.new
     @educations = Education.find_by_sql ["SELECT * FROM educations WHERE users_id = ?", @user.id]

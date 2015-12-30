@@ -1,0 +1,6 @@
+$('.video_list').hide();
+$('#new_video').hide();
+$('#incomplete_videos').empty();
+$('#incomplete_videos').append('<%= j render("index") %>');
+$('#new_link_video').show();
+$('#addpic').modal('hide');

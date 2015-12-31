@@ -1,3 +1,8 @@
+    <div class="video_list">
+<% if @videos.blank? %>
+<a data-target="#addvideo" data-toggle="modal" class="btn" href="#">Add Video</a>
+<% else %>
+
 <div class="video_list">
     <% @videos.each do |video| %>
     <div class="col-md-6 text-center">                        
@@ -10,6 +15,7 @@
                              <a href="/videos/<%= video.id %>" data-remote="true" data-method="delete" data-confirm="Are you sure?" class="close-button-x"><span>X</span></a>
           </div>
       </div>
+    <% end %>
     <% end %>
 </div>
 <div id="incomplete_videos"></div>

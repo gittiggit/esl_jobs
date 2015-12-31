@@ -1,5 +1,14 @@
 <div id="new_video">
-<%= form_for @video, remote:true do |f| %>
+  <div id="addvideo" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Add Video</h4>
+      </div>
+      <div class="modal-body">
+           <%= form_for @video, remote:true do |f| %>
   <% if @video.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@video.errors.count, "error") %> prohibited this video from being saved:</h2>
@@ -11,17 +20,23 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :video_url %><br>
-    <%= f.text_area :video_url %>
-  </div>
-  <div class="field">
-    <%= f.label :vid_description %><br>
-    <%= f.text_area :vid_description %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <div class="form-group">
+    <label for="pwd">Video Embed Code</label>
+    <%= f.text_area :video_url, class: 'modal-textarea' %>
+  </div> 
+   <div class="form-group">
+    <label for="pwd">Video Detail</label>
+     <%= f.text_area :vid_description, class: 'modal-textarea' %>
+  </div>  
+        <div class="modal-footer">
+        <%= f.submit class: 'send-msg' %>
+      </div>
 <% end %>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
 </div>

@@ -29,7 +29,6 @@
           @issomething = "something"
          end %>
         <% if current_user.id == review.review_by %>
-        <td><%= link_to 'Edit', edit_review_path(review) %></td>
         <td><%= link_to 'Destroy', review_path(review, :reviewid=> review.review_to ), method: :delete, data: { confirm: 'Are you sure?' } , remote: true %></td>
       </div>
     <% end %>

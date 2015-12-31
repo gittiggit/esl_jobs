@@ -219,9 +219,10 @@
                 <div class="bhoechie-tab-content">
                   <!-- Education box -->
                   <div class="profile-box">
-                      <h3><i class="glyphicon glyphicon-briefcase"></i> Jobs Openings</h3>
+                      <h3><i class="glyphicon glyphicon-briefcase"></i> Jobs Openings<a class="btn add-btn" href="<%= new_job_post_path %>"> <i class="fa fa-plus"></i></a></h3>
                       <div class="profile-content-box">
-                      
+                    
+                   <% unless @job_posts.blank? %>
                     <% @job_posts.each do |job_post| %>  
                       <div class="education-row">
                         <div class="col-md-9">
@@ -234,7 +235,9 @@
                         <div class="clearfix"></div>
                       </div>
                         <% end %>  
-
+                  <% else %>
+                  <%= link_to 'Add Jobs', new_job_post_path %>
+                  <% end %>  
                       <div class="clearfix"></div>
                       </div>
                   </div>

@@ -1,28 +1,15 @@
- <div class="video_list">
-<h1>Listing videos</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Video url</th>
-      <th>Vid description</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="video_list">
     <% @videos.each do |video| %>
-      <tr>
-        <td><%= video.video_url %></td>
-        <td><%= video.vid_description %></td>
-        <td><%= link_to 'Show', video %></td>
-        <td><%= link_to 'Edit', edit_video_path(video) %></td>
-        <td><%= link_to 'Destroy', video, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <div class="col-md-6 text-center">                        
+                          <div class="video-box">
+                            <div class="embed-responsive embed-responsive-16by9">
+                              <a href="<%= video.video_url %>" data-toggle="modal" data-target="#Video1"><img src="/assets/video-thumbnail.jpg" class="img-responsive"></a>
+                              <div class="clerarfix"></div>
+                            </div>
+                            <p><%= video.vid_description %></p>
+                             <a href="/videos/<%= video.id %>" data-remote="true" data-method="delete" data-confirm="Are you sure?" class="close-button-x"><span>X</span></a>
+          </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
 </div>
 <div id="incomplete_videos"></div>

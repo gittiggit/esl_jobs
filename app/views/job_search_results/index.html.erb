@@ -21,24 +21,25 @@
                     <div class="filter-head">
                         <h1>Filter Results</h1>
                     </div>
+                 <%= form_tag job_search_results_path, :method => 'get' do %>
                      <div class="filter-single-field">
                          <label for="keyword">Keyword:</label>
-                         <input type="text" name="" id="keyword" class="form-control" value="Science Teacher" required="required" pattern="" title="">
+                         <input type="text" name="keyword" id="keyword" class="form-control" title="">
                      </div>
 
                      <div class="filter-single-field">
                          <label for="business">Business Name:</label>
-                         <input type="text" name="" id="business" class="form-control" value="" required="required" pattern="" title="">
+                         <input type="text" name="businessname" id="business" class="form-control" value="" title="">
                      </div>
                     
                      <div class="filter-single-field">
                          <label for="keyword">Title:</label>
-                         <input type="text" name="" id="" class="form-control" value="" required="required" pattern="" title="">
+                         <input type="text" name="titlejobs" id="" class="form-control" value="" title="">
                      </div>
 
                      <div class="filter-single-field">
                          <label for="location">Location:</label>
-                         <select name="" onchange="showcountry(this.value)" id="location" class="form-control" required="required">
+                         <select name="location" onchange="showcountry(this.value)" id="location" class="form-control">
                              <option value="1">Anywhere in the world </option>
                              <option value="2">Specific country</option>
                          </select>
@@ -48,7 +49,7 @@
 
                      <div class="filter-single-field" id="">
                          <label for="country">Country:</label>
-                         <select name="" id="country" class="form-control check-location" required="required" disabled="disabled">
+                         <select name="countryvalue" id="country" class="form-control check-location" disabled="disabled">
                             <option value="AL">Alabama</option>
                             <option value="AK">Alaska</option>
                             <option value="AZ">Arizona</option>
@@ -148,6 +149,7 @@
                     <div class="filter-single-field text-center">
                         <button class="btn  green-btn job-detail-btn filter-btn">Apply Filters</button>
                     </div>
+                    <% end %>
                      <div class="clearfix"></div>
                 </aside>
 

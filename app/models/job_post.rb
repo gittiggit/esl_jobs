@@ -14,8 +14,15 @@ class JobPost < ActiveRecord::Base
   validates_uniqueness_of :title
 #  validates_length_of :description, :maximum => 5                  
 
-  def self.search(search,countrysearch)
-  where('(title LIKE? OR description LIKE?) AND country_id=?', "%#{search}%","%#{search}%", "#{countrysearch}")
+  def self.search(search, countrysearch = nil)
+    
+    @countryid = Country.find_by(:countryname => countrysearch ) 
+    
+    if @countryid.blank?
+        where('(title LIKE? OR description LIKE?)', "%#{search}%","%#{search}%")
+    else
+      where('(title LIKE? OR description LIKE?) AND country_id=?', "%#{search}%","%#{search}%", "#{@countryid.id }")
+    end
   end
 
 end

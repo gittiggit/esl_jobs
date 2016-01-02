@@ -168,7 +168,7 @@
                             <div class="search-r-content">
                             <span class="feature-color">Featured</span>
                                 <h2><a href="<%=job_post_path(job_post) %>"><%= raw(strip_tags(job_post.title)[0,100]) %></a></h2>
-                                <h4><%= raw(strip_tags(job_post.description)[0,200]) %></h4>
+                                <h4><%= raw(strip_tags(job_post.description)[0,200]) %>...</h4>
                         
                             </div>
                         </div>                        

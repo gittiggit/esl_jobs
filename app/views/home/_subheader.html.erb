@@ -4,12 +4,12 @@
 				
 				<div class="search-form-header">
                 <div class="col-md-12">
-                    <form>
+                    <%= form_tag job_posts_path, :method => 'get' do %>
                         <div class="col-md-5 col-sm-6 col-xs-12 text-field-cover">
-    					   <input type="text" placeholder="Job title keyword">
+    					   <input type="text" name="jobsimplesearch" placeholder="Job title keyword">
                         </div>
                         <div class="col-md-5 col-sm-6 col-xs-12 text-field-cover">
-                            <input type="text" placeholder="Country">
+                            <input type="text" name="countrysearch" placeholder="Country">
 
     					 <!--   <div class="select-country">
                             <select>
@@ -28,12 +28,12 @@
                         <button type="submit" class="btn green">Search</button>
                         <a href="">Advanced Search</a>                                                 
                         </div>
-                    </form>
+                    
                     </div>
                     <div class="clearfix"></div>
 				</div>
 				
-			
+			<% end %>
 			</div>
 		</div>
 	</div>

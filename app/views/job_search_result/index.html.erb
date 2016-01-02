@@ -1,0 +1,206 @@
+  <%= render 'home/header' %> 
+   </header>
+
+    <section class="page-heading-sec">    
+        <div class="container">
+            <div class="row">
+            <div class="page-heading">
+                 <h1>Search Results</h1>            
+            </div>       
+        </div>
+    </div>
+
+    </section>
+    
+
+    <section class="search-result-sec">
+        <div class="container">
+            <div class="row">
+            <div class="col-md-3">
+                <aside class="search-filters">
+                    <div class="filter-head">
+                        <h1>Filter Results</h1>
+                    </div>
+                     <div class="filter-single-field">
+                         <label for="keyword">Keyword:</label>
+                         <input type="text" name="" id="keyword" class="form-control" value="Science Teacher" required="required" pattern="" title="">
+                     </div>
+
+                     <div class="filter-single-field">
+                         <label for="business">Business Name:</label>
+                         <input type="text" name="" id="business" class="form-control" value="" required="required" pattern="" title="">
+                     </div>
+                    
+                     <div class="filter-single-field">
+                         <label for="keyword">Title:</label>
+                         <input type="text" name="" id="" class="form-control" value="" required="required" pattern="" title="">
+                     </div>
+
+                     <div class="filter-single-field">
+                         <label for="location">Location:</label>
+                         <select name="" onchange="showcountry(this.value)" id="location" class="form-control" required="required">
+                             <option value="1">Anywhere in the world </option>
+                             <option value="2">Specific country</option>
+                         </select>
+                     </div>
+
+
+
+                     <div class="filter-single-field" id="">
+                         <label for="country">Country:</label>
+                         <select name="" id="country" class="form-control check-location" required="required" disabled="disabled">
+                            <option value="AL">Alabama</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DE">Delaware</option>
+                            <option value="DC">District Of Columbia</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="ME">Maine</option>
+                            <option value="MD">Maryland</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NY">New York</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VT">Vermont</option>
+                            <option value="VA">Virginia</option>
+                            <option value="WA">Washington</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WY">Wyoming</option>
+                         </select>
+                     </div>
+                    
+                     <div class="filter-single-field">
+                         
+                         
+                     </div>
+                     <div class="date-posted-cover">
+                        <h2>Date Posted</h2> 
+
+                            <div class="filter-single-field">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="">
+                                        1 day ago
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="filter-single-field">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="">
+                                        2-7 days ago
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="filter-single-field">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="">
+                                        8-14 days ago
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="filter-single-field">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="">
+                                        15-30 days ago
+                                    </label>
+                                </div>
+                            </div>
+
+                     </div>
+                    <div class="clearfix"></div>
+                    <div class="filter-single-field text-center">
+                        <button class="btn  green-btn job-detail-btn filter-btn">Apply Filters</button>
+                    </div>
+                     <div class="clearfix"></div>
+                </aside>
+
+            </div>
+                <div class="col-md-9 nopadding">
+                <div class="col-md-12 result-top-bar-counter nopl">                       
+                    <h2>7,103 jobs found under "Science Teacher"</h2>
+                </div>
+               
+                <div class="clearfix"></div>
+                <% @job_posts.each do |job_post| %>
+                   <div class="search-result-row featured-job">
+                    <div class="featured-border">
+                        <div class="col-md-7">
+                            <!-- <div class="search-result-img-cover">
+                                <img src="/assets/award-logo-23.jpg">
+                            </div> -->
+                            <div class="search-r-content">
+                            <span class="feature-color">Featured</span>
+                                <h2><a href="<%=job_post_path(job_post) %>"><%= raw(strip_tags(job_post.title)[0,100]) %></a></h2>
+                                <h4><%= raw(strip_tags(job_post.description)[0,200]) %></h4>
+                        
+                            </div>
+                        </div>                        
+                         <div class="col-md-5">
+                        <div class="row">
+                            <div class="col-md-8">                                
+                                <span class="job-location"><%= job_post.country.countryname %></span>
+                                <span class="job-date"><%= job_post.created_at.strftime("%d %b. %Y") %></span>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="<%= job_post_path(job_post) %>" class="btn  green-btn job-detail-btn">Job Details</a>
+                            </div>
+                        </div>
+                        
+                        </div>
+                        <div class="clearfix"></div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                <% end %>
+                     <div class="col-md-6 col-md-offset-2 topbar-pagination nopr">
+                        <ul class="pagination pagination-sm pull-right">
+                            <li>
+                                <%= will_paginate @job_posts,:inner_window => 2 %> 
+							</li>
+                        </ul>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+      <%= render 'home/footer' %> 

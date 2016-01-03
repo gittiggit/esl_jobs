@@ -1,0 +1,2 @@
+module EmployeeSearchResultsHelper
+end

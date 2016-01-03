@@ -1,4 +1,5 @@
 EslJobs::Application.routes.draw do
+  resources :employee_search_results
   resources :job_search_results
   resources :videos
 

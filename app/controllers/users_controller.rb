@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     @userid = @user.id
     params[:type] = "individual"
     @roleid = RoleType.find_by( :name => params[:type] )
-    @job_posts = JobPost.where(:user_id => '3')
+    @job_posts = JobPost.where(:user_id => @userid)
     if @user.role_type.name == 'business'
     render 'users/business'
     else

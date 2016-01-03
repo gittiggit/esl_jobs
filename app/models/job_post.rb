@@ -25,7 +25,7 @@ class JobPost < ActiveRecord::Base
     end
   end
   
-  def self.advancesearch(keyword = nil, countrysearch = nil)
+  def self.advancesearch(keyword = nil, countrysearch = nil, datesearch= nil)
     where('(title LIKE? OR description LIKE?)', "%#{keyword}%","%#{keyword}%") if keyword.blank? 
     keywordsql= '(title LIKE\'%'+keyword+'%\' OR description LIKE\'%'+keyword+'%\')' unless keyword.blank?
     
@@ -33,8 +33,15 @@ class JobPost < ActiveRecord::Base
     addand = ' AND '
     end
     
+    unless keyword.blank? && countrysearch.blank?
+      unless datesearch.blank?
+        dateand = ' AND '
+      end
+    end
+    
     countrysql = addand.to_s + 'country_id ='+countrysearch unless countrysearch.blank?
-    where(keywordsql.to_s+countrysql.to_s)
+    datesearch = dateand.to_s + '`created_at` BETWEEN \'' + datesearch.to_i.days.ago.to_s + '\' AND \'' + 0.days.ago.to_s + '\'' unless datesearch.blank?
+    where(keywordsql.to_s+countrysql.to_s + datesearch.to_s)
 
   end
 

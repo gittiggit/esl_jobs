@@ -19,14 +19,14 @@
             <div class="profile-top-sec">
             <div class="col-md-2">
                 <div class="ind-prof-pic">
-                    <img src="/assets/employe-pic.jpg">
+                    <img src="<%= image_tag(@user.avatar)  %>">
                 </div>
               </div> 
               <div class="col-md-10">
                   <div class="prof-general-info">
                       <div class="col-md-4">
-                      <h3>Stephanie</h3>
-                      <p><i class="fa fa-map-marker"></i> Islamabad, Pakistan</p>
+                      <h3><%=best_in_place @user, :first_name , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "First Name ", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%><%=best_in_place @user, :last_name , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Last Name", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%></h3>
+                      <p><i class="fa fa-map-marker"></i> <%=best_in_place @user, :city , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Add City", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>,<%=best_in_place @user, :country , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Add Country", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%></p>
                       
                           <a href="" class="send-msg"> Send a message</a>                          
                     
@@ -66,12 +66,13 @@
                       <h3>About Me</h3> 
                       <div class="clearfix"></div>
                       <div class="profile-content-box">
+                      <p><%=best_in_place @user, :about , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Write something about you", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%></p>
                       <div class="about-info-row">  
                         <div class="col-md-3 nopadding a-t-title">
                             Current city:
                         </div>
                         <div class="col-md-9">
-                          Los Angeles
+                              <%=best_in_place @user, :city , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Can you put your current city?", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>
                         </div>
                         <div class="clearfix"></div>
                       </div>
@@ -80,7 +81,7 @@
                             Current country:
                         </div>
                         <div class="col-md-9">
-                          United States
+                              <%=best_in_place @user, :country , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Can you put your current country?", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>
                         </div>
                         <div class="clearfix"></div>
                       </div>
@@ -89,7 +90,7 @@
                             Citizenship:
                         </div>
                         <div class="col-md-9">
-                          United States
+                            <%=best_in_place @user, :citizenship , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Can you write your cityzenship?", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>
                         </div>
                         <div class="clearfix"></div>
                       </div>
@@ -108,7 +109,7 @@
                 <div class="profile-box">
                 <h3>Introduction:</h3>
                 <div class="profile-content-box">
-                <p>Hi, my name is Stephanie and I am currently teaching English to 1st graders in Ecuador. I am always looking for new teaching jobs and am excited to meet future employers.</p>
+                <p>  <%=best_in_place @user, :introduction , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Give us introduction", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%></p>
                 </div>
                 </div>
 

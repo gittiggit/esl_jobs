@@ -178,7 +178,7 @@
                 <div class="profile-box">
                 <h3>Introduction:</h3>
                 <div class="profile-content-box">
-                <p> <%=@user.introduction  %></p>
+                <p>  <%=best_in_place @user, :introduction , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Give us introduction", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%></p>
                 </div>
                 </div>
 

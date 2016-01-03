@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require_tree .
 //= require best_in_place
+
 (function() {
   jQuery(function() {
     return $('.best_in_place').best_in_place();

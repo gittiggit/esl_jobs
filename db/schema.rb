@@ -209,6 +209,7 @@ ActiveRecord::Schema.define(version: 20151230174912) do
     t.string   "telephone"
     t.string   "website"
     t.string   "otherlocation"
+    t.string   "citizenship",                         null: false
     t.date     "birthdate"
     t.text     "introduction"
     t.string   "employees"

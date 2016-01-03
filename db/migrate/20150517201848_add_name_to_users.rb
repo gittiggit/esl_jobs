@@ -11,6 +11,7 @@ class AddNameToUsers < ActiveRecord::Migration
     add_column :users, :telephone, :string
     add_column :users, :website, :string
     add_column :users, :otherlocation, :string
+    add_column :users, :citizenship, :string
     add_column :users, :birthdate, :date
     add_column :users, :introduction, :text
     add_column :users, :employees, :string

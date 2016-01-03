@@ -186,10 +186,11 @@
             </div>
                 <div class="col-md-9 nopadding">
                 <div class="col-md-12 result-top-bar-counter nopl">                       
-                    <h2>7,103 jobs found under "Teacher"</h2>
+                    <h2> <%= @users.count %> employee found under "Teacher"</h2>
                 </div>
                
                 <div class="clearfix"></div>
+                <% @users.each do |user| %>
                     <div class="search-result-row">
                     <div class="featured-border">
                         <div class="col-md-9">
@@ -197,211 +198,24 @@
                                 <img src="/assets/comment-img-1.jpg">
                             </div>
                         <div class="search-r-content">
-                        <h2><a href="">Laura Roeder</a></h2>
+                        <h2><a href="<%= user_path(user) %>"><%= user.first_name %> <%= user.last_name %> (<%= user.username %>)</a></h2>
                         <h4>Designation: Teacher </h4>
                         
-                        <span class="address-search">Los Angeles, California</span>
+                        <span class="address-search"><%= user.country %></span>
                         </div>
 
                         </div>                        
                         <div class="col-md-3">
-                        <a href="" class="btn  green-btn job-detail-btn">View Profile</a>
+                        <a href="<%= user_path(user) %>" class="btn  green-btn job-detail-btn">View Profile</a>
                         </div>
                         <div class="clearfix"></div>
                         </div>
                         <div class="clearfix"></div>
                     </div>
-                   <div class="search-result-row">
-                   <div class="featured-border">
-                        <div class="col-md-9">
-                            <div class="search-result-img-cover">
-                                <img src="/assets/comment-img-2.jpg">
-                            </div>
-                            <div class="search-r-content">
-                                <h2><a href="">Gabrielle Bernstein</a></h2>
-                        <h4>Designation: Teacher </h4>
-                        
-                        <span class="address-search">Los Angeles, California</span>
-                            </div>
-                        </div>                        
-                        <div class="col-md-3">
-                        <a href="" class="btn  green-btn job-detail-btn">View Profile</a>
-                        </div>
-                        <div class="clearfix"></div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-
-                     <div class="search-result-row">
-                     <div class="featured-border">
-                        <div class="col-md-9">
-                            <div class="search-result-img-cover">
-                               <img src="/assets/comment-img-3.jpg">
-                           </div>
-                            <div class="search-r-content">
-                                <h2><a href="">Britt Michaelian</a></h2>
-                        <h4>Designation: Teacher </h4>
-                        
-                        <span class="address-search">Los Angeles, California</span>
-                            </div>
-                        </div>                        
-                        <div class="col-md-3">
-                        <a href="" class="btn  green-btn job-detail-btn">View Profile</a>
-                        </div>
-                        <div class="clearfix"></div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-
-                    <div class="search-result-row">
-                    <div class="featured-border">
-                        <div class="col-md-9">
-                            <div class="search-result-img-cover">
-                                <img src="/assets/comment-img-4.jpg">
-                            </div>
-                            <div class="search-r-content">
-                                <h2><a href="">Lewis Howes</a></h2>
-                        <h4>Designation: Teacher </h4>
-                        
-                        <span class="address-search">Los Angeles, California</span>
-                            </div>
-                        </div>                        
-                        <div class="col-md-3">
-                        <a href="" class="btn  green-btn job-detail-btn">View Profile</a>
-                        </div>
-                        <div class="clearfix"></div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-
-                    <div class="search-result-row">
-                    <div class="featured-border">
-                        <div class="col-md-9">
-                            <div class="search-result-img-cover">
-                                <img src="/assets/comment-img-1.jpg">
-                            </div>
-                        <div class="search-r-content">
-                        <h2><a href="">Laura Roeder</a></h2>
-                        <h4>Designation: Teacher </h4>
-                        
-                        <span class="address-search">Los Angeles, California</span>
-                        </div>
-
-                        </div>                        
-                        <div class="col-md-3">
-                        <a href="" class="btn  green-btn job-detail-btn">View Profile</a>
-                        </div>
-                        <div class="clearfix"></div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                   <div class="search-result-row">
-                   <div class="featured-border">
-                        <div class="col-md-9">
-                            <div class="search-result-img-cover">
-                                <img src="/assets/comment-img-2.jpg">
-                            </div>
-                            <div class="search-r-content">
-                                <h2><a href="">Gabrielle Bernstein</a></h2>
-                        <h4>Designation: Teacher </h4>
-                        
-                        <span class="address-search">Los Angeles, California</span>
-                            </div>
-                        </div>                        
-                        <div class="col-md-3">
-                        <a href="" class="btn  green-btn job-detail-btn">View Profile</a>
-                        </div>
-                        <div class="clearfix"></div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-
-                     <div class="search-result-row">
-                     <div class="featured-border">
-                        <div class="col-md-9">
-                            <div class="search-result-img-cover">
-                               <img src="/assets/comment-img-3.jpg">
-                           </div>
-                            <div class="search-r-content">
-                                <h2><a href="">Britt Michaelian</a></h2>
-                        <h4>Designation: Teacher </h4>
-                        
-                        <span class="address-search">Los Angeles, California</span>
-                            </div>
-                        </div>                        
-                        <div class="col-md-3">
-                        <a href="" class="btn  green-btn job-detail-btn">View Profile</a>
-                        </div>
-                        <div class="clearfix"></div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-
-                    <div class="search-result-row">
-                    <div class="featured-border">
-                        <div class="col-md-9">
-                            <div class="search-result-img-cover">
-                                <img src="/assets/comment-img-4.jpg">
-                            </div>
-                            <div class="search-r-content">
-                                <h2><a href="">Lewis Howes</a></h2>
-                        <h4>Designation: Teacher </h4>
-                        
-                        <span class="address-search">Los Angeles, California</span>
-                            </div>
-                        </div>                        
-                        <div class="col-md-3">
-                        <a href="" class="btn  green-btn job-detail-btn">View Profile</a>
-                        </div>
-                        <div class="clearfix"></div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="search-result-row">
-                    <div class="featured-border">
-                        <div class="col-md-9">
-                            <div class="search-result-img-cover">
-                                <img src="/assets/comment-img-1.jpg">
-                            </div>
-                        <div class="search-r-content">
-                        <h2><a href="">Laura Roeder</a></h2>
-                        <h4>Designation: Teacher </h4>
-                        
-                        <span class="address-search">Los Angeles, California</span>
-                        </div>
-
-                        </div>                        
-                        <div class="col-md-3">
-                        <a href="" class="btn  green-btn job-detail-btn">View Profile</a>
-                        </div>
-                        <div class="clearfix"></div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                   <div class="search-result-row">
-                   <div class="featured-border">
-                        <div class="col-md-9">
-                            <div class="search-result-img-cover">
-                                <img src="/assets/comment-img-2.jpg">
-                            </div>
-                            <div class="search-r-content">
-                                <h2><a href="">Gabrielle Bernstein</a></h2>
-                        <h4>Designation: Teacher </h4>
-                        
-                        <span class="address-search">Los Angeles, California</span>
-                            </div>
-                        </div>                        
-                        <div class="col-md-3">
-                        <a href="" class="btn  green-btn job-detail-btn">View Profile</a>
-                        </div>
-                        <div class="clearfix"></div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                     
-
+                <% end %>
                      <div class="col-md-8 col-md-offset-2 topbar-pagination nopr">
-                        <ul class="pagination pagination-sm">
+                        <%= will_paginate @users %> 
+                     <!--   <ul class="pagination pagination-sm">
                             <li><a href="#">&laquo;</a></li>
                             <li><a href="#" class="active">1</a></li>
                             <li><a href="#">2</a></li>
@@ -410,6 +224,7 @@
                             <li><a href="#">5</a></li>
                             <li><a href="#">&raquo;</a></li>
                         </ul>
+                     -->    
                     </div>
 
 

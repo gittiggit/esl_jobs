@@ -103,7 +103,7 @@
             </div>
                 <div class="col-md-9 nopadding">
                 <div class="col-md-12 result-top-bar-counter nopl">                       
-                    <h2>7,103 jobs found under "Science Teacher"</h2>
+                    <h2><%= @job_posts.count %> jobs found <%= ' under "'+ params[:keyword]  + '"' unless params[:keyword].blank? %></h2>
                 </div>
                
                 <div class="clearfix"></div>
@@ -141,7 +141,7 @@
                      <div class="col-md-6 col-md-offset-2 topbar-pagination nopr">
                         <ul class="pagination pagination-sm pull-right">
                             <li>
-                                <%= will_paginate @job_posts,:inner_window => 2 %> 
+                                <%= will_paginate @job_posts %> 
 							</li>
                         </ul>
                     </div>

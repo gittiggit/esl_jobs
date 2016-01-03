@@ -107,14 +107,14 @@
                <div class="job-des-profile">
                     <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12 nopadding">
                         <div class="job-profile-img">
-                            <img src="/assets/employe-pic.jpg">
+                            <img src="<%= @job_post.user.avatar %>">
                         </div>                        
                     </div>
                     <div class="col-lg-10 col-md-9 col-sm-8 col-xs-12">
                         <div class="job-profile-des">
-                            <h3>Stephin</h3>
-                            <span class="designation">Maths Teacher  |  <b> Location:</b> Fremont, California  |  <b>Since:</b> 12, August 2014  </span>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. </p> 
+                            <h3><%= @job_post.user.username %></h3>
+                            <span class="designation"> <%= @job_post.user.businessname + " | " unless @job_post.user.businessname.blank?  %> <b></b> <%= @job_post.user.country + "Location: | " unless @job_post.user.country.blank?  %>  <b>Since:</b> <%= @job_post.created_at.strftime("%d %b. %Y") %> </span>
+                            <p><%= raw(strip_tags(@job_post.user.about)[0,100]) unless @job_post.user.about.blank? %> </p> 
                             <div class="start-rating-cover">
         <fieldset class="rating">
         <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
@@ -136,37 +136,16 @@
                </div>
 
                <div class="employer-similar-jobs">
-                   <h2>Other job posted by Stephin</h2>
+                   <h2>Other job posted by <%= @job_post.user.username %></h2>
                    <div class="clearfix"></div>
+                   <% @userjobpost.each do |userjobpost| %>
                    <div class="list-job-box">
-                       <h5><a href="#">Special Ed Paraeducator, Adaptive </a></h5>
-                       <p> Located in School District 27J, Innovations and Options Brighton Heritage Academy is currently seeking a TOSA to provide ...</p>
-                       <h6>Posted August 20, 2015</h6>
+                       <h5><a href="#"><%= userjobpost.title %> </a></h5>
+                       <p> <%= raw(strip_tags(userjobpost.description)[0,300]) %></p>
+                       <h6>Posted <%= userjobpost.created_at.strftime("%d %b. %Y") %></h6>
                        <div class="clearfix"></div>
                    </div>
-
-                   <div class="list-job-box">
-                       <h5><a href="#">Special Ed Paraeducator, Adaptive Support Center</a> </h5>
-                       <p> Located in School District 27J, Innovations and Options Brighton Heritage Academy is currently...</p>
-                       <h6>Posted August 20, 2015</h6>
-                       <div class="clearfix"></div>
-                   </div>
-
-                   <div class="list-job-box">
-                       <h5><a href="#">Special Ed Paraeducator</a></h5>
-                       <p> Located in School District 27J, Innovations and Options Brighton Heritage Academy is currently seeking a TOSA to ...</p>
-                       <h6>Posted August 20, 2015</h6>
-                       <div class="clearfix"></div>
-                   </div>
-
-                   <div class="list-job-box">
-                       <h5><a href="#">Special Ed Paraeducator, Adaptive Support Center (ASC) 1:1, 7 hours / 9 months -KL1527</a></h5>
-                       <p> Located in School District 27J, Innovations and Options Brighton Heritage Academy is currently seeking a ...</p>
-                       <h6>Posted August 20, 2015</h6>
-                       <div class="clearfix"></div>
-                   </div>
-                
-
+                   <% end %>
                </div>
 
 

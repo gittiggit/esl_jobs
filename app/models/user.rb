@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   has_many :pictures
   belongs_to :role_type
+  has_many :job_posts
   mount_uploader :avatar, AvatarUploader
   validates :username, format: { with: /\A[a-zA-Z0-9]+\Z/ }
   include Mailboxer::Models::Messageable

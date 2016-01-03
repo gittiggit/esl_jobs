@@ -11,6 +11,7 @@ class JobPost < ActiveRecord::Base
 
   belongs_to :country
   belongs_to :job_type
+  belongs_to :user
   validates_uniqueness_of :title
 #  validates_length_of :description, :maximum => 5                  
 

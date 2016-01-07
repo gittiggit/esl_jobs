@@ -35,20 +35,23 @@
                       <div class="col-md-5">
                       <h3><%=best_in_place @user, :businessname , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Business Name Here", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%></h3>
                       <p><i class="fa fa-map-marker"></i><%=best_in_place @user, :city , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Add City", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%> ,<%=best_in_place @user, :country , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Add Country", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%></p>
+                      
                        <div class="col-md-8 nopadding">
+                          <% totalrating = 0 %>
+                          <% @reviews.each do |reviewrate| %>
+                                <% totalrating = totalrating + reviewrate.rating %>
+                                <% end %>
+
+                                <%= mainrate = totalrating / @reviews.count %>
+                             <fieldset>
+                              <span class="star-cb-group">
+                                <% (1..5).each do |i| %>
+                                <input type="radio" id="ratingtop-<%= i %>" <%= "checked" if i == 1 %> value="<%= i %>" ><label for="ratingtop-<%= i %>"><%= i %></label>
+                                <% end %>
+                              </span>
+                            </fieldset>
                           <div class="start-rating-cover business-star-rating">
-        <fieldset class="rating">
-        <input type="radio" value="5" name="rating" id="star5"><label title="Awesome - 5 stars" for="star5" class="full"></label>
-        <input type="radio" value="4 and a half" name="rating" id="star4half"><label title="Pretty good - 4.5 stars" for="star4half" class="half"></label>
-        <input type="radio" value="4" name="rating" id="star4"><label title="Pretty good - 4 stars" for="star4" class="full"></label>
-        <input type="radio" value="3 and a half" name="rating" id="star3half"><label title="Meh - 3.5 stars" for="star3half" class="half"></label>
-        <input type="radio" value="3" name="rating" id="star3"><label title="Meh - 3 stars" for="star3" class="full"></label>
-        <input type="radio" value="2 and a half" name="rating" id="star2half"><label title="Kinda bad - 2.5 stars" for="star2half" class="half"></label>
-        <input type="radio" value="2" name="rating" id="star2"><label title="Kinda bad - 2 stars" for="star2" class="full"></label>
-        <input type="radio" value="1 and a half" name="rating" id="star1half"><label title="Meh - 1.5 stars" for="star1half" class="half"></label>
-        <input type="radio" value="1" name="rating" id="star1"><label title="Sucks big time - 1 star" for="star1" class="full"></label>
-        <input type="radio" value="half" name="rating" id="starhalf"><label title="Sucks big time - 0.5 stars" for="starhalf" class="half"></label>
-        </fieldset>
+
         <div class="clearfix"></div>
                                                 </div> 
                                                 <a href="" class="send-msg prof-send-msg">Send a Message</a>                           

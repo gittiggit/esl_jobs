@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @picture  = Picture.new
     @videos = Video.where(:user_id => @user.id)
     @video  = Video.new
-    @reviews = Review.find_by_sql ["SELECT * FROM reviews WHERE review_to = ?", @user.id]
+    @reviews = Review.where(:review_to => @user.id)
     @review = Review.new
     @educations = Education.find_by_sql ["SELECT * FROM educations WHERE users_id = ?", @user.id]
     @userid = @user.id

@@ -15,73 +15,26 @@
                 </div>
                 
                 
-                
+            <% @individualuser.each do |indivuser| %>    
 				<div class="col-md-3 ft-single-box">
                 	<div class="teacher-img-cover">
-                    	<img src="assets/teacher-img.jpg" class="img-responsive">
+                    	<img src="<%= indivuser.avatar %>" class="img-responsive">
                         <a href="#"><span class="plus-icon">+</span></a>
                     </div>
                     <div class="clearfix"></div>
                     <div class="teacher-text">
-                    	<h3>Olga Korokhina</h3>
-                        <p>Math Specialist</p>
+                    	<h3><a href="<%= user_path(indivuser) %>"><%= indivuser.username %></a></h3>
+                        <p>Teacher</p>
                         <div class="location">
                             	<i class="fa  fa-map-marker"></i>
-                                 United States
+                                 <%= indivuser.country %>
                             </div>
                     </div>           
             </div>
-            
-            	<div class="col-md-3 ft-single-box">
-                	<div class="teacher-img-cover">
-                    	<img src="assets/teacher-img.jpg" class="img-responsive">
-                        <a href="#"><span class="plus-icon">+</span></a>
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="teacher-text">
-                    	<h3>Olga Korokhina</h3>
-                        <p>Computer Sciences Specialist</p>
-                        <div class="location">
-                            	<i class="fa  fa-map-marker"></i>
-                                 United States
-                            </div>
-                    </div>           
-            </div>
-            
-            	<div class="col-md-3 ft-single-box">
-                	<div class="teacher-img-cover">
-                    	<img src="assets/teacher-img.jpg" class="img-responsive">
-                        <a href="#"><span class="plus-icon">+</span></a>
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="teacher-text">
-                    	<h3>Olga Korokhina</h3>
-                        <p>English Specialist</p>
-                        <div class="location">
-                            	<i class="fa  fa-map-marker"></i>
-                                 Canada
-                            </div>
-                    </div>           
-            </div>
-            
-            	<div class="col-md-3 ft-single-box">
-                	<div class="teacher-img-cover">
-                    	<img src="assets/teacher-img.jpg" class="img-responsive">
-                        <a href="#"><span class="plus-icon">+</span></a>
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="teacher-text">
-                    	<h3>Olga Korokhina</h3>
-                        <p>Biology Specialist</p>
-                        <div class="location">
-                            	<i class="fa  fa-map-marker"></i>
-                                 Jamaica
-                            </div>
-                    </div>           
-            </div>
+            <% end %>
             <div class="clearfix"></div>
               <div class="view-all-teachers text-center">
-                    <a href="#" class="viewallteachers-btn col-md-3">View All Teachers</a>
+                    <a href="<%= employee_search_results_path %>" class="viewallteachers-btn col-md-3">View All Teachers</a>
                 </div>  
       
             

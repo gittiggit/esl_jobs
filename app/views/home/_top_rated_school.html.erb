@@ -45,7 +45,19 @@
         <div class="clearfix"></div>
                                                 </div>  
                                                 <div class="job-label">Latest Job:</div>
-                                                <h4 class="slide-latest-job"><a href=""><i class="fa fa-briefcase"></i> Middle School Counselor</a></h4>                                        
+                                               <h4 class="slide-latest-job">
+                                                    <% @jobpostbyschools = JobPost.where(:user_id => busiuser.id).limit(1) %>
+                                                    
+                                                <% @jobpostbyschools.each do |schoollatestjob| %>
+                                                   <% unless schoollatestjob.blank? %>
+                                                    <a href="<%= job_post_path(schoollatestjob) %>"><i class="fa fa-briefcase"></i>
+                                                 <%= schoollatestjob.title %>
+                                                    </a>
+                                                    <% else %>
+                                                        No Job posted by this user
+                                                    <% end %>
+                                                <% end %>    
+                                                    </h4>                                         
                                             </div>
                                             <div class="employe-pic">
                                                     <img src="assets/employe-pic.jpg" class="img-responsive">

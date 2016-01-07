@@ -1,0 +1,75 @@
+	<!-- Our top rated teachers section -->
+	<section class="trt-sec">
+    	<div class="container">
+        	<div class="row">
+            	<div class="trt-cover">
+                	<h1>Featured <span>Employers</span></h1>
+                    <div class="heading-border">
+                    	<span class="line-border-left"></span>
+                        <span class="left-circle"></span>
+                        <span class="center-circle"></span>                        
+                        <span class="left-circle"></span>
+                        <span class="line-border-right"></span>
+                    </div>
+                    
+                    <div class="trt-carsouel-slider-cover"> 
+                <div class="carousel slide" data-ride="carousel" data-type="multi" data-interval="3000" id="myCarousel">
+                <div class="carsouel-cover">
+                <div class="carousel-inner">
+                <div class="item active">
+                    <% @businessusers.each do |busiuser| %>
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="top-rated-single-employe">
+                                                <h2><a href="<%= user_path(busiuser) %>"><%= busiuser.username %></a></h2>                      
+                                                <div class="location">
+                                                    <i class="fa  fa-map-marker"></i>
+                                                      <%= busiuser.country %>
+                                                </div>  
+                                                <div class="start-rating-cover">
+         <% @reviewstop = Review.where(:review_to => busiuser.id) %>                            
+          <% totalrating = 0 %>
+           <% unless @reviewstop.blank? %>      
+           <% @reviewstop.each do |reviewrate| %>
+           <% totalrating = totalrating + reviewrate.rating %>
+            <% end %>
+
+            <% mainrate = totalrating / @reviewstop.count %>
+          <% else %>
+          <% mainrate = 0 %>
+          <% end %>                                                
+        <fieldset class="rating">
+        <% 5.downto(1) do |i| %>    
+        <input type="radio" id="star<%= i %>" disabled='disabled' <%= "checked" if i == mainrate %> value="<%= i %>"  name="rating" value="<%= i %>" /><label class = "full" for="star<%= i %>" title="Awesome - <%= i %> stars"></label>
+        <% end %>
+        </fieldset>
+        <div class="clearfix"></div>
+                                                </div>  
+                                                <div class="job-label">Latest Job:</div>
+                                                <h4 class="slide-latest-job"><a href=""><i class="fa fa-briefcase"></i> Middle School Counselor</a></h4>                                        
+                                            </div>
+                                            <div class="employe-pic">
+                                                    <img src="assets/employe-pic.jpg" class="img-responsive">
+                                            </div>    
+                    </div>
+                    <% end %>
+                </div>
+               
+                
+               
+                
+                
+                
+                </div>
+                </div>
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev"><i class="fa fa-angle-left"></i></a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next"><i class="fa fa-angle-right"></i></a>
+                </div>
+
+                    </div>
+                </div>
+                <div class="view-all-employers text-center">
+                    <a href="#" class="viewallemployers-btn col-md-3">View All Employers</a>
+                </div>
+            </div>
+        </div>
+    </section>

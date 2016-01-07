@@ -4,7 +4,8 @@ class JobPostsController < ApplicationController
 
     @countries = Country.all
     @user = User.all
-    @individualuser = User.where( :role_type_id => 1).limit(4)
+    @individualusers = User.where( :role_type_id => 1).limit(4)
+    @businessusers = User.where( :role_type_id => 2).limit(3)
   end
 
   def new

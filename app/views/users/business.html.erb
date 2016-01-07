@@ -38,15 +38,19 @@
                       
                        <div class="col-md-8 nopadding">
                           <% totalrating = 0 %>
+                          <%  unless @reviewstop.blank? %>
                           <% @reviews.each do |reviewrate| %>
                                 <% totalrating = totalrating + reviewrate.rating %>
                                 <% end %>
 
                                 <% mainrate = totalrating / @reviews.count %>
+                          <% else %>
+                             <% mainrate = 0 %>
+                          <% end %>
                              <fieldset>
                               <span class="star-cb-group">
                                 <% 5.downto(1) do |i| %>
-                                <input type="radio" id="ratingtop-<%= i %>" <%= "checked" if i == mainrate %> value="<%= i %>" ><label for="ratingtop-<%= i %>"><%= i %></label>
+                                <input type="radio" disabled="disabled" id="ratingtop-<%= i %>" <%= "checked" if i == mainrate %> value="<%= i %>" ><label for="ratingtop-<%= i %>"><%= i %></label>
                                 <% end %>
                               </span>
                             </fieldset>

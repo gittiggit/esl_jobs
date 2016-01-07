@@ -42,11 +42,11 @@
                                 <% totalrating = totalrating + reviewrate.rating %>
                                 <% end %>
 
-                                <%= mainrate = totalrating / @reviews.count %>
+                                <% mainrate = totalrating / @reviews.count %>
                              <fieldset>
                               <span class="star-cb-group">
-                                <% (1..5).each do |i| %>
-                                <input type="radio" id="ratingtop-<%= i %>" <%= "checked" if i == 1 %> value="<%= i %>" ><label for="ratingtop-<%= i %>"><%= i %></label>
+                                <% 5.downto(1) do |i| %>
+                                <input type="radio" id="ratingtop-<%= i %>" <%= "checked" if i == mainrate %> value="<%= i %>" ><label for="ratingtop-<%= i %>"><%= i %></label>
                                 <% end %>
                               </span>
                             </fieldset>

@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
   validates :username, format: { with: /\A[a-zA-Z0-9]+\Z/ }
   include Mailboxer::Models::Messageable
+  
+  validates_uniqueness_of :username
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable

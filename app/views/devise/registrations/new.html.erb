@@ -13,11 +13,6 @@
                 <div class="login-form-cover">
 
      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:multipart => true}) do |f| %>
-                        
-                        <div class="col-md-12">
-                            <%= f.text_field :username, :placeholder => 'Username' %>          
-                        </div>
-
                         <div class="col-md-12">
                             <%= f.text_field :businessname, :placeholder => 'Business or School Name' %> 
                         </div>
@@ -72,55 +67,37 @@
             
                 <div class="login-form-cover">
 
-                    <form>
+     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:multipart => true}) do |f| %>                    
                         <div class="col-md-12">
-                            <input type="text" placeholder="First Name">                           
+                            <%= f.text_field :first_name, :placeholder => 'First Name' %> 
                         </div>
                         <div class="col-md-12">
-                            <input type="text" placeholder="Last Name">
+                            <%= f.text_field :last_name, :placeholder => 'Last Name' %> 
                         </div>
                         <div class="col-md-12">
-                            <input type="text" placeholder="City">
+                             <%= f.text_field :city, :placeholder => 'City' %>
                         </div>
                         <div class="col-md-12">
-                            <input type="text" placeholder="Country">
+                            <%= f.text_field :country, :placeholder => 'Country' %>
                         </div>
                         <div class="col-md-12">
-                            <input type="text" placeholder="E-mail">
+                            <%= f.text_field :email, :placeholder => 'Email' %>
                         </div>
                         <div class="col-md-12">
-                            <input type="text" placeholder="Enter e-mail again">
+                            <%= f.password_field :password, autocomplete: "off", :placeholder => 'Password' %>
                         </div>
                         <div class="col-md-12">
-                            <input type="password" placeholder="Password">
+                            <%= f.password_field :password_confirmation, autocomplete: "off", :placeholder => 'Retype Password' %>
                         </div>
-
-
-
-
-
-                     <!--    <div class="col-lg-12">
-                            <h3>I want to</h3>
-                                <div class="select-country">
-                                    <select>
-                                        <option value="">Select one option</option>
-                                        <option value="hire">Hire</option>
-                                        <option value="work">Work</option>                                    
-                                    </select> 
-                                    <span class="down-arrow">
-                                         <i class="fa fa-caret-down"></i>
-                                    </span>
-                                </div>
-                        </div> -->
-
+                        
+                        <%= f.hidden_field :role_type_id, :value => '1' %>
                         
                       
                         <div id="buttons" class="col-md-12">                        
                         <button type="submit" class="btn green register-btn">Register</button>
                         </div>
 
-
-                    </form>
+             <% end %>
                     <div class="clearfix"></div>
                 </div>
                 <div class="col-md-12  dont-account">

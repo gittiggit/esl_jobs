@@ -3463,3 +3463,28 @@ div.bhoechie-tab-menu div.list-group > a.active::after {
   margin-top: 0px;
   height: 30px;
 }
+
+/* start editing by next developer */
+    .ui-autocomplete {
+      padding: 0;
+      list-style: none;
+      background-color: #fff;
+      width: 218px;
+      border: 1px solid #B0BECA;
+      max-height: 350px;
+      overflow-x: hidden;
+    }
+    .ui-autocomplete .ui-menu-item {
+      border-top: 1px solid #B0BECA;
+      display: block;
+      padding: 4px 6px;
+      color: #353D44;
+      cursor: pointer;
+    }
+    .ui-autocomplete .ui-menu-item:first-child {
+      border-top: none;
+    }
+    .ui-autocomplete .ui-menu-item.ui-state-focus {
+      background-color: #D5E5F4;
+      color: #161A1C;
+    }

@@ -4,8 +4,8 @@ class JobPostsController < ApplicationController
 
     @countries = Country.all
     @user = User.all
-    @individualusers = User.where( :role_type_id => 1).limit(4)
-    @businessusers = User.where( :role_type_id => 2).limit(3)
+    @individualusers = User.where( :role_type_id => 1).order("rand()").limit(4)
+    @businessusers = User.where( :role_type_id => 2).order("rand()").limit(3)
   end
 
   def new

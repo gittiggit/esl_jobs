@@ -20,8 +20,8 @@
                     <a href="<%=job_post_path(job_post) %>">
                     <div class="panel panel-default">
                         <div class="panel-body">
-                        	<h3><%= raw(strip_tags(job_post.title)[0,30]) %></h3>
-                            <p><%= raw(strip_tags(job_post.description)[0,100]) %></p>
+                        	<h3 class="job-title"><%= raw(strip_tags(job_post.title).split[0..5].join(" ")) %></h3>
+                            <p class="job-description"><%= raw(strip_tags(job_post.description).split[0..28].join(" ")) %></p>
                             <div class="location">
                             	<i class="fa  fa-map-marker"></i>
                                 <%= job_post.country.countryname %>

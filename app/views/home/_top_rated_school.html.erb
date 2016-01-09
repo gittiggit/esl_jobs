@@ -47,15 +47,14 @@
                                                 <div class="job-label">Latest Job:</div>
                                                <h4 class="slide-latest-job">
                                                     <% @jobpostbyschools = JobPost.where(:user_id => busiuser.id).limit(1) %>
-                                                    
+                                                
+                                                <% if @jobpostbyschools.blank? %>   
+                                                    <a href="#"><i class="fa fa-briefcase"></i>No Job posted by this user</a>
+                                                <% end %>
                                                 <% @jobpostbyschools.each do |schoollatestjob| %>
-                                                   <% unless schoollatestjob.blank? %>
                                                     <a href="<%= job_post_path(schoollatestjob) %>"><i class="fa fa-briefcase"></i>
                                                  <%= schoollatestjob.title %>
                                                     </a>
-                                                    <% else %>
-                                                        No Job posted by this user
-                                                    <% end %>
                                                 <% end %>    
                                                     </h4>                                         
                                             </div>

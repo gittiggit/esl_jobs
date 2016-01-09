@@ -3488,3 +3488,12 @@ div.bhoechie-tab-menu div.list-group > a.active::after {
       background-color: #D5E5F4;
       color: #161A1C;
     }
+    
+.panel-body .job-title{
+  height: 30px
+}
+
+.panel-body .job-description{
+  height: 100px;
+  overflow: hidden;
+}

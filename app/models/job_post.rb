@@ -27,20 +27,21 @@ class JobPost < ActiveRecord::Base
   end
   
   def self.advancesearch(keyword = nil, countrysearch = nil, datesearch= nil)
+    @countryid = Country.find_by(:countryname => countrysearch )
     where('(title LIKE? OR description LIKE?)', "%#{keyword}%","%#{keyword}%") if keyword.blank? 
     keywordsql= '(title LIKE\'%'+keyword+'%\' OR description LIKE\'%'+keyword+'%\')' unless keyword.blank?
     
-    unless keyword.blank? || countrysearch.blank?
+    unless keyword.blank? || @countryid.blank?
     addand = ' AND '
     end
     
-    unless keyword.blank? && countrysearch.blank?
+    unless keyword.blank? && @countryid.blank?
       unless datesearch.blank?
         dateand = ' AND '
       end
     end
     
-    countrysql = addand.to_s + 'country_id ='+countrysearch unless countrysearch.blank?
+    countrysql = addand.to_s + 'country_id ='+@countryid.id.to_s unless @countryid.blank?
     datesearch = dateand.to_s + '`created_at` BETWEEN \'' + datesearch.to_i.days.ago.to_s + '\' AND \'' + 0.days.ago.to_s + '\'' unless datesearch.blank?
     where(keywordsql.to_s+countrysql.to_s + datesearch.to_s)
 

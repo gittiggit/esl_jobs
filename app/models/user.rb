@@ -28,5 +28,15 @@ class User < ActiveRecord::Base
      
   end
   
+  def self.teacher_search(keyword = nil, countrysearch = nil)
+    
+    @countryid = Country.find_by(:countryname => countrysearch ) 
+    
+    if @countryid.blank?
+        where('(username LIKE? OR first_name LIKE?)', "%#{keyword}%","%#{keyword}%")
+    else
+      where('(username LIKE? OR first_name LIKE?) AND country_id=?', "%#{keyword}%","%#{keyword}%", "#{@countryid.id }")
+    end
+  end
   
 end

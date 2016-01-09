@@ -26,4 +26,5 @@ class ApplicationController < ActionController::Base
       :password_confirmation, :current_password, :avatar, :avatar_cache) }
   end
   
+
 end

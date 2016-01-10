@@ -2,7 +2,7 @@ class RegistrationsController < Devise::RegistrationsController
  
 private
   def sign_up_params
-    if params[:user][:role_type_id] == 1
+    if params[:user][:role_type_id].to_i == 1
       new_username = params[:user][:first_name].split.join.to_s + params[:user][:last_name].split.join.to_s + (5...30).sort_by{rand}[2].to_s
     else
       new_username = params[:user][:businessname].split.join.to_s + (5...30).sort_by{rand}[2].to_s

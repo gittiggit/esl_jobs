@@ -15,7 +15,7 @@
             <div class="col-md-8 col-sm-8 col-xs-12 small-right pull-right">
             <div class="col-md-2 col-xs-12 col-sm-3 pull-right login-signup-btn">
                 <% if user_signed_in? %>
-                    <a class="sign-in-login-btn green-btn" href="<%= destroy_user_session_path %>">
+                    <a class="sign-in-login-btn green-btn" data-no-turbolink href="<%= destroy_user_session_path %>">
                     <i class="fa fa-sign-in"></i> 
                     Sign out                                      
                     </a>

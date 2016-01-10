@@ -1,5 +1,7 @@
 EslJobs::Application.routes.draw do
+  get "school_search_results/index"
   resources :employee_search_results
+  resources :school_search_results
   resources :job_search_results
   resources :videos
 

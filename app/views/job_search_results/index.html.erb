@@ -61,8 +61,8 @@
                             <div class="filter-single-field">
                                 <div class="checkbox">
                                     <label>
-                                        <input name="datesearch" type="checkbox" value="3">
-                                        1 day ago
+                                        <input name="datesearch" type="checkbox" value="1">
+                                        24 hours ago
                                     </label>
                                 </div>
                             </div>
@@ -70,7 +70,7 @@
                                 <div class="checkbox">
                                     <label>
                                         <input name="datesearch" type="checkbox" value="7">
-                                        2-7 days ago
+                                        Past 7 days ago
                                     </label>
                                 </div>
                             </div>
@@ -78,7 +78,7 @@
                                 <div class="checkbox">
                                     <label>
                                         <input name="datesearch" type="checkbox" value="14">
-                                        8-14 days ago
+                                        Past 14 days ago
                                     </label>
                                 </div>
                             </div>
@@ -86,7 +86,7 @@
                                 <div class="checkbox">
                                     <label>
                                         <input name="datesearch" type="checkbox" value="30">
-                                        15-30 days ago
+                                        Past 30 days ago
                                     </label>
                                 </div>
                             </div>
@@ -110,25 +110,25 @@
                 <% @job_posts.each do |job_post| %>
                    <div class="search-result-row featured-job">
                     <div class="featured-border">
-                        <div class="col-md-7">
+                        <div class="col-md-10">
                             <!-- <div class="search-result-img-cover">
                                 <img src="/assets/award-logo-23.jpg">
                             </div> -->
-                            <div class="search-r-content">
+                            <div class="search-r-content-delete">
                             <span class="feature-color">Featured</span>
                                 <h2><a href="<%=job_post_path(job_post) %>"><%= raw(strip_tags(job_post.title)[0,100]) %></a></h2>
                                 <h4><%= raw(strip_tags(job_post.description)[0,200]) %>...</h4>
                         
                             </div>
                         </div>                        
-                         <div class="col-md-5">
+                         <div class="col-md-2">
                         <div class="row">
-                            <div class="col-md-8">                                
+                            <div class="col-md-11">
+                                <a href="<%= job_post_path(job_post) %>" class="btn  green-btn job-detail-btn">Job Details</a>
+                            </div>
+                            <div class="col-md-12">                                
                                 <span class="job-location"><%= job_post.country.countryname %></span>
                                 <span class="job-date"><%= job_post.created_at.strftime("%d %b. %Y") %></span>
-                            </div>
-                            <div class="col-md-4">
-                                <a href="<%= job_post_path(job_post) %>" class="btn  green-btn job-detail-btn">Job Details</a>
                             </div>
                         </div>
                         

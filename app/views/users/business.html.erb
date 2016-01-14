@@ -77,10 +77,11 @@
                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bhoechie-tab-container">
             <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 bhoechie-tab-menu">
               <div class="list-group">
-                <a href="#" class="list-group-item active text-center">
+                <% @active_picture = params[:picture] %>
+                <a href="#" class="list-group-item <%= 'active' if @active_picture.blank? %> text-center">
                   <h4 class="glyphicon glyphicon-user"></h4><span class="hidden-xs"><br>About Us</span>
                 </a>
-                <a href="#" class="list-group-item text-center">
+                <a href="#" class="list-group-item <%= 'active' unless @active_picture.blank? %> text-center">
                   <h4 class="glyphicon glyphicon-film"></h4><span class="hidden-xs"><br>Pictures &amp; Videos</span>
                 </a>
                 <a href="#" class="list-group-item text-center">
@@ -101,7 +102,7 @@
             </div>
             <div class="col-lg-10 col-md-10 col-sm-9 col-xs-12 bhoechie-tab">
                 <!-- About section -->
-                <div class="bhoechie-tab-content active">                 
+                <div class="bhoechie-tab-content <%= 'active' if @active_picture.blank? %>">                 
                     <div class="profile-box">
                       <h3>About Us</h3> 
                       <div class="clearfix"></div>
@@ -193,7 +194,7 @@
                 </div>                
     
                 <!-- hotel search -->
-                <div class="bhoechie-tab-content">
+                <div class="bhoechie-tab-content <%= 'active' unless @active_picture.blank? %>">
                    
                   <!-- video and portfolio box -->
                   <div class="profile-box">

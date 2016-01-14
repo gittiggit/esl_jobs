@@ -19,7 +19,7 @@
             <div class="profile-top-sec">
             <div class="col-md-2">
                 <div class="ind-prof-pic">
-                    <img src="<%= image_tag(@user.avatar)  %>">
+                    <%= image_tag(@user.avatar)  %>
                 </div>
               </div> 
               <div class="col-md-10">
@@ -349,6 +349,7 @@
             
             </div>
               
+        </div>
         </div>
     </section>
      <%= render 'home/footer' %>

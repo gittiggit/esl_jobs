@@ -1,0 +1,11 @@
+    <% @educations.each do |education| %>
+
+                      <div class="education-row">
+                        <h4><%= education.school %></h4>
+                        <p><%= education.degree %></p>
+                        <p class="edu-year"><%= education.date %></p>
+                      </div>
+
+    <% end %>
+
+<a href="#" class="btn" data-toggle="modal" data-target="#addeducation">New Education</a>

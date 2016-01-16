@@ -119,25 +119,9 @@
                 <div class="bhoechie-tab-content">
                   <!-- Education box -->
                   <div class="profile-box">
-                      <h3><i class="fa fa-graduation-cap"></i> Education</h3>
+                      <h3><i class="fa fa-graduation-cap"></i> Education<a data-target="#addeducation" data-toggle="modal" class="btn add-btn" href="#"><i class="fa fa-plus"></i></a></h3>
                       <div class="profile-content-box">
-                      <div class="education-row">
-                        <h4>University of International Economic Relation</h4>
-                        <p>Master's Degree, Computer Software Engineering, Master of Engineering</p>
-                        <p class="edu-year">2006-2008</p>
-                      </div>
-
-                       <div class="education-row">
-                        <h4>American University in America</h4>
-                        <p>Certificate, Computer Programming, Vandor/Product Certification</p>
-                        <p class="edu-year">2006-2008</p>
-                      </div>
-
-                       <div class="education-row">
-                        <h4>University of International Economic Relation</h4>
-                        <p>Master's Degree, Computer Software Engineering, Master of Engineering</p>
-                        <p class="edu-year">2006-2008</p>
-                      </div>
+                         <%= render 'educations/index' %>
                       </div>
                   </div>
                   <!-- Works Experience box -->
@@ -331,4 +315,166 @@
         </div>
         </div>
     </section>
+      <!-- add Video modal -->
+  <div id="addvideo" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Add Video</h4>
+      </div>
+      <div class="modal-body">
+           <form role="form">
+  <div class="form-group">
+    <label for="pwd">Video Embed Code</label>
+    <textarea class="modal-textarea" col="6" rows="10"></textarea>
+  </div> 
+   <div class="form-group">
+    <label for="pwd">Video Detail</label>
+    <textarea class="modal-textarea" col="6" rows="10"></textarea>
+  </div>  
+  
+</form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="send-msg">Add Video</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+ <!-- add picture modal -->
+  <div id="addportfolio" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Add Picture</h4>
+      </div>
+      <div class="modal-body">
+           <form role="form">
+  <div class="form-group">
+    <label for="email">Upload Portfolio file (.jpg, .png etc)</label>
+    <input type="file" class="form-control" id="">
+  </div>
+  <div class="form-group">
+    <label for="pwd">Portfolio Detial</label>
+    <textarea class="modal-textarea" col="6" rows="10"></textarea>
+  </div>  
+  
+</form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="send-msg">Add Portfolio</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- add Education modal -->
+<%= render 'educations/form' %>
+
+<!-- add Education modal -->
+  <div id="addexperience" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Add Experience</h4>
+      </div>
+      <div class="modal-body">
+           <form role="form">
+  <div class="form-group">
+     <label for="pwd">TItle of Job</label>
+    <input type="text" class="form-control" id="">
+  </div>
+  <div class="form-group">
+     <label for="pwd">Company name</label>
+    <input type="text" class="form-control" id="">
+  </div>
+  <div class="form-group">
+     <label for="pwd">Years of experience</label>
+    <input type="text" class="form-control" id="">
+  </div>
+<div class="form-group">
+    <label for="pwd">Job Detial</label>
+    <textarea class="modal-textarea" col="6" rows="10"></textarea>
+  </div> 
+
+  
+  
+</form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="send-msg">Add Experience</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- add Education modal -->
+  <div id="addskill" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Add Skill</h4>
+      </div>
+      <div class="modal-body">
+           <form role="form">
+  <div class="form-group">
+     <label for="pwd">Title of Skill</label>
+    <input type="text" class="form-control" id="">
+  </div>
+
+</form> 
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="send-msg">Add Experience</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- add Education modal -->
+  <div id="addlanguage" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Add Language</h4>
+      </div>
+      <div class="modal-body">
+           <form role="form">
+  <div class="form-group">
+     <label for="pwd">Title of Language</label>
+    <input type="text" class="form-control" id="">
+  </div>
+
+</form> 
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="send-msg">Add Experience</button>
+      </div>
+    </div>
+
+  </div>
+</div>
      <%= render 'home/footer' %>

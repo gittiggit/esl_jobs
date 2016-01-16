@@ -126,24 +126,9 @@
                   </div>
                   <!-- Works Experience box -->
                   <div class="profile-box">
-                      <h3><i class="glyphicon glyphicon-list-alt"></i> Experiences</h3>
+                      <h3><i class="glyphicon glyphicon-list-alt"></i> Experiences <a data-target="#addexperience" data-toggle="modal" class="btn add-btn" href="#"><i class="fa fa-plus"></i></a></h3>
                       <div class="profile-content-box">
-                      <div class="experience-row">
-                        <h4>Emergency Medical Technician</h4>
-                        <p class="company-name">Scarsdale Volunteer Ambulance Corps</p>
-                        <p class="experience-line">May 1971 – June 1984 (13 years 2 months)</p>
-                        <p>Medical team lead responsible for vehicles and crews in emergency medical responses. Responsible for training ambulance response crews in call operations, first aid/medical procedures, ambulance operations and integration with other first-responders, e.g. police and fire department personnel.</p>
-
-                      </div>
-
-                      <div class="experience-row">
-                        <h4>IT Director and Web Master</h4>
-                        <p class="company-name">NY Raptors</p>
-                        <p class="experience-line">September 2012Social | Services</p>
-                        <p>The NY Raptors is a hockey team whose members have a variety of challenges and special needs including Autistic Spectrum Disorders, Down's syndrome and Seizure Disorders. The team is a member of the American Special Hockey Association and plays games against local, regional, national and international opponents. The team management, coaching staff and on-ice support staff are all volunteers who operate the team approximately nine months out of the year.</p>
-
-                      </div>
-                       
+                      <%= render 'experiences/index' %>  
                       </div>
                   </div>
 
@@ -382,47 +367,8 @@
 <!-- add Education modal -->
 <%= render 'educations/form' %>
 
-<!-- add Education modal -->
-  <div id="addexperience" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Add Experience</h4>
-      </div>
-      <div class="modal-body">
-           <form role="form">
-  <div class="form-group">
-     <label for="pwd">TItle of Job</label>
-    <input type="text" class="form-control" id="">
-  </div>
-  <div class="form-group">
-     <label for="pwd">Company name</label>
-    <input type="text" class="form-control" id="">
-  </div>
-  <div class="form-group">
-     <label for="pwd">Years of experience</label>
-    <input type="text" class="form-control" id="">
-  </div>
-<div class="form-group">
-    <label for="pwd">Job Detial</label>
-    <textarea class="modal-textarea" col="6" rows="10"></textarea>
-  </div> 
-
-  
-  
-</form>
-
-      </div>
-      <div class="modal-footer">
-        <button type="submit" class="send-msg">Add Experience</button>
-      </div>
-    </div>
-
-  </div>
-</div>
+<!-- add experience modal -->
+<%= render 'experiences/form' %>
 
 <!-- add Education modal -->
   <div id="addskill" class="modal fade" role="dialog">

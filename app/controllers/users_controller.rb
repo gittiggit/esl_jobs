@@ -12,6 +12,8 @@ class UsersController < ApplicationController
     @review = Review.new
     @education = Education.new
     @educations = Education.where(:user_id => @user.id)
+    @experience = Experience.new
+    @experiences = Experience.where(:user_id => @user.id)
     @userid = @user.id
     params[:type] = "individual"
     @roleid = RoleType.find_by( :name => params[:type] )

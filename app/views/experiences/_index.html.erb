@@ -1,0 +1,11 @@
+    <% @experiences.each do |experience| %>
+
+         <div class="experience-row">
+          <h4><%= experience.title %></h4>
+          <p class="company-name"><%= experience.company_name %></p>
+          <p class="experience-line"><%= experience.year_experiences %></p>
+          <p><%= experience.job_details %></p>
+
+   </div>
+    <% end %>
+

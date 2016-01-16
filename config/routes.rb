@@ -1,4 +1,6 @@
 EslJobs::Application.routes.draw do
+  resources :experiences
+
   get "school_search_results/index"
   resources :employee_search_results
   resources :school_search_results

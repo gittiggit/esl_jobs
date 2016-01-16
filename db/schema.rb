@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160116110945) do
+ActiveRecord::Schema.define(version: 20160116115422) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -65,6 +65,18 @@ ActiveRecord::Schema.define(version: 20160116110945) do
   end
 
   add_index "educations", ["user_id"], name: "index_educations_on_user_id", using: :btree
+
+  create_table "experiences", force: true do |t|
+    t.string   "title"
+    t.string   "company_name"
+    t.integer  "year_experiences"
+    t.text     "job_details"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
+
+  add_index "experiences", ["user_id"], name: "index_experiences_on_user_id", using: :btree
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false

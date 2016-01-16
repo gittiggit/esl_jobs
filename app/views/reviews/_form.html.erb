@@ -36,7 +36,7 @@
                                                 </div> 
   <div class="field">
     <% f.label :review_by %><br>
-    <%= f.hidden_field :review_by, :value=> current_user.id %>
+    <%= f.hidden_field :review_by, :value=> @user.id %>
   </div>
   <div class="field">
     <% f.label :review_to %><br>

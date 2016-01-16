@@ -33,7 +33,13 @@
               <div class="col-md-10">
                   <div class="prof-general-info">
                       <div class="col-md-5">
-                      <h3><%=best_in_place @user, :businessname , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Business Name Here", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%></h3>
+                      <h3>
+                        <% if !current_user.blank? && current_user.id == @user.id %>
+                        <%=best_in_place @user, :businessname , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Business Name Here", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>
+                        <% else %>
+                        <%= @user.businessname %>
+                        <% end %>
+                        </h3>
                       <p><i class="fa fa-map-marker"></i><%=best_in_place @user, :city , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Add City", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%> ,<%=best_in_place @user, :country , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Add Country", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%></p>
                       
                        <div class="col-md-8 nopadding">
@@ -418,26 +424,3 @@
 </div>    
 
 <%= render 'home/footer' %>
-
-
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>UserName:</strong>
-  <%= @user.username %>
-</p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @user.email %>
-</p>
-<%= @user.role_type.name %>
-<p>
-  newrole
-  <%= @roleid.id %>
-  soytan
-  <strong>ID:</strong>
-  <%= @user.id %>
-</p>
-<li><%= current_user.id %></li>
-<br>

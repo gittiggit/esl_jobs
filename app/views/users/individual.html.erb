@@ -169,30 +169,9 @@
                       <div class="profile-content-box">
                       <div class="skill-row">
                           <div class="skill-tag">
-                            <span class="skill-rating">4/5</span><span class="label label-default custom-label">Enterprise Software</span> 
+                            <span class="skill-rating">Skills</span><span class="label label-default custom-label"><%=best_in_place @user, :skills , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Add your skills with separated comma", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%></span> 
                             <div class="clearfix"></div>                        
                           </div>
-
-                           <div class="skill-tag">
-                            <span class="skill-rating">5/5</span><span class="label label-default custom-label">Business Intelligence</span>  
-                            <div class="clearfix"></div>                       
-                          </div>
-
-                           <div class="skill-tag">
-                            <span class="skill-rating">3/5</span><span class="label label-default custom-label">SaaS</span> 
-                            <div class="clearfix"></div>                        
-                          </div>
-
-                           <div class="skill-tag">
-                            <span class="skill-rating">4/5</span><span class="label label-default custom-label">Strategic Planning</span> 
-                            <div class="clearfix"></div>                        
-                          </div>
-
-                           <div class="skill-tag">
-                            <span class="skill-rating">2/5</span><span class="label label-default custom-label">Strategy</span> 
-                            <div class="clearfix"></div>                        
-                          </div>
-
                       </div>
                       </div>
                   </div>
@@ -202,7 +181,7 @@
                       <div class="profile-content-box">
                       <div class="lang-row">
                           <div class="skill-tag">
-                            <span class="label label-default custom-label">English</span> 
+                            <span class="label label-default custom-label"><%=best_in_place @user, :language , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Add Languages", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%></span> 
                             <div class="clearfix"></div>                        
                           </div>
                       </div>

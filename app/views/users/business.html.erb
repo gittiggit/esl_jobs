@@ -64,7 +64,7 @@
 
         <div class="clearfix"></div>
                                                 </div> 
-                                                <a href="" class="send-msg prof-send-msg">Send a Message</a>                           
+                                                <%= link_to "Send a Message", new_conversation_path(:user => @user.id), class: "send-msg prof-send-msg" %>
                       </div>
 
                       </div>

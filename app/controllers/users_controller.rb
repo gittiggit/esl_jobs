@@ -10,7 +10,6 @@ class UsersController < ApplicationController
     @video  = Video.new
     @reviews = Review.where(:review_to => @user.id)
     @review = Review.new
-    @educations = Education.find_by_sql ["SELECT * FROM educations WHERE users_id = ?", @user.id]
     @userid = @user.id
     params[:type] = "individual"
     @roleid = RoleType.find_by( :name => params[:type] )

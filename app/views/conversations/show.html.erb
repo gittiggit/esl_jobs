@@ -1,44 +1,53 @@
-<div class="row">
-  <div class="spacer"></div>
-  <div class="col-md-6">
-    <%= link_to "Compose", new_conversation_path, class: "btn btn-success" %>
-  </div>
-  <div class="col-md-6 text-right">
-    <% if conversation.is_trashed?(current_user) %>
-        <%= link_to 'Untrash', untrash_conversation_path(conversation), class: 'btn btn-info', method: :post %>
+
+<div class="main-messages-box-cover">
+                        <div class="msg-center-box">
+                          <div class="msg-send-recevier-cover"> 
+                            <div class="day-messages">
+                                Conversation
+                            </div>  
+                            <div class="clearfix"></div> 
+                            
+<% @receipts.each do |receipt| %>
+    <% message = receipt.message %>
+    
+  <%  @first_sender = message.sender.username if @first_sender.blank? %>
+      
+    <% if @first_sender == message.sender.username %>
+                                    <div class="msg-sender">
+
+                            <img src="images/teacher-img.jpg" width="50" height="50">
+                                    <div class="user-name-msg">
+                                        <h4><%= message.sender.username %><span class="date-time"><i class="fa fa-clock"></i> <%=  message.created_at.strftime("%A, %b %d, %Y at %I:%M%p") %></span></h4>
+                                        <p><%= message.body %></p>
+                                    </div> 
+                                    <div class="clearfix"></div>
+                            </div>
+                            <div class="clearfix"></div> 
     <% else %>
-        <%= link_to 'Move to trash', trash_conversation_path(conversation), class: 'btn btn-danger', method: :post,
-                    data: {confirm: 'Are you sure?'} %>
+    
+                            <div class="msg-receiver">
+                                    <img src="images/receiver.png" width="50" height="50" class="pull-right">
+                                    <div class="user-name-msg text-right pull-left">
+                                        <h4><span class="date-time"><i class="fa fa-clock"></i> <%=  message.created_at.strftime("%A, %b %d, %Y at %I:%M%p") %> </span> <%= message.sender.username %> </h4>
+                                        <p> <%= message.body %></p>
+                                    </div> 
+                                    
+                                      <div class="clearfix"></div>
+                            </div>
+
+                            <div class="clearfix"></div>
+           
     <% end %>
-  </div>
-</div>
+      
 
-<div class="row">
-  <div class="spacer"></div>
-  <div class="col-md-4">
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <%= render 'mailbox/folders' %>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-8">
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <%= render partial: 'messages' %>
-      </div>
-      <div class="panel-footer">
-        <!-- Reply Form -->
+<% end %>                    
+                          </div>
         <%= form_for :message, url: reply_conversation_path(conversation) do |f| %>
             <div class="form-group">
               <%= f.text_area :body, placeholder: "Reply Message", rows: 4, class: "form-control" %>
             </div>
             <%= f.submit "Reply", class: 'btn btn-danger pull-right' %>
         <% end %>
-        <div class="clearfix"></div>
-      </div>
-    </div>
-  </div>
+                        </div>
 
 </div>

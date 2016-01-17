@@ -3,7 +3,7 @@ class ConversationsController < ApplicationController
  helper_method :mailbox, :conversation
   def new
     @recipient = User.find(params[:user]) 
-    @ongoing_conversation_sent = mailbox.sentbox.participant(current_user).participant(@recipient).first(1) 
+    @ongoing_conversation_sent = mailbox.sentbox.participant(@recipient).participant(current_user).first(1) 
     @ongoing_conversation_inbox = mailbox.inbox.participant(current_user).participant(@recipient).first(1)
     if !@ongoing_conversation_inbox.blank?
     redirect_to conversation_path(@ongoing_conversation_inbox)

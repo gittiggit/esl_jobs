@@ -1,5 +1,5 @@
 <% @company_employees.each do |company_employee| %>
-<%= User.find(company_employee.employee_id).username %>
+<% User.find(company_employee.employee_id).username %>
 <% end %>
 <%= render 'home/header' %>
 </header>

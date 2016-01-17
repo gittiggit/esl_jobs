@@ -1,4 +1,6 @@
 EslJobs::Application.routes.draw do
+  resources :company_employees
+
   resources :experiences
 
   get "school_search_results/index"
@@ -14,6 +16,8 @@ EslJobs::Application.routes.draw do
   resources :educations
 
   resources :reviews
+  
+  
 
   default_url_options :host => "/"
   devise_for :users, :controllers => { registrations: 'registrations' }

@@ -15,6 +15,7 @@ class UsersController < ApplicationController
     @experience = Experience.new
     @experiences = Experience.where(:user_id => @user.id)
     @userid = @user.id
+    @company_employees = CompanyEmployee.where(:user_id => @user.id)
     params[:type] = "individual"
     @roleid = RoleType.find_by( :name => params[:type] )
     @job_posts = JobPost.where(:user_id => @userid)

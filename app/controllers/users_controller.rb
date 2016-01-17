@@ -11,6 +11,7 @@ class UsersController < ApplicationController
     @reviews = Review.where(:review_to => @user.id)
     @review = Review.new
     @education = Education.new
+    @company_employee = CompanyEmployee.new
     @educations = Education.where(:user_id => @user.id)
     @experience = Experience.new
     @experiences = Experience.where(:user_id => @user.id)

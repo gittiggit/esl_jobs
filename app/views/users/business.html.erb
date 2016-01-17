@@ -1,6 +1,3 @@
-<% @company_employees.each do |company_employee| %>
-<% User.find(company_employee.employee_id).username %>
-<% end %>
 <%= render 'home/header' %>
 </header>
     <!-- individual profile section -->
@@ -156,35 +153,12 @@
 
                       <div class="staff-member-cover">
                             <h2>Current Staff </h2>
+                             <% @company_employees.each do |company_employee| %>
                             <div class="col-md-2 col-sm-6 col-lg-2 col-xs-6">
-                            <img src="/assets/employe-pic.jpg" class="img-responsive">
-                               <p class="member-name">Lorem Ipsum</p>                             
+                            <img src="<%= User.find(company_employee.employee_id).username %>" class="img-responsive">
+                               <p class="member-name"><%= User.find(company_employee.employee_id).username %></p>                             
                             </div>
-
-                            <div class="col-md-2 col-sm-6 col-lg-2 col-xs-6">
-                            <img src="/assets/employe-pic.jpg" class="img-responsive">
-                               <p class="member-name">Lorem Ipsum</p>                             
-                            </div>
-
-                            <div class="col-md-2 col-sm-6 col-lg-2 col-xs-6">
-                            <img src="/assets/employe-pic.jpg" class="img-responsive">
-                               <p class="member-name">Lorem Ipsum</p>                             
-                            </div>
-
-                            <div class="col-md-2 col-sm-6 col-lg-2 col-xs-6">
-                            <img src="/assets/employe-pic.jpg" class="img-responsive">
-                               <p class="member-name">Lorem Ipsum</p>                             
-                            </div>
-
-                            <div class="col-md-2 col-sm-6 col-lg-2 col-xs-6">
-                            <img src="/assets/employe-pic.jpg" class="img-responsive">
-                               <p class="member-name">Lorem Ipsum</p>                             
-                            </div>
-
-                            <div class="col-md-2 col-sm-6 col-lg-2 col-xs-6">
-                            <img src="/assets/employe-pic.jpg" class="img-responsive">
-                               <p class="member-name">Lorem Ipsum</p>                             
-                            </div>
+                             <% end %>
 
                             <div class="clearfix"></div>
                         </div>
@@ -275,38 +249,11 @@
                 <div class="bhoechie-tab-content">
                   <!-- Education box -->
                   <div class="profile-box">
-                      <h3><i class="glyphicon glyphicon-user"></i> Employees</h3>
+                      <h3><i class="glyphicon glyphicon-user"></i> Employees <a data-target="#addemployee" data-toggle="modal" class="btn add-btn" href="#"> <i class="fa fa-plus"></i></a></h3>
                       <div class="profile-content-box">
                       <div class="staff-member-cover">                            
-                            <div class="col-md-2 col-sm-6 col-lg-6 col-xs-6">
-                            <img src="/assets/employe-pic.jpg" class="img-responsive">
-                               <p class="member-name">Lorem Ipsum</p>                             
-                            </div>
-
-                            <div class="col-md-2 col-sm-6 col-lg-6 col-xs-6">
-                            <img src="/assets/employe-pic.jpg" class="img-responsive">
-                               <p class="member-name">Lorem Ipsum</p>                             
-                            </div>
-
-                            <div class="col-md-2 col-sm-6 col-lg-6 col-xs-6">
-                            <img src="/assets/employe-pic.jpg" class="img-responsive">
-                               <p class="member-name">Lorem Ipsum</p>                             
-                            </div>
-
-                            <div class="col-md-2 col-sm-6 col-lg-6 col-xs-6">
-                            <img src="/assets/employe-pic.jpg" class="img-responsive">
-                               <p class="member-name">Lorem Ipsum</p>                             
-                            </div>
-
-                            <div class="col-md-2 col-sm-6 col-lg-6 col-xs-6">
-                            <img src="/assets/employe-pic.jpg" class="img-responsive">
-                               <p class="member-name">Lorem Ipsum</p>                             
-                            </div>
-
-                            <div class="col-md-2 col-sm-6 col-lg-6 col-xs-6">
-                            <img src="/assets/employe-pic.jpg" class="img-responsive">
-                               <p class="member-name">Lorem Ipsum</p>                             
-                            </div>
+                            
+<%= render 'company_employees/index' %>
 
                             <div class="clearfix"></div>
                         </div>
@@ -395,35 +342,6 @@
 </div>
 
 <!-- add Video modal -->
-  <div id="addemployee" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Add Employee</h4>
-      </div>
-      <div class="modal-body">
-           <form role="form">
- <div class="form-group">
-    <label for="email">Upload Employee Image</label>
-    <input type="file" class="form-control" id="">
-  </div>
-   <div class="form-group">
-    <label for="pwd">Employee Description Description</label>
-    <textarea class="modal-textarea" col="6" rows="10"></textarea>
-  </div>   
-  
-</form>
-
-      </div>
-      <div class="modal-footer">
-        <button type="submit" class="send-msg">Add Employee</button>
-      </div>
-    </div>
-
-  </div>
-</div>    
+<%= render 'company_employees/form'%>
 
 <%= render 'home/footer' %>

@@ -1,25 +1,24 @@
-<%= form_for(@company_employee) do |f| %>
-  <% if @company_employee.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@company_employee.errors.count, "error") %> prohibited this company_employee from being saved:</h2>
+  <div id="addemployee" class="modal fade" role="dialog">
+  <div class="modal-dialog">
 
-      <ul>
-      <% @company_employee.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <% f.label :user_id %><br>
-    <%= f.hidden_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :employee_id %><br>
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Add Employee</h4>
+      </div>
+      <div class="modal-body">
+ <%= form_for(@company_employee) do |f| %>
+<%= f.hidden_field :user_id %>
+   <div class="form-group">
+    <label for="pwd">Employee username or Email</label>
     <%= text_field_tag :employee_name %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  </div>   
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="send-msg">Add Employee</button>
+      </div>
+    </div>
 <% end %>
+  </div>
+</div>    

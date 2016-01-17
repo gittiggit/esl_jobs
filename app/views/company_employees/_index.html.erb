@@ -1,0 +1,6 @@
+    <% @company_employees.each do |company_employee| %>
+    <div class="col-md-2 col-sm-6 col-lg-6 col-xs-6">
+    <img src="<%= User.find(company_employee.employee_id).username %>" class="img-responsive">
+    <p class="member-name"><%= User.find(company_employee.employee_id).username %></p>                             
+    </div>
+    <% end %>

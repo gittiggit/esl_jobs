@@ -1,5 +1,6 @@
   <li>
-                                        <a href="<%= '/mailbox/inbox?id='+ conversation.id.to_s  %>" class="user-msg">
+                                        <a href="<%= mailbox_inbox_path + '?id='+ conversation.id.to_s  %>" class="user-msg">
+                                        <% @first_con_id = conversation.id if @first_con_id.blank? %>    
                                         <div class="msg-user-prof">
                                             <img src="/assets/images/teacher-img.jpg" width="50" height="50">
                                             <div class="user-name-msg">

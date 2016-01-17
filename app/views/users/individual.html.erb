@@ -28,7 +28,7 @@
                       <h3><%=best_in_place @user, :first_name , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "First Name ", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%><%=best_in_place @user, :last_name , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Last Name", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%></h3>
                       <p><i class="fa fa-map-marker"></i> <%=best_in_place @user, :city , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Add City", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>,<%=best_in_place @user, :country , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Add Country", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%></p>
                       
-                          <a href="" class="send-msg"> Send a message</a>                          
+                          <%= link_to "Send a Message", new_conversation_path(:user => @user.id), class: "send-msg prof-send-msg" %>                       
                     
                       </div>
                       <div class="col-md-8">

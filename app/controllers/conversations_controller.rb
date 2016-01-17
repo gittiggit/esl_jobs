@@ -2,11 +2,19 @@ class ConversationsController < ApplicationController
   before_action :authenticate_user!
  helper_method :mailbox, :conversation
   def new
+    @recipient = User.find(params[:user]) 
+    @ongoing_conversation_sent = mailbox.sentbox.participant(current_user).participant(@recipient).first(1) 
+    @ongoing_conversation_inbox = mailbox.inbox.participant(current_user).participant(@recipient).first(1)
+    if !@ongoing_conversation_inbox.blank?
+    redirect_to conversation_path(@ongoing_conversation_inbox)
+    elsif !@ongoing_conversation_sent.blank?
+    redirect_to conversation_path(@ongoing_conversation_sent)
+    end
   end
 
   def create
     recipients = User.where(id: params[:recipients])
-    conversation = current_user.send_message(recipients, conversation_params[:body], conversation_params[:subject]).conversation
+     conversation = current_user.send_message(recipients, conversation_params[:body], conversation_params[:subject]).conversation
     flash[:notice] = "Your message was successfully sent!"
     redirect_to conversation_path(conversation)
   end
@@ -42,6 +50,6 @@ class ConversationsController < ApplicationController
   end
 
   def message_params
-    params.require(:message).permit(:body, :subject)
+    params.require(:conversation).permit(:subject, :body,recipients:[])
   end
 end

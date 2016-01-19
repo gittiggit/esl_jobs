@@ -150,3 +150,19 @@ function close_image(){
   $('#blah').attr('src', '');
   $("#image_div").css("display", "none");
 }*/
+
+$('#searchsubmit').click(function(){
+var select_cat = $('#searchcategory').attr('value');
+var name_param = $('#search_field').val();
+var new_action;
+
+if (select_cat == 'Jobs'){
+  new_action = '/job_search_results?';
+} else if ( select_cat == 'Teachers' ){
+  new_action = '/school_search_results?';
+} else if ( select_cat == 'Employers'){
+  new_action = '/employee_search_results?';
+}
+
+$("#searchform").attr("action", new_action + name_param);
+});

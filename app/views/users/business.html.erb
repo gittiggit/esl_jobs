@@ -19,7 +19,7 @@
                <div class="profile-top-sec">
             <div class="col-md-2 uploadsection">
                 <div class="ind-prof-pic">
-                    <%= image_tag(@user.avatar)  %>
+                  <img src="<%= @user.avatar.blank? ? asset_path('profile-placeholder.jpg') : @user.avatar %>"/>
                 </div>
                 <div class="imageupload" >
                 <%= form_for @user, html: { multipart: true } do |f| %>
@@ -155,7 +155,7 @@
                             <h2>Current Staff </h2>
                              <% @company_employees.each do |company_employee| %>
                             <div class="col-md-2 col-sm-6 col-lg-2 col-xs-6">
-                            <img src="<%= User.find(company_employee.employee_id).username %>" class="img-responsive">
+                            <img src="<%= User.find(company_employee.employee_id).avatar.blank? ? asset_path('profile-placeholder.jpg') : User.find(company_employee.employee_id).avatar %>"/> 
                                <p class="member-name"><%= User.find(company_employee.employee_id).username %></p>                             
                             </div>
                              <% end %>
@@ -252,7 +252,8 @@
                       <h3><i class="glyphicon glyphicon-user"></i> Employees <a data-target="#addemployee" data-toggle="modal" class="btn add-btn" href="#"> <i class="fa fa-plus"></i></a></h3>
                       <div class="profile-content-box">
                       <div class="staff-member-cover">                            
-                            
+                      <a href="#" data-toggle="modal" data-target="#addemployee">Add Employees</a>
+                      <div class="clearfix"></div></br>
 <%= render 'company_employees/index' %>
 
                             <div class="clearfix"></div>

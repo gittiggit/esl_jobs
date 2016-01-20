@@ -19,7 +19,7 @@
             <div class="profile-top-sec">
             <div class="col-md-2">
                 <div class="ind-prof-pic">
-                    <%= image_tag(@user.avatar)  %>
+                    <img src=<%= @user.avatar.blank? ? asset_path('profile-placeholder.jpg') : @user.avatar %>/>
                 </div>
               </div> 
               <div class="col-md-10">

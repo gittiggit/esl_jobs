@@ -59,7 +59,7 @@
                                                     </h4>                                         
                                             </div>
                                             <div class="employe-pic">
-                                                    <img src="assets/employe-pic.jpg" class="img-responsive">
+                                                    <img src="<%= busiuser.avatar.blank? ? '/assets/profile-placeholder.jpg' : busiuser.avatar %>" class="img-responsive">
                                             </div>    
                     </div>
                     <% end %>

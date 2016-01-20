@@ -402,12 +402,14 @@
                 </div>
                
                 <div class="clearfix"></div>
+                <% count = 0 %>
                 <% @users.each do |user| %>
+                <% count = count + 1  %>
                     <div class="search-result-row">
-                    <div class="featured-border">
+                    <div class="<%= count == 1 ? 'featured-border' : '' %>">
                         <div class="col-md-9">
                             <div class="search-result-img-cover">
-                                <img src="/assets/comment-img-1.jpg">
+                                <img src="<%= user.avatar.blank? ? asset_path('profile-placeholder.jpg') : user.avatar %>">
                             </div>
                         <div class="search-r-content">
                         <h2><a href="<%= user_path(user) %>"><%= user.first_name %> <%= user.last_name %> (<%= user.username %>)</a></h2>

@@ -107,15 +107,17 @@
                 </div>
                
                 <div class="clearfix"></div>
+                <% count = 0 %>
                 <% @job_posts.each do |job_post| %>
+                    <% count = count + 1  %>
                    <div class="search-result-row featured-job">
-                    <div class="featured-border">
+                    <div class="<%= count == 1 ? 'featured-border' : '' %>">
                         <div class="col-md-10">
                             <!-- <div class="search-result-img-cover">
                                 <img src="/assets/award-logo-23.jpg">
                             </div> -->
                             <div class="search-r-content-delete">
-                            <span class="feature-color">Featured</span>
+                            <span class="feature-color"><%= count == 1 ? 'Featured' : '' %></span>
                                 <h2><a href="<%=job_post_path(job_post) %>"><%= raw(strip_tags(job_post.title)[0,100]) %></a></h2>
                                 <h4><%= raw(strip_tags(job_post.description)[0,200]) %>...</h4>
                         

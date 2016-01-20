@@ -27,7 +27,7 @@
                                 <%= job_post.country.countryname %>
                             </div>
                             <div class="job-price">
-                            	$500
+                            	<%= job_post.created_at.strftime("%d %b, %Y") %>
                             </div>
                             <div class="job-apply">
                             	Apply

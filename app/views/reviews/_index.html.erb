@@ -1,3 +1,4 @@
+     <%unless @reviews.blank?%>
      <% @reviews.each do |review| %>
            <div class="review_list">
                         <div class="review-row">
@@ -28,10 +29,11 @@
       </div>
     <% end %>
     <% end %>
-
+   <% end %>
+   
 <div id="incomplete_reviews"></div>
 <% if @issomething.nil? && current_user.id != @user.id %>
 <%= render 'reviews/form' %>
-<% elsif ( @check_review.blank?) %>
+<% elsif ( @reviews.blank?) %>
 No Review
 <% end %>

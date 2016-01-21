@@ -13,7 +13,7 @@ class ReviewsController < ApplicationController
         @user = User.friendly.find(params[:review][:review_to])
         respond_to do |format|
         if @review.save
-        format.html { redirect_to user_path(@user), notice: 'review was successfully created.' }
+        format.html { redirect_to user_path(@user)+'?back_to=reviews', notice: 'review was successfully created.' }
         format.js
         else
         format.html { render action: 'new' }

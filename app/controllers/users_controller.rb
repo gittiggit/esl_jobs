@@ -20,6 +20,19 @@ class UsersController < ApplicationController
     params[:type] = "individual"
     @roleid = RoleType.find_by( :name => params[:type] )
     @job_posts = JobPost.where(:user_id => @userid)
+    
+    if params[:back_to] == 'pictures'
+      @back_pictures = 'active'
+    elsif params[:back_to] == 'reviews'
+      @back_reviews = 'active'
+    elsif params[:back_to] == 'employees'
+      @back_employees = 'active'
+    elsif params[:back_to] == 'eresume'
+      @back_eresume = 'active'
+      else
+      @back_main = 'active'  
+    end
+    
     if @user.role_type.name == 'business'
     render 'users/business'
     else

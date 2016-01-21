@@ -11,7 +11,7 @@
                               <p><img class="quote-left" src="/assets/quote-left.png"><%= review.reviewpost %> <img class="quote-right" src="/assets/quote-right.png"></p>
                               <div class="user-name">
                                  <span class="line-left-right"></span>
-                                 <span class="comment-name"><%= review.review_by %></span>
+                                 <span class="comment-name"><%= User.find(review.review_by).first_name %> <%= User.find(review.review_by).last_name %></span>
                                  <span class="line-left-right"></span>
                               </div>
                               
@@ -19,22 +19,19 @@
                           </div>
                           <div class="clearfix"></div>
                           </div>
-
-  
-
-        <td><%= review.reviewpost %></td>
-        <td><%= review.review_by %></td>
-        <td><%= review.review_to %></td>
-        <% if review.review_by == current_user.id 
-          @issomething = "something"
-         end %>
+        <% if review.review_by == current_user.id %>
+        <% @issomething = "something" %>
+        <% end %>
+        <% @check_review = "Review exist" %>
         <% if current_user.id == review.review_by %>
-        <td><%= link_to 'Destroy', review_path(review, :reviewid=> review.review_to ), method: :delete, data: { confirm: 'Are you sure?' } , remote: true %></td>
+        <td><%= link_to 'Destroy', review_path(review, :reviewid=> review.review_to ), method: :delete, data: { confirm: 'Are you sure?' }  %></td>
       </div>
     <% end %>
     <% end %>
 
 <div id="incomplete_reviews"></div>
-<% if @issomething.nil? %> 
+<% if @issomething.nil? && current_user.id != @user.id %>
 <%= render 'reviews/form' %>
+<% elsif ( @check_review.blank?) %>
+No Review
 <% end %>

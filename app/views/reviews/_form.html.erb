@@ -1,6 +1,6 @@
 <div id="new_review">
 <div class="comment-box">
-<%= form_for @review, remote: true do |f| %>
+<%= form_for @review do |f| %>
   <% if @review.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
@@ -36,17 +36,10 @@
                                                 </div> 
   <div class="field">
     <% f.label :review_by %><br>
-    <%= f.hidden_field :review_by, :value=> @user.id %>
   </div>
   <div class="field">
-    <% f.label :review_to %><br>
-    <% if @userid.nil? 
-        @mainuserid = params[:reviewid]
-        else
-        @mainuserid = @userid
-      end
-    %>
-    <%= f.hidden_field :review_to, :value=> @mainuserid  %>
+
+    <%= f.hidden_field :review_to, :value=> @user.id  %>
   </div>
   <div class="actions">
     <%= f.submit "Leave a Review",  :class=>"btn leave-button" %>

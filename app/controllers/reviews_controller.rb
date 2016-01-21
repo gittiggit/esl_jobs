@@ -10,12 +10,10 @@ class ReviewsController < ApplicationController
 
    def create
         @review = Review.new(review_params)
+        @user = User.friendly.find(params[:review][:review_to])
         respond_to do |format|
         if @review.save
-        params[:review].each {|param|
-        @reviews = Review.find_by_sql ["SELECT * FROM reviews WHERE review_to = ?", param[1]]
-        }
-        format.html { redirect_to @review, notice: 'review was successfully created.' }
+        format.html { redirect_to user_path(@user), notice: 'review was successfully created.' }
         format.js
         else
         format.html { render action: 'new' }
@@ -26,9 +24,9 @@ class ReviewsController < ApplicationController
   
    def destroy
     @review.destroy
+    @user = User.friendly.find(params[:reviewid])
     respond_to do |format|
-    format.html { redirect_to reviews_url }
-      @reviews = Review.find_by_sql ["SELECT * FROM reviews WHERE review_to = ?", params[:reviewid]]
+    format.html { redirect_to user_path(@user)}
     format.js
     end
 end
@@ -40,7 +38,7 @@ end
   end
 
   def review_params
-      params.require(:review).permit(:reviewpost, :review_by, :review_to, :rating)
+      params.require(:review).permit(:reviewpost, :review_by, :review_to, :rating).merge(:review_by => current_user.id)
     end
   end
 

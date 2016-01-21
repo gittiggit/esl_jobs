@@ -1,4 +1,14 @@
 class ExperiencesController < InheritedResources::Base
+  
+  def create
+    @experience = Experience.new(experience_params)
+   
+    if @experience.save
+        redirect_to user_path(current_user)
+      else
+        redirect_to user_path(current_user)
+    end
+  end
 
   private
 

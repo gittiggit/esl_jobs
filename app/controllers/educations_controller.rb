@@ -1,4 +1,14 @@
 class EducationsController < InheritedResources::Base
+  
+  def create
+  @education = Education.new(education_params)
+ 
+  if @education.save
+      redirect_to user_path(current_user)
+    else
+      redirect_to user_path(current_user)
+    end
+  end
 
   private
 

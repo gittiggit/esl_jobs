@@ -23,13 +23,13 @@ class ReviewsController < ApplicationController
   end
   
    def destroy
-    @review.destroy
-    @user = User.friendly.find(params[:reviewid])
-    respond_to do |format|
-    format.html { redirect_to user_path(@user)}
-    format.js
-    end
-end
+      @review.destroy
+      @user = User.friendly.find(params[:reviewid])
+      respond_to do |format|
+        format.html { redirect_to user_path(@user)}
+        format.js
+      end
+  end
   
   private
 

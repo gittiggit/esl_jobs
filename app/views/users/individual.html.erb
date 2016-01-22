@@ -45,23 +45,23 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 bhoechie-tab-container">
             <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 bhoechie-tab-menu">
               <div class="list-group">
-                <a href="#" class="list-group-item active text-center cus-width">
+                <a href="#" class="list-group-item <%= @back_main %> text-center cus-width">
                   <h4 class="glyphicon glyphicon-user"></h4><span class="hidden-xs"><br>About Me</span>
                 </a>
-                <a href="#" class="list-group-item text-center">
+                <a href="#" class="list-group-item <%= @back_eresume %> text-center">
                   <h4 class="glyphicon glyphicon-list-alt"></h4><span class="hidden-xs"><br>My eResume</span>
                 </a>
-                <a href="#" class="list-group-item text-center">
+                <a href="#" class="list-group-item <%= @back_pictures %> text-center">
                   <h4 class="glyphicon glyphicon-briefcase"></h4><span class="hidden-xs"><br>Videos &amp Portfolio</span>
                 </a>
-                <a href="#" class="list-group-item text-center">
+                <a href="#" class="list-group-item <%= @back_reviews %> text-center">
                   <h4 class="glyphicon glyphicon-comment"></h4><span class="hidden-xs"><br>Reviews</span>
                 </a>               
               </div>
             </div>
             <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 bhoechie-tab">
                 <!-- About section -->
-                <div class="bhoechie-tab-content active">                 
+                <div class="bhoechie-tab-content <%= @back_main %>">                 
                     <div class="profile-box">
                       <h3>About Me</h3> 
                       <div class="clearfix"></div>
@@ -116,7 +116,7 @@
 
                 </div>
                 <!-- train section -->
-                <div class="bhoechie-tab-content">
+                <div class="bhoechie-tab-content <%= @back_eresume %>">
                   <!-- Education box -->
                   <div class="profile-box">
                       <h3><i class="fa fa-graduation-cap"></i> Education<a data-target="#addeducation" data-toggle="modal" class="btn add-btn" href="#"><i class="fa fa-plus"></i></a></h3>
@@ -163,7 +163,7 @@
                 </div>
     
                 <!-- hotel search -->
-                <div class="bhoechie-tab-content">
+                <div class="bhoechie-tab-content <%= @back_pictures %>">
                    <!-- video and portfolio box -->
                   <div class="profile-box">
                       <h3><i class="fa fa-video-camera"></i> Videos<a data-target="#addvideo" data-toggle="modal" class="btn add-btn" href="#"> <i class="fa fa-plus"></i></a></h3>
@@ -192,7 +192,7 @@
                   </div>
 
                 </div>
-                <div class="bhoechie-tab-content">
+                <div class="bhoechie-tab-content <%= @back_reviews %> ">
                    <div class="profile-box">
                       <h3><i class="fa fa-commenting"></i> Reviews</h3>
                       <div class="profile-content-box">

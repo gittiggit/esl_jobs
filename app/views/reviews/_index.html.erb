@@ -20,20 +20,21 @@
                           </div>
                           <div class="clearfix"></div>
                           </div>
-        <% if review.review_by == current_user.id %>
-        <% @issomething = "something" %>
-        <% end %>
-        <% @check_review = "Review exist" %>
+    <% unless current_user.blank? %>
         <% if current_user.id == review.review_by %>
+        <% @issomething = "something" %>
         <td><%= link_to 'Destroy', review_path(review, :reviewid=> review.review_to ), method: :delete, data: { confirm: 'Are you sure?' }  %></td>
+         <% end %>
+    <% end %>     
       </div>
     <% end %>
-    <% end %>
    <% end %>
-   
-<div id="incomplete_reviews"></div>
+
+<% unless current_user.blank? %>   
 <% if @issomething.nil? && current_user.id != @user.id %>
 <%= render 'reviews/form' %>
-<% elsif ( @reviews.blank?) %>
+<% end %>
+<% end %>
+<% if (@reviews.blank?) %>
 No Review
 <% end %>

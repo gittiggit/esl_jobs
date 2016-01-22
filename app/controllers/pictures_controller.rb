@@ -16,7 +16,7 @@ class PicturesController < InheritedResources::Base
           @pictures = Picture.where(:user_id => current_user.id)
     }
          
-        format.html { redirect_to user_path(current_user) + '?picture=success', notice: 'Picture was successfully created.' }
+        format.html { redirect_to user_path(current_user) + '?back_to=pictures', notice: 'Picture was successfully created.' }
         format.js
       else
         format.html { render action: 'new' }

@@ -110,7 +110,7 @@
             </div>
             <div class="col-lg-10 col-md-10 col-sm-9 col-xs-12 bhoechie-tab">
                 <!-- About section -->
-                <div class="bhoechie-tab-content <%= 'active' if @active_picture.blank? %>">                 
+                <div class="bhoechie-tab-content <%= @back_main %>">                 
                     <div class="profile-box">
                       <h3>About Us</h3> 
                       <div class="clearfix"></div>
@@ -179,7 +179,7 @@
                 </div>                
     
                 <!-- hotel search -->
-                <div class="bhoechie-tab-content">
+                <div class="bhoechie-tab-content <%= @back_pictures %>">
                    
                   <!-- video and portfolio box -->
                   <div class="profile-box">
@@ -209,7 +209,7 @@
 
                 </div>
                 
-                <div class="bhoechie-tab-content">
+                <div class="bhoechie-tab-content <%= @back_reviews %>">
                   <!-- Education box -->
                   <div class="profile-box">
                       <h3><i class="glyphicon glyphicon-briefcase"></i> Jobs Openings<a class="btn add-btn" href="<%= new_job_post_path %>"> <i class="fa fa-plus"></i></a></h3>
@@ -248,7 +248,7 @@
                    </div>
                 </div>
 
-                <div class="bhoechie-tab-content">
+                <div class="bhoechie-tab-content <%= @back_employees%>">
                   <!-- Education box -->
                   <div class="profile-box">
                       <h3><i class="glyphicon glyphicon-user"></i> Employees <a data-target="#addemployee" data-toggle="modal" class="btn add-btn" href="#"> <i class="fa fa-plus"></i></a></h3>

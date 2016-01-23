@@ -4,7 +4,7 @@
                         <div class="review-row">
                           <div class="col-md-2">
                             <div class="comment-img">
-                                <img src="/assets/davene-januszewski.jpg" width="80" height="80">
+                                <img src="<%= @user.avatar.blank? ? asset_path('profile-placeholder.jpg') : @user.avatar %>" width="80" height="80">
                             </div>
                           </div>
                           <div class="col-md-10">

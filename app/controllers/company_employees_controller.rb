@@ -10,10 +10,16 @@ class CompanyEmployeesController < InheritedResources::Base
   @company_employee = CompanyEmployee.new(company_employee_params)
  
   if @company_employee.save
-  redirect_to user_path(current_user)
+  redirect_to user_path(current_user) + '?back_to=employees'
     else
       render 'new'
     end
+  end
+  
+  def destroy
+    @company_employee = CompanyEmployee.find(params[:id])
+    @company_employee.destroy
+    redirect_to user_path(current_user)  + '?back_to=employees'
   end
 
   private

@@ -20,6 +20,7 @@ class UsersController < ApplicationController
     params[:type] = "individual"
     @roleid = RoleType.find_by( :name => params[:type] )
     @job_posts = JobPost.where(:user_id => @userid)
+    @reviewstop = Review.where(:review_to => @user.id)
     
     if params[:back_to] == 'pictures'
       @back_pictures = 'active'

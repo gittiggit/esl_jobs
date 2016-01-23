@@ -65,7 +65,7 @@
         <div class="clearfix"></div>
                                                 </div> 
                       <% unless current_user == @user.id %>  
-                        <%= link_to "Send a Message", new_conversation_path(:user => @user.id), class: "send-msg prof-send-msg" %>
+                        <%= link_to "Send a Message", new_conversation_path(:user => @user.id), class: "send-msg prof-send-msg", data: { no_turbolink: true } %>
                       <% end %>
                       </div>
 

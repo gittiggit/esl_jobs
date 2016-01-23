@@ -15,7 +15,7 @@
     <% if @first_sender == message.sender.username %>
                                     <div class="msg-sender">
 
-                            <img src="images/teacher-img.jpg" width="50" height="50">
+                            <img src="/assets/images/teacher-img.jpg" width="50" height="50">
                                     <div class="user-name-msg">
                                         <h4><%= message.sender.username %><span class="date-time"><i class="fa fa-clock"></i> <%=  message.created_at.strftime("%A, %b %d, %Y at %I:%M%p") %></span></h4>
                                         <p><%= message.body %></p>
@@ -26,7 +26,7 @@
     <% else %>
     
                             <div class="msg-receiver">
-                                    <img src="images/receiver.png" width="50" height="50" class="pull-right">
+                                    <img src="/assets/images/receiver.png" width="50" height="50" class="pull-right">
                                     <div class="user-name-msg text-right pull-left">
                                         <h4><span class="date-time"><i class="fa fa-clock"></i> <%=  message.created_at.strftime("%A, %b %d, %Y at %I:%M%p") %> </span> <%= message.sender.username %> </h4>
                                         <p> <%= message.body %></p>

@@ -1,6 +1,6 @@
 class ConversationsController < ApplicationController
   before_action :authenticate_user!
- helper_method :mailbox, :conversation
+  helper_method :mailbox, :conversation
   def new
     @recipient = User.find(params[:user]) 
     @ongoing_conversation_sent = mailbox.sentbox.participant(@recipient).participant(current_user).first(1) 

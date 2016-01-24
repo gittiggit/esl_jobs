@@ -25,14 +25,7 @@
                 <div class="ind-prof-pic">
                   <img src="<%= @user.avatar.blank? ? asset_path('profile-placeholder.jpg') : @user.avatar %>"/>
                 </div>
-                <div class="imageupload" >
-                <%= form_for @user, html: { multipart: true } do |f| %>
-                <span><%= f.file_field :avatar %></span>
-                  
-                  <%= f.hidden_field :avatar_cache %>  
-                <span><%= f.submit "upload" %> </span>
-                <% end %>
-                </div>
+                 <a href="#" style="margin-left: 18px" data-toggle="modal" data-target="#add_avatar">Update Avatar</a>
               </div> 
               <div class="col-md-10">
                   <div class="prof-general-info">
@@ -323,35 +316,32 @@
 <!-- add Video modal -->
 <%= render 'videos/form' %>	
 
-<!-- add Video modal -->
-  <div id="addjob" class="modal fade" role="dialog">
+<!-- add avatar modal -->
+  <div id="add_avatar" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Add Job</h4>
+        <h4 class="modal-title">Update Profile Picture</h4>
       </div>
       <div class="modal-body">
-           <form role="form">
+    <%= form_for @user, html: { multipart: true } do |f| %>
   <div class="form-group">
-    <label for="pwd">Job Title</label>
-    <input type="text" class="form-control" id="">
+    <label for="pwd">Update here</label>
+    <div>
+    <%= f.file_field :avatar %>
+    <%= f.hidden_field :avatar_cache %>  
+    </div><br>
   </div> 
-   <div class="form-group">
-    <label for="pwd">Job Description</label>
-    <textarea class="modal-textarea" col="6" rows="10"></textarea>
-  </div>   
-  
-</form>
 
       </div>
       <div class="modal-footer">
-        <button type="submit" class="send-msg">Add Job</button>
+        <button type="submit" class="send-msg">Update</button>
       </div>
     </div>
-
+    <% end %>
   </div>
 </div>
 

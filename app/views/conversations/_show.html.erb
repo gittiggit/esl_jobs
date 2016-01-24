@@ -15,7 +15,7 @@
     <% if @first_sender == message.sender.username %>
                                     <div class="msg-sender">
 
-                            <img src="<%= message.sender.avatar.blank? ? asset_path('profile-placeholder.jpg') : message.sender.avatar %>" width="50" height="50">
+                            <img src="<%= message.sender.avatar.blank? ? asset_path('profile-placeholder.jpg') : message.sender.avatar.thumb.url %>" width="50" height="50">
                                     <div class="user-name-msg">
                                         <h4><%= message.sender.username %><span class="date-time"><i class="fa fa-clock"></i> <%=  message.created_at.strftime("%A, %b %d, %Y at %I:%M%p") %></span></h4>
                                         <p><%= message.body %></p>

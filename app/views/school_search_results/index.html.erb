@@ -409,7 +409,7 @@
                     <div class="<%= count == 1 ? 'featured-border' : '' %>">
                         <div class="col-md-9">
                             <div class="search-result-img-cover">
-                                <img src="<%= user.avatar.blank? ? asset_path('profile-placeholder.jpg') : user.avatar %>">
+                                <img src="<%= user.avatar.blank? ? asset_path('profile-placeholder.jpg') : user.avatar.thumb.url %>">
                             </div>
                         <div class="search-r-content">
                         <h2><a href="<%= user_path(user) %>"><%= user.first_name %> <%= user.last_name %> (<%= user.username %>)</a></h2>

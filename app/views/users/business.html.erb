@@ -23,7 +23,7 @@
                <div class="profile-top-sec">
             <div class="col-md-2 uploadsection">
                 <div class="ind-prof-pic">
-                  <img src="<%= @user.avatar.blank? ? asset_path('profile-placeholder.jpg') : @user.avatar %>"/>
+                  <img src="<%= @user.avatar.blank? ? asset_path('profile-placeholder.jpg') : @user.avatar.thumb.url %>"/>
                 </div>
                  <a href="#" style="margin-left: 18px" data-toggle="modal" data-target="#add_avatar">Update Avatar</a>
               </div> 
@@ -157,7 +157,7 @@
                             <% else %>
                              <% @company_employees.each do |company_employee| %>
                             <div class="col-md-2 col-sm-6 col-lg-2 col-xs-6">
-                            <img src="<%= User.find(company_employee.employee_id).avatar.blank? ? asset_path('profile-placeholder.jpg') : User.find(company_employee.employee_id).avatar %>"/> 
+                            <img src="<%= User.find(company_employee.employee_id).avatar.blank? ? asset_path('profile-placeholder.jpg') : User.find(company_employee.employee_id).avatar.thumb.url %>"/> 
                                <p class="member-name"><%= User.find(company_employee.employee_id).username %></p>                             
                             </div>
                              <% end %>

@@ -67,6 +67,7 @@ gem 'chosen-rails'
 gem 'carrierwave'
 gem 'best_in_place'
 gem 'remotipart'
+gem 'rmagick'
 
 group :development do
   gem 'rspec-rails', '~> 3.0'

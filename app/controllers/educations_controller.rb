@@ -4,9 +4,9 @@ class EducationsController < InheritedResources::Base
   @education = Education.new(education_params)
  
   if @education.save
-      redirect_to user_path(current_user)
+      redirect_to user_path(current_user) + '?back_to=eresume'
     else
-      redirect_to user_path(current_user)
+      redirect_to user_path(current_user) + '?back_to=eresume'
     end
   end
 

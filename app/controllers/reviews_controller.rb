@@ -26,7 +26,7 @@ class ReviewsController < ApplicationController
       @review.destroy
       @user = User.friendly.find(params[:reviewid])
       respond_to do |format|
-        format.html { redirect_to user_path(@user)}
+        format.html { redirect_to user_path(@user) +'?back_to=reviews' }
         format.js
       end
   end

@@ -1,21 +1,25 @@
+<%= render 'home/header'  %>
+   </header>
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:method => :put, :multipart => true}) do |f| %>
   <%= devise_error_messages! %>
 
+  <div><b>Change Avatar</b><div/>
   <% if current_user.avatar.url.present? %>
+  <div>
     <%= image_tag(current_user.avatar.url)  %>
     <%= f.label :remove_avatar do %>
       <%= f.check_box :remove_avatar  %>
     <% end %>
+  </div><br/>  
   <% end %>
+   <div>
   <%= f.file_field :avatar   %>
-  <%= f.hidden_field :avatar_cache %>
-  
-   <div><%= f.label :businessname %><br />
-  <%= f.text_field :businessname, :autofocus => true %></div>
+  <%= f.hidden_field :avatar_cache %><br/>
+  </div><br/>  
 
-  <div><%= f.label :email %><br />
+  <div><%= f.label :email %><br/>
   <%= f.email_field :email, :autofocus => true %></div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -39,3 +43,4 @@
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %></p>
 
 <%= link_to "Back", :back %>
+<%= render 'home/footer'  %>

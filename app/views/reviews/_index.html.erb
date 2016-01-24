@@ -33,8 +33,9 @@
 <% unless current_user.blank? %>   
 <% if @issomething.nil? && current_user.id != @user.id %>
 <%= render 'reviews/form' %>
+<% @form_loaded = 'loaded' %>
 <% end %>
 <% end %>
-<% if (@reviews.blank?) %>
+<% if (@reviews.blank?) && @form_loaded.blank? %>
 No Review
 <% end %>

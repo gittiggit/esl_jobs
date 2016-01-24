@@ -38,7 +38,6 @@ class VideosController < InheritedResources::Base
       @embed_url = @input_url.match(/(?:.be\/|\/watch\?v=|\/(?=p\/))([\w\/\-]+)/)[1]
       
       params.require(:video).permit(:video_url, :vid_description, :user_id).merge(:user_id => current_user.id,
-      
                                                             :video_url => @embed_url)
     end
 end

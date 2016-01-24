@@ -8,9 +8,8 @@ class VideosController < InheritedResources::Base
      @video = Video.new
    end
    
-     def create
+    def create
     @video = Video.new(video_params)
-
     respond_to do |format|
       if @video.save
          params[:video].each {|param|
@@ -35,7 +34,12 @@ class VideosController < InheritedResources::Base
   private
 
     def video_params
-      params.require(:video).permit(:video_url, :vid_description, :user_id).merge(:user_id => current_user.id)
+      @input_url = params[:video][:video_url]
+      @embed_url = @input_url.match(/(?:.be\/|\/watch\?v=|\/(?=p\/))([\w\/\-]+)/)[1]
+      
+      params.require(:video).permit(:video_url, :vid_description, :user_id).merge(:user_id => current_user.id,
+      
+                                                            :video_url => @embed_url)
     end
 end
 

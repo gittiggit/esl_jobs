@@ -13,10 +13,10 @@ class ReviewsController < ApplicationController
         @user = User.friendly.find(params[:review][:review_to])
         respond_to do |format|
         if @review.save
-        format.html { redirect_to user_path(@user)+'?back_to=reviews', notice: 'review was successfully created.' }
+        format.html { redirect_to user_path(@user)+'?back_to=reviews', notice: 'Review was successfully created.' }
         format.js
         else
-        format.html { render action: 'new' }
+        format.html {redirect_to user_path(@user)+'?back_to=reviews', notice: 'Something Wrong. Make Sure you have checked on rating.' }
         format.json { render json: @review.errors, status: :unprocessable_entity }
       end
     end
@@ -26,7 +26,7 @@ class ReviewsController < ApplicationController
       @review.destroy
       @user = User.friendly.find(params[:reviewid])
       respond_to do |format|
-        format.html { redirect_to user_path(@user) +'?back_to=reviews' }
+        format.html { redirect_to user_path(@user) +'?back_to=reviews' , notice: 'Review was successfully deleted.' }
         format.js
       end
   end

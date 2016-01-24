@@ -7,7 +7,7 @@
                                 <img src="<%= @user.avatar.blank? ? asset_path('profile-placeholder.jpg') : @user.avatar %>" width="80" height="80">
                             </div>
                           </div>
-                          <div class="col-md-10">
+                          <div class="col-md-7">
                             <div class="reviews-cover">
                               <p><img class="quote-left" src="/assets/quote-left.png"><%= review.reviewpost %> <img class="quote-right" src="/assets/quote-right.png"></p>
                               <div class="user-name">
@@ -15,15 +15,23 @@
                                  <span class="comment-name"><%= User.find(review.review_by).first_name %> <%= User.find(review.review_by).last_name %></span>
                                  <span class="line-left-right"></span>
                               </div>
-                              
                             </div>                            
+                          </div>
+                          <div class="col-md-3">
+                              <fieldset>
+                              <span class="star-cb-group">
+                                <% 5.downto(1) do |i| %>
+                                <input type="radio" disabled="disabled" id="ratingtop-<%= i %>" <%= "checked" if i == review.rating %> value="<%= i %>" ><label for="ratingtop-<%= i %>"><%= i %></label>
+                                <% end %>
+                              </span>
+                            </fieldset>
                           </div>
                           <div class="clearfix"></div>
                           </div>
     <% unless current_user.blank? %>
         <% if current_user.id == review.review_by %>
         <% @issomething = "something" %>
-        <td><%= link_to 'Destroy', review_path(review, :reviewid=> review.review_to ), method: :delete, data: { confirm: 'Are you sure?' }  %></td>
+        <td><%= link_to 'Delete', review_path(review, :reviewid=> review.review_to ), method: :delete, data: { confirm: 'Are you sure?' }, :class => "pull-right"  %></td>
          <% end %>
     <% end %>     
       </div>

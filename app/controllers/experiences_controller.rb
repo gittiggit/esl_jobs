@@ -4,10 +4,16 @@ class ExperiencesController < InheritedResources::Base
     @experience = Experience.new(experience_params)
    
     if @experience.save
-        redirect_to user_path(current_user)
+        redirect_to user_path(current_user)  + '?back_to=eresume'  , notice: 'Experience details was successfully Added.'
       else
-        redirect_to user_path(current_user)
+        redirect_to user_path(current_user) + '?back_to=eresume', notice: 'Something wrong.'
     end
+  end
+  
+  def destroy
+  @experience = Experience.find(params[:id])
+  @experience.destroy
+  redirect_to user_path(current_user) + '?back_to=eresume' , notice: 'Education details was successfully deleted.'
   end
 
   private

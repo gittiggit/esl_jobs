@@ -1,6 +1,9 @@
+  <a href="#" class="btn btn-default button_center" data-toggle="modal" data-target="#addexperience">Add Experiences</a>
+
     <% @experiences.each do |experience| %>
 
          <div class="experience-row">
+          <%= link_to 'Destroy',  experience,  method: :delete, data: { confirm: 'Are you sure?' }, :class=>"pull-right" %>
           <h4><%= experience.title %></h4>
           <p class="company-name"><%= experience.company_name %></p>
           <p class="experience-line"><%= experience.year_experiences %></p>

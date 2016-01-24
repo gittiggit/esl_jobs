@@ -11,7 +11,11 @@
         </div>
     </div>
     </section>
-
+      <% flash.each do |name, msg| %>
+        <div class="alert alert-info text-center"> 
+        <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+        </div>
+      <% end %>
     <!-- individual profile tabs section -->
     <section class="individual-profile-tabs">
         <div class="container">
@@ -146,8 +150,6 @@
                   <div class="profile-box">
                       <h3><i class="glyphicon glyphicon-list-alt"></i> Experiences <a data-target="#addexperience" data-toggle="modal" class="btn add-btn" href="#"><i class="fa fa-plus"></i></a></h3>
                       <div class="profile-content-box">
-                      <a data-target="#addexperience" data-toggle="modal" href="#">Add Experiences</a>
-                      <div class="clearfix"></div></br>
                       <%= render 'experiences/index' %>  
                       </div>
                   </div>

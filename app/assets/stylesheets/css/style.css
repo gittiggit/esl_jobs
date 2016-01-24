@@ -3497,3 +3497,9 @@ div.bhoechie-tab-menu div.list-group > a.active::after {
   height: 100px;
   overflow: hidden;
 }
+
+.button_center{
+    margin: 0 auto;
+    display:block;
+    width: 30%
+}

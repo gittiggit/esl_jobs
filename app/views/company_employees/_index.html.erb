@@ -1,5 +1,5 @@
     <% @company_employees.each do |company_employee| %>
-    <div class="col-md-2 col-sm-6 col-lg-6 col-xs-6">
+    <div class="col-md-2 col-sm-2 col-lg-2 col-xs-2">
     <img src="<%= User.find(company_employee.employee_id).avatar.blank? ? asset_path('profile-placeholder.jpg') : User.find(company_employee.employee_id).avatar %>"/>
     <p class="member-name"><%= User.find(company_employee.employee_id).username %></p>                             
     </div>

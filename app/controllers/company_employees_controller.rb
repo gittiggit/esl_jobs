@@ -10,16 +10,16 @@ class CompanyEmployeesController < InheritedResources::Base
   @company_employee = CompanyEmployee.new(company_employee_params)
  
   if @company_employee.save
-  redirect_to user_path(current_user) + '?back_to=employees'
+  redirect_to user_path(current_user) + '?back_to=employees', notice: 'Staff Added'
     else
-      render 'new'
+      redirect_to user_path(current_user) + '?back_to=employees', notice: 'We have not found any staff with this username or email'
     end
   end
   
   def destroy
     @company_employee = CompanyEmployee.find(params[:id])
     @company_employee.destroy
-    redirect_to user_path(current_user)  + '?back_to=employees'
+    redirect_to user_path(current_user)  + '?back_to=employees', notice: 'We have deleted the staff'
   end
 
   private

@@ -159,13 +159,16 @@
 
                       <div class="staff-member-cover">
                             <h2>Current Staff </h2>
+                            <% if @company_employees.blank? %>
+                            No Staff
+                            <% else %>
                              <% @company_employees.each do |company_employee| %>
                             <div class="col-md-2 col-sm-6 col-lg-2 col-xs-6">
                             <img src="<%= User.find(company_employee.employee_id).avatar.blank? ? asset_path('profile-placeholder.jpg') : User.find(company_employee.employee_id).avatar %>"/> 
                                <p class="member-name"><%= User.find(company_employee.employee_id).username %></p>                             
                             </div>
                              <% end %>
-
+                             <% end %>
                             <div class="clearfix"></div>
                         </div>
 
@@ -190,6 +193,7 @@
                       <h3><i class="fa fa-picture-o"></i> Pictures<a href="#" class="btn add-btn " data-toggle="modal" data-target="#addpic"> <i class="fa fa-plus"></i></a></h3>
                       <div class="profile-content-box">
                       <div class="portfolio-row">
+                       <a href="#" class="btn btn-default button_center" data-toggle="modal" data-target="#addpic">Add Picture</a>     
                       <!-- Portfolio Single box -->
                       <%= render 'pictures/index' %>
                       <div class="clearfix"></div>
@@ -203,7 +207,7 @@
                       <h3><i class="fa fa-video-camera"></i> Videos<a data-target="#addvideo" data-toggle="modal" class="btn add-btn" href="#"> <i class="fa fa-plus"></i></a></h3>
                       <div class="profile-content-box">
                       <div class="video-row">
-                      <a href="#" class="btn btn-default button_center" data-toggle="modal" data-target="#addvideo">Add Video</a>     
+                      <a href="#" class="btn btn-default button_center" data-toggle="modal" data-target="#addvideo">Add Video</a><br>     
                       <!-- video Single box -->
                       <%= render 'videos/index' %>
                       <div class="clearfix"></div>
@@ -234,7 +238,7 @@
                       </div>
                         <% end %>  
                   <% else %>
-                  <%= link_to 'Add Jobs', new_job_post_path %>
+                  <%= link_to 'Add Jobs', new_job_post_path ,  :class=> "btn btn-default button_center" %>
                   <% end %>  
                       <div class="clearfix"></div>
                       </div>
@@ -259,7 +263,7 @@
                       <h3><i class="glyphicon glyphicon-user"></i> Employees <a data-target="#addemployee" data-toggle="modal" class="btn add-btn" href="#"> <i class="fa fa-plus"></i></a></h3>
                       <div class="profile-content-box">
                       <div class="staff-member-cover">                            
-                      <a href="#" data-toggle="modal" data-target="#addemployee">Add Employees</a>
+                      <a href="#" data-toggle="modal" class="btn btn-default button_center" data-target="#addemployee">Add Employees</a>
                       <div class="clearfix"></div></br>
 <%= render 'company_employees/index' %>
 

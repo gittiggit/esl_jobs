@@ -6,7 +6,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Add Picture</h4>
+        <h4 class="modal-title">Add Content</h4>
       </div>
       <div class="modal-body">
           <%= form_for @picture, remote: true, authenticity_token: true do |f| %>
@@ -24,7 +24,7 @@
 
       </div>
       <div class="modal-footer">
-        <%= f.submit :class=>"send-msg" %>
+        <%= f.submit 'Creat', :class=>"send-msg" %>
       </div>
       <% end %>
     </div>

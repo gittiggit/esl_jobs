@@ -32,6 +32,8 @@ class UsersController < ApplicationController
       @back_eresume = 'active'
       elsif params[:back_to] == 'jobs'
       @back_jobs = 'active'
+    elsif params[:back_to] == 'location'
+      @back_location = 'active'
     else
       @back_main = 'active'  
     end

@@ -98,7 +98,7 @@
                 <a href="#" class="list-group-item <%= @back_employees %> text-center">
                   <h4 class="glyphicon glyphicon-user"></h4><span class="hidden-xs"><br>Employees</span>
                 </a>
-                <a href="#" class="list-group-item text-center">
+                <a href="#" class="list-group-item <%= @back_location %> text-center">
                   <h4 class="glyphicon glyphicon-map-marker"></h4><span class="hidden-xs"><br>Location</span>
                 </a>
                
@@ -272,7 +272,7 @@
 
                 </div>
 
-                <div class="bhoechie-tab-content">
+                <div class="bhoechie-tab-content <%= @back_location %> ">
                   <!-- Education box -->
                   <div class="profile-box">
                       <h3><i class="glyphicon glyphicon-map-marker"></i> Location</h3>
@@ -281,14 +281,13 @@
                        <div style="width:500px;overflow:hidden;height:500px;max-width:100%;">
 
                        <div id="google-maps-canvas" style="height:500px;width:500px;max-width:100%;">
-                       <iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://maps.google.com/maps?&amp;q=<%= @user.locationdescription %>&amp;output=embed"></iframe>
+                       <iframe id="location_frame" style="height:100%;width:100%;border:0;" frameborder="0" src="https://maps.google.com/maps?&amp;q=<%= @user.locationdescription %>&amp;output=embed"></iframe>
                        </div>
                         </div>
                         </div>
                         <div class="col-md-5">
                           <p id="map-location">
-                        <%=best_in_place @user, :locationdescription , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Write full address", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>    
-                                         
+                        <%=best_in_place @user, :locationdescription , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Write full address", :id => "location_tracker" , :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>    
                           </p>                          
                         </div>
 
@@ -368,6 +367,10 @@
     $(inputFile).val('');
   };
 }
+
+$('#location_tracker').bind("ajax:success", function(){
+window.location = "?back_to=location";
+});
 </script>
 </div>
 

@@ -28,6 +28,24 @@
                       <h3><%=best_in_place @user, :first_name , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "First Name ", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%><%=best_in_place @user, :last_name , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Last Name", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%></h3>
                       <p><i class="fa fa-map-marker"></i> <%=best_in_place @user, :city , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Add City", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>,<%=best_in_place @user, :country , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Add Country", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%></p>
                       
+                                                <% totalrating = 0 %>
+                          <%  unless @reviewstop.blank? %>
+                          <% @reviews.each do |reviewrate| %>
+                                <% totalrating = totalrating + reviewrate.rating %>
+                                <% end %>
+
+                                <% mainrate = totalrating / @reviews.count %>
+                          <% else %>
+                             <% mainrate = 0 %>
+                          <% end %>
+                             <fieldset>
+                              <span class="star-cb-group">
+                                <% 5.downto(1) do |i| %>
+                                <input type="radio" disabled="disabled" id="ratingtop-<%= i %>" <%= "checked" if i == mainrate %> value="<%= i %>" ><label for="ratingtop-<%= i %>"><%= i %></label>
+                                <% end %>
+                              </span>
+                            </fieldset>
+                      
                           <%= link_to "Send a Message", new_conversation_path(:user => @user.id), class: "send-msg prof-send-msg", data: { no_turbolink: true } %>                       
                     
                       </div>

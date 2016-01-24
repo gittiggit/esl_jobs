@@ -96,7 +96,7 @@
                 <a href="#" class="list-group-item <%= @back_pictures %> text-center">
                   <h4 class="glyphicon glyphicon-film"></h4><span class="hidden-xs"><br>Pictures &amp; Videos</span>
                 </a>
-                <a href="#" class="list-group-item text-center">
+                <a href="#" class="list-group-item <%= @back_jobs %> text-center">
                   <h4 class="glyphicon glyphicon-briefcase"></h4><span class="hidden-xs"><br>Job Postings</span>
                 </a>                
                 <a href="#" class="list-group-item <%= @back_reviews %> text-center">
@@ -218,7 +218,7 @@
 
                 </div>
                 
-                <div class="bhoechie-tab-content">
+                <div class="bhoechie-tab-content <%= @back_jobs %>">
                   <!-- Education box -->
                   <div class="profile-box">
                       <h3><i class="glyphicon glyphicon-briefcase"></i> Jobs Openings<a class="btn add-btn" href="<%= new_job_post_path %>"> <i class="fa fa-plus"></i></a></h3>
@@ -232,8 +232,9 @@
                           <p><%= raw(strip_tags(job_post.description)[0,30]) %></p>
                         </div>
                         <div class="col-md-3">
-                            <a class="send-msg" href="<%= job_post_path(job_post)%>">Apply Now</a>                        
+                            <a class="send-msg" href="<%= job_post_path(job_post)%>">Apply Now</a>         
                         </div>
+                        <%= link_to 'Delete',  job_post,  method: :delete, data: { confirm: 'Are you sure?' }, :class=>"pull-left" %>
                         <div class="clearfix"></div>
                       </div>
                         <% end %>  

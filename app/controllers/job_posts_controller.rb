@@ -48,7 +48,7 @@ class JobPostsController < ApplicationController
   def destroy
   @job_post = JobPost.friendly.find(params[:id])
   @job_post.destroy
-  redirect_to job_posts_path
+  redirect_to user_path(current_user) + '?back_to=jobs'
   end
 
   private

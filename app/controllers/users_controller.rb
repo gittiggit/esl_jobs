@@ -30,7 +30,9 @@ class UsersController < ApplicationController
       @back_employees = 'active'
     elsif params[:back_to] == 'eresume'
       @back_eresume = 'active'
-      else
+      elsif params[:back_to] == 'jobs'
+      @back_jobs = 'active'
+    else
       @back_main = 'active'  
     end
     

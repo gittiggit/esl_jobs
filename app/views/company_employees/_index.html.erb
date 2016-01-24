@@ -1,6 +1,7 @@
     <% @company_employees.each do |company_employee| %>
     <div class="col-md-2 col-sm-2 col-lg-2 col-xs-2">
     <img src="<%= User.find(company_employee.employee_id).avatar.blank? ? asset_path('profile-placeholder.jpg') : User.find(company_employee.employee_id).avatar %>"/>
-    <p class="member-name"><%= User.find(company_employee.employee_id).username %></p>                             
+    <p class="member-name"><%= User.find(company_employee.employee_id).username %></p> 
+    <%= link_to 'Delete',  company_employee,  method: :delete, data: { confirm: 'Are you sure?' }, :class=>"pull-left" %>
     </div>
     <% end %>

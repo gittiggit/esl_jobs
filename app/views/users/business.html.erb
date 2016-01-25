@@ -135,45 +135,73 @@
                       <p>
                         <% if @right_user %>
                         <%=best_in_place @user, :about , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Write something about you", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>
-                        <% elsif @user.about.blank? %>
-                        No Record Found
                         <% else %>
                         <%= @user.about %>
+                        
+                    <% if @user.about.blank? && @user.address.blank? && @user.telephone.blank? && @user.website.blank? && @user.otherlocation.blank? %>
+                    No Record Found
+                    <% end %>
+                        
                         <% end %>
+                        
                         </p>
                       <div class="about-info-row">  
                         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 nopadding a-t-title">
+                          <% unless !@right_user && @user.address.blank? %>
                             Address:
+                          <% end %>
                         </div>
                         <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 cus-col">
+                          <% if @right_user %>
                           <%=best_in_place @user, :address , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Can you put your address?", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>
+                          <% else %>
+                          <%= @user.address %>
+                          <% end %>
                         </div>
                         <div class="clearfix"></div>
                       </div>
                       <div class="about-info-row">  
                         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 nopadding a-t-title">
+                          <% unless !@right_user && @user.telephone.blank? %>
                             Telephone:
+                          <% end %>
                         </div>
                         <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 cus-col">
+                          <% if @right_user %>
                           <%=best_in_place @user, :telephone , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Input you phone no here", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>
+                           <% else %>
+                          <%= @user.telephone %>
+                          <% end %>
                         </div>
                         <div class="clearfix"></div>
                       </div>
                       <div class="about-info-row">  
                         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 nopadding a-t-title">
+                          <% unless !@right_user && @user.website.blank? %>
                             Website:
+                          <% end %>
                         </div>
                         <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 cus-col">
+                        <% if @right_user %>  
                           <%=best_in_place @user, :website , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "http://www.example.com", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>
+                          <% else %>
+                          <%= @user.website %>
+                          <% end %>  
                         </div>
                         <div class="clearfix"></div>
                       </div>
                       <div class="about-info-row">  
                         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 nopadding a-t-title">
+                          <% unless !@right_user && @user.otherlocation.blank? %>
                            Other Locations:
+                          <% end %>
                         </div>
                         <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 cus-col">
+                        <% if @right_user %>    
                           <%=best_in_place @user, :otherlocation , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "If you have other location you can write", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>
+                          <% else %>
+                          <%= @user.otherlocation %>
+                          <% end %>   
                         </div>
                         <div class="clearfix"></div>
                       </div>
@@ -199,7 +227,16 @@
                 <div class="profile-box">
                 <h3>Introduction:</h3>
                 <div class="profile-content-box">
-                <p>  <%=best_in_place @user, :introduction , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Give us introduction", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%></p>
+                  
+                <p> 
+                <% if @right_user %>  
+                <%=best_in_place @user, :introduction , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Give us introduction", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>
+                <% elsif @user.introduction.blank? %>
+                No record found
+                <% else %>
+                <%= @user.introduction %>
+                <% end %>
+                </p>
                 </div>
                 </div>
 
@@ -211,10 +248,14 @@
                    
                   <!-- video and portfolio box -->
                   <div class="profile-box">
-                      <h3><i class="fa fa-picture-o"></i> Pictures<a href="#" class="btn add-btn " data-toggle="modal" data-target="#addpic"> <i class="fa fa-plus"></i></a></h3>
+                      <h3><i class="fa fa-picture-o"></i> Pictures <% if @right_user %> <a href="#" class="btn add-btn " data-toggle="modal" data-target="#addpic"> <i class="fa fa-plus"> <% end %></i></a></h3>
                       <div class="profile-content-box">
                       <div class="portfolio-row">
-                       <a href="#" class="btn btn-default button_center" data-toggle="modal" data-target="#addpic">Add Picture</a>     
+                      <% if @right_user %>   
+                       <a href="#" class="btn btn-default button_center" data-toggle="modal" data-target="#addpic">Add Picture</a>  <% end %>
+                       <% if !@right_user && @pictures.blank? %>
+                           No Record Found
+                       <% end %>
                       <!-- Portfolio Single box -->
                       <%= render 'pictures/index' %>
                       <div class="clearfix"></div>
@@ -225,10 +266,14 @@
 
                   <!-- video and portfolio box -->
                   <div class="profile-box">
-                      <h3><i class="fa fa-video-camera"></i> Videos<a data-target="#addvideo" data-toggle="modal" class="btn add-btn" href="#"> <i class="fa fa-plus"></i></a></h3>
+                      <h3><i class="fa fa-video-camera"></i> Videos<% if @right_user %><a data-target="#addvideo" data-toggle="modal" class="btn add-btn" href="#"> <i class="fa fa-plus"></i></a><% end %></h3>
                       <div class="profile-content-box">
                       <div class="video-row">
-                      <a href="#" class="btn btn-default button_center" data-toggle="modal" data-target="#addvideo">Add Video</a><br>     
+                        <% if @right_user %> 
+                      <a href="#" class="btn btn-default button_center" data-toggle="modal" data-target="#addvideo">Add Video</a><br>  <% end %>  
+                       <% if !@right_user && @videos.blank? %>
+                           No Record Found
+                       <% end %>
                       <!-- video Single box -->
                       <%= render 'videos/index' %>
                       <div class="clearfix"></div>
@@ -242,9 +287,15 @@
                 <div class="bhoechie-tab-content <%= @back_jobs %>">
                   <!-- Education box -->
                   <div class="profile-box">
-                      <h3><i class="glyphicon glyphicon-briefcase"></i> Jobs Openings<a class="btn add-btn" href="<%= new_job_post_path %>"> <i class="fa fa-plus"></i></a></h3>
+                      <h3><i class="glyphicon glyphicon-briefcase"></i> Jobs Openings<% if @right_user %><a class="btn add-btn" href="<%= new_job_post_path %>"> <i class="fa fa-plus"></i></a><% end %> </h3>
                       <div class="profile-content-box">
-                    
+                  <% if @right_user %>
+                  <%= link_to 'Add Jobs', new_job_post_path ,  :class=> "btn btn-default button_center" %>
+                  <% end %> 
+                  <% if !@right_user && @job_posts.blank? %>
+                           No Record Found
+                  <% end %>
+                  <div class="clearfix"></div>
                    <% unless @job_posts.blank? %>
                     <% @job_posts.each do |job_post| %>  
                       <div class="education-row">
@@ -259,10 +310,8 @@
                         <div class="clearfix"></div>
                       </div>
                         <% end %>  
-                  <% else %>
-                  <%= link_to 'Add Jobs', new_job_post_path ,  :class=> "btn btn-default button_center" %>
-                  <% end %>  
-                      <div class="clearfix"></div>
+                  <% end %>
+
                       </div>
                   </div>
 
@@ -282,10 +331,15 @@
                 <div class="bhoechie-tab-content <%= @back_employees%>">
                   <!-- Education box -->
                   <div class="profile-box">
-                      <h3><i class="glyphicon glyphicon-user"></i> Employees <a data-target="#addemployee" data-toggle="modal" class="btn add-btn" href="#"> <i class="fa fa-plus"></i></a></h3>
+                      <h3><i class="glyphicon glyphicon-user"></i> Employees <% if @right_user %><a data-target="#addemployee" data-toggle="modal" class="btn add-btn" href="#"> <i class="fa fa-plus"></i></a><% end %></h3>
                       <div class="profile-content-box">
-                      <div class="staff-member-cover">                            
+                      <div class="staff-member-cover">
+                      <% if @right_user %>                              
                       <a href="#" data-toggle="modal" class="btn btn-default button_center" data-target="#addemployee">Add Employees</a>
+                      <% end %>
+                      <% if !@right_user && @company_employees.blank? %>
+                           No Record Found
+                       <% end %>
                       <div class="clearfix"></div></br>
                       <%= render 'company_employees/index' %>
 
@@ -315,7 +369,13 @@
                         </div>
                         <div class="col-md-5">
                           <p id="map-location">
-                        <%=best_in_place @user, :locationdescription , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Write full address", :id => "location_tracker" , :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>    
+                          <% if @right_user %>  
+                          <%=best_in_place @user, :locationdescription , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Write full address", :id => "location_tracker" , :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>    
+                          <% elsif @user.locationdescription.blank? %>
+                          No Record
+                          <% else %>
+                          <%= @user.locationdescription %>
+                          <% end %>
                           </p>                          
                         </div>
 

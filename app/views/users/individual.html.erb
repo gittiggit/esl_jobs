@@ -25,14 +25,48 @@
                 <div class="ind-prof-pic">
                     <img src=<%= @user.avatar.blank? ? asset_path('profile-placeholder.jpg') : @user.avatar.thumb.url %>/>
                 </div>
+                <% if @right_user %>
+                 <a href="#" style="margin-left: 18px" data-toggle="modal" data-target="#add_avatar">Update Avatar</a>
+                <% end %>  
               </div> 
               <div class="col-md-10">
                   <div class="prof-general-info">
                       <div class="col-md-4">
-                      <h3><%=best_in_place @user, :first_name , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "First Name ", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%><%=best_in_place @user, :last_name , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Last Name", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%></h3>
-                      <p><i class="fa fa-map-marker"></i> <%=best_in_place @user, :city , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Add City", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>,<%=best_in_place @user, :country , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Add Country", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%></p>
+                      <h3>
+                        <% if @right_user %>
+                        <%=best_in_place @user, :first_name , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "First Name ", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>
+                        <% elsif @user.first_name.blank? %>
+                          First
+                        <% else %>
+                        <%= @user.first_name %>
+                        <% end %>
+                        
+                        <% if @right_user %>
+                        <%=best_in_place @user, :last_name , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Last Name", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>
+                        <% elsif @user.last_name.blank? %>
+                          Last
+                        <% else %>
+                        <%= @user.last_name %>
+                        <% end %>
+                        </h3>
+                      <p><i class="fa fa-map-marker"></i>
+                      <% if @right_user %>
+                      <%=best_in_place @user, :city , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Add City", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%> ,
+                      <% elsif @user.city.blank? %>
+                       City
+                      <% @user.city.blank? %>
+                     <%= @user.city %>
+                      <% end %>
                       
-                                                <% totalrating = 0 %>
+                      <% if @right_user %>
+                      <%=best_in_place @user, :country , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Add Country", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%></p>
+                      <% elsif @user.country.blank? %>
+                       Country
+                      <% @user.country.blank? %>
+                      <%= @user.country %>
+                      <% end %>
+                      
+                          <% totalrating = 0 %>
                           <%  unless @reviewstop.blank? %>
                           <% @reviews.each do |reviewrate| %>
                                 <% totalrating = totalrating + reviewrate.rating %>
@@ -50,7 +84,11 @@
                               </span>
                             </fieldset>
                       
-                          <%= link_to "Send a Message", new_conversation_path(:user => @user.id), class: "send-msg prof-send-msg", data: { no_turbolink: true } %>                       
+                      <% if @right_user %>
+                      <%= link_to "Conversation", new_conversation_path , class: "send-msg prof-send-msg", data: { no_turbolink: true } %>
+                      <% else %>
+                      <%= link_to "Send a Message", new_conversation_path(:user => @user.id), class: "send-msg prof-send-msg", data: { no_turbolink: true } %>
+                      <% end %>                  
                     
                       </div>
                       <div class="col-md-8">
@@ -88,40 +126,72 @@
                       <h3>About Me</h3> 
                       <div class="clearfix"></div>
                       <div class="profile-content-box">
-                      <p><%=best_in_place @user, :about , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Write something about you", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%></p>
+                      <p>
+                        <% if @right_user %>
+                        <%=best_in_place @user, :about , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Write something about you", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>
+                        <% else %>
+                        <%= @user.about %>
+                        <% end %>
+                        </p>
+                        
                       <div class="about-info-row">  
                         <div class="col-md-3 nopadding a-t-title">
+                          <% unless !@right_user && @user.country.blank? %>
                             Current city:
+                          <% end %>  
                         </div>
                         <div class="col-md-9">
-                              <%=best_in_place @user, :city , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Can you put your current city?", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>
+                          <% if @right_user %>
+                          <%=best_in_place @user, :city , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Can you put your current city?", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>
+                          <% else %>
+                          <%= @user.city %>
+                          <% end %>
+                          
                         </div>
                         <div class="clearfix"></div>
                       </div>
                       <div class="about-info-row">  
                         <div class="col-md-3 nopadding a-t-title">
+                          <% unless !@right_user && @user.country.blank? %>
                             Current country:
+                          <% end %>
                         </div>
                         <div class="col-md-9">
+                          <% if @right_user %>
                               <%=best_in_place @user, :country , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Can you put your current country?", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>
+                          <% else %>
+                          <%= @user.country %>
+                          <% end %>    
                         </div>
                         <div class="clearfix"></div>
                       </div>
                       <div class="about-info-row">  
                         <div class="col-md-3 nopadding a-t-title">
+                          <% unless !@right_user && @user.address.blank? %>
                             Citizenship:
+                          <% end %>
                         </div>
                         <div class="col-md-9">
-                            <%=best_in_place @user, :citizenship , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Can you write your cityzenship?", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>
+                          <% if @right_user %>
+                          <%=best_in_place @user, :citizenship , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Can you write your cityzenship?", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>
+                          <% else %>
+                          <%= @user.citizenship %>
+                          <% end %>    
                         </div>
                         <div class="clearfix"></div>
                       </div>
                       <div class="about-info-row">  
                         <div class="col-md-3 nopadding a-t-title">
+                          <% unless !@right_user && @user.address.blank? %>
                             Age:
+                          <% end %>
                         </div>
                         <div class="col-md-9">
-                          12 August 1985
+                         <% if @right_user %>  
+                         <%=best_in_place @user, :birthdate , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Can you write your birthdate?", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>
+                         <% else %>
+                         <%= @user.birthdate %>
+                         <% end %>   
                         </div>
                         <div class="clearfix"></div>
                       </div>
@@ -131,7 +201,14 @@
                 <div class="profile-box">
                 <h3>Introduction:</h3>
                 <div class="profile-content-box">
-                <p>  <%=best_in_place @user, :introduction , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Give us introduction", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%></p>
+                <p> <% if @right_user %>
+                <%=best_in_place @user, :introduction , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Give us introduction", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>
+                <% elsif  @user.introduction.blank? %>
+                No record found
+                <% else %>
+                <%= @user.introduction %>
+                <% end %> 
+                </p>
                 </div>
                 </div>
 
@@ -141,14 +218,14 @@
                 <div class="bhoechie-tab-content <%= @back_eresume %>">
                   <!-- Education box -->
                   <div class="profile-box">
-                      <h3><i class="fa fa-graduation-cap"></i> Education<a data-target="#addeducation" data-toggle="modal" class="btn add-btn" href="#"><i class="fa fa-plus"></i></a></h3>
+                      <h3><i class="fa fa-graduation-cap"></i> Education<% if @right_user %><a data-target="#addeducation" data-toggle="modal" class="btn add-btn" href="#"><i class="fa fa-plus"></i></a><% end %></h3>
                       <div class="profile-content-box">
                          <%= render 'educations/index' %>
                       </div>
                   </div>
                   <!-- Works Experience box -->
                   <div class="profile-box">
-                      <h3><i class="glyphicon glyphicon-list-alt"></i> Experiences <a data-target="#addexperience" data-toggle="modal" class="btn add-btn" href="#"><i class="fa fa-plus"></i></a></h3>
+                      <h3><i class="glyphicon glyphicon-list-alt"></i> Experiences <% if @right_user %><a data-target="#addexperience" data-toggle="modal" class="btn add-btn" href="#"> <% end %> <i class="fa fa-plus"></i></a></h3>
                       <div class="profile-content-box">
                       <%= render 'experiences/index' %>  
                       </div>
@@ -160,7 +237,15 @@
                       <div class="profile-content-box">
                       <div class="skill-row">
                           <div class="skill-tag">
-                            <span class="skill-rating">Skills</span><span class="label label-default custom-label"><%=best_in_place @user, :skills , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Add your skills with separated comma", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%></span> 
+                            <span class="skill-rating">Skills</span><span class="label label-default custom-label">
+                           <% if @right_user %>    
+                              <%=best_in_place @user, :skills , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Add your skills with separated comma", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>
+                           <% elsif @user.skills.blank?  %>
+                           No Record Found
+                           <% else %>
+                           <%= @user.skills %>
+                           <% end %> 
+                              </span> 
                             <div class="clearfix"></div>                        
                           </div>
                       </div>
@@ -172,7 +257,15 @@
                       <div class="profile-content-box">
                       <div class="lang-row">
                           <div class="skill-tag">
-                            <span class="label label-default custom-label"><%=best_in_place @user, :language , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Add Languages", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%></span> 
+                            <span class="label label-default custom-label">
+                              <% if @right_user %> 
+                              <%=best_in_place @user, :language , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Add Languages", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>
+                              <% elsif @user.language.blank? %>
+                              No Record Found
+                              <% else %>
+                              <%= @user.language %>
+                              <% end %> 
+                              </span> 
                             <div class="clearfix"></div>                        
                           </div>
                       </div>
@@ -186,10 +279,16 @@
                 <div class="bhoechie-tab-content <%= @back_pictures %>">
                    <!-- video and portfolio box -->
                   <div class="profile-box">
-                      <h3><i class="fa fa-video-camera"></i> Videos<a data-target="#addvideo" data-toggle="modal" class="btn add-btn" href="#"> <i class="fa fa-plus"></i></a></h3>
+                      <h3><i class="fa fa-video-camera"></i> Videos<% if @right_user %><a data-target="#addvideo" data-toggle="modal" class="btn add-btn" href="#"> <i class="fa fa-plus"></i></a><% end %></h3>
                       <div class="profile-content-box">
-                      <a href="#" class="btn btn-default button_center" data-toggle="modal" data-target="#addvideo">Add Video</a> 
+                      <% if @right_user %>
+                      <a href="#" class="btn btn-default button_center" data-toggle="modal" data-target="#addvideo">Add Video</a<% end %>
+                       <% if !@right_user && @videos.blank? %>
+                           No Record Found
+                       <% end %>
+                      
                       <br/>
+  
                       <div class="video-row">
                      <%= render 'videos/index' %>
                       
@@ -299,4 +398,64 @@
 
   </div>
 </div>
-     <%= render 'home/footer' %>
+
+<!-- add avatar modal -->
+  <div id="add_avatar" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Update Profile Picture</h4>
+      </div>
+      <div class="modal-body">
+    <%= form_for @user, html: { multipart: true } do |f| %>
+  <div class="form-group">
+    <label for="pwd">Update here</label>
+    <div>
+    <%= f.file_field :avatar , :onchange =>"validateFiles(this);" , :data => {:max_file_size => 1.megabytes} %>
+    <%= f.hidden_field :avatar_cache %>  
+    </div><br>
+  </div> 
+
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="send-msg">Update</button>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <script>
+  function validateFiles(inputFile) {
+  var maxExceededMessage = "This file exceeds the maximum allowed file size (1 MB)";
+  var extErrorMessage = "Only image file with extension: .jpg, .jpeg, .gif or .png is allowed";
+  var allowedExtension = ["jpg", "jpeg", "gif", "png"];
+  
+  var extName;
+  var maxFileSize = $(inputFile).data('max-file-size');
+  var sizeExceeded = false;
+  var extError = false;
+  
+  $.each(inputFile.files, function() {
+    if (this.size && maxFileSize && this.size > parseInt(maxFileSize)) {sizeExceeded=true;};
+    extName = this.name.split('.').pop();
+    if ($.inArray(extName, allowedExtension) == -1) {extError=true;};
+  });
+  if (sizeExceeded) {
+    window.alert(maxExceededMessage);
+    $(inputFile).val('');
+  };
+  
+  if (extError) {
+    window.alert(extErrorMessage);
+    $(inputFile).val('');
+  };
+}
+
+$('#location_tracker').bind("ajax:success", function(){
+window.location = "?back_to=location";
+});
+</script>
+</div>
+
+<%= render 'home/footer' %>

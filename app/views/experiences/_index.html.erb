@@ -1,5 +1,9 @@
-  <a href="#" class="btn btn-default button_center" data-toggle="modal" data-target="#addexperience">Add Experiences</a>
-
+    <% if @right_user %>
+      <a href="#" class="btn btn-default button_center" data-toggle="modal" data-target="#addexperience">Add Experiences</a>
+    <% end %>
+    <% if !@right_user && @experiences.blank? %>
+       No Record Found
+    <% end %>
     <% @experiences.each do |experience| %>
 
          <div class="experience-row">

@@ -54,15 +54,15 @@
                       <%=best_in_place @user, :city , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Add City", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%> ,
                       <% elsif @user.city.blank? %>
                        City
-                      <% @user.city.blank? %>
-                     <%= @user.city %>
+                      <% else %>
+                     <%= @user.city %>,
                       <% end %>
                       
                       <% if @right_user %>
                       <%=best_in_place @user, :country , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Add Country", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%></p>
                       <% elsif @user.country.blank? %>
                        Country
-                      <% @user.country.blank? %>
+                      <% else %>
                       <%= @user.country %>
                       <% end %>
                       
@@ -131,6 +131,9 @@
                         <%=best_in_place @user, :about , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Write something about you", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>
                         <% else %>
                         <%= @user.about %>
+                        <% if @user.about.blank? && @user.country.blank? && @user.city.blank? && @user.citizenship.blank? && @user.birthdate.blank? %>
+                        No record found
+                        <% end %>
                         <% end %>
                         </p>
                         
@@ -167,7 +170,7 @@
                       </div>
                       <div class="about-info-row">  
                         <div class="col-md-3 nopadding a-t-title">
-                          <% unless !@right_user && @user.address.blank? %>
+                          <% unless !@right_user && @user.citizenship.blank? %>
                             Citizenship:
                           <% end %>
                         </div>
@@ -182,7 +185,7 @@
                       </div>
                       <div class="about-info-row">  
                         <div class="col-md-3 nopadding a-t-title">
-                          <% unless !@right_user && @user.address.blank? %>
+                          <% unless !@right_user && @user.birthdate.blank? %>
                             Age:
                           <% end %>
                         </div>
@@ -225,7 +228,7 @@
                   </div>
                   <!-- Works Experience box -->
                   <div class="profile-box">
-                      <h3><i class="glyphicon glyphicon-list-alt"></i> Experiences <% if @right_user %><a data-target="#addexperience" data-toggle="modal" class="btn add-btn" href="#"> <% end %> <i class="fa fa-plus"></i></a></h3>
+                      <h3><i class="glyphicon glyphicon-list-alt"></i> Experiences <% if @right_user %><a data-target="#addexperience" data-toggle="modal" class="btn add-btn" href="#"> <i class="fa fa-plus"></i></a><% end %></h3>
                       <div class="profile-content-box">
                       <%= render 'experiences/index' %>  
                       </div>
@@ -300,10 +303,14 @@
 
                   <!-- video and portfolio box -->
                   <div class="profile-box">
-                      <h3><i class="fa fa-suitcase"></i> Portfolio<a href="#" class="btn add-btn " data-toggle="modal" data-target="#addpic"> <i class="fa fa-plus"></i></a></h3>
+                      <h3><i class="fa fa-suitcase"></i> Portfolio <% if @right_user %><a href="#" class="btn add-btn " data-toggle="modal" data-target="#addpic"> <i class="fa fa-plus"></i></a> <% end %> </h3>
                       <div class="profile-content-box">
                       <div class="portfolio-row">
-                         <a href="#" class="btn btn-default button_center" data-toggle="modal" data-target="#addpic">Add Content</a>   
+                        <% if @right_user %>
+                         <a href="#" class="btn btn-default button_center" data-toggle="modal" data-target="#addpic">Add Content</a><% end %>
+                       <% if !@right_user && @pictures.blank? %>
+                           No Record Found
+                       <% end %>   
                       <!-- Portfolio Single box -->
                       <%= render 'pictures/index' %>
                         
@@ -333,8 +340,10 @@
         </div>
         </div>
     </section>
+
+<% if @right_user %>    
       <!-- add Video modal -->
-  <%= render 'videos/form' %>	
+<%= render 'videos/form' %>	
 
  <!-- add picture modal -->
 <%= render 'pictures/form' %>
@@ -457,5 +466,6 @@ window.location = "?back_to=location";
 });
 </script>
 </div>
+<% end %>
 
 <%= render 'home/footer' %>

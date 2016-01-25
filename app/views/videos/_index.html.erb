@@ -11,7 +11,9 @@
                               <div class="clerarfix"></div>
                             </div>
                             <p><%= video.vid_description %></p>
+                             <% if @right_user %>
                              <a href="/videos/<%= video.id %>" data-remote="true" data-method="delete" data-confirm="Are you sure?" class="close-button-x"><span>X</span></a>
+                             <% end %>
           </div>
       </div>
     <% end %>

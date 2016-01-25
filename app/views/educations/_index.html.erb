@@ -1,6 +1,9 @@
-
-<a href="#" class="btn btn-default button_center" data-toggle="modal" data-target="#addeducation">Add Education</a>
-
+<% if @right_user %>
+  <a href="#" class="btn btn-default button_center" data-toggle="modal" data-target="#addeducation">Add Education</a>
+<% end %>
+<% if !@right_user && @educations.blank? %>
+   No Record Found
+<% end %>
     <% @educations.each do |education| %>
 
                       <div class="education-row">

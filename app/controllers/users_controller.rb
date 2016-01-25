@@ -38,6 +38,11 @@ class UsersController < ApplicationController
       @back_main = 'active'  
     end
     
+    @right_user = false
+    if !current_user.blank? && current_user.id == @user.id
+      @right_user = true
+    end  
+    
     if @user.role_type.name == 'business'
     render 'users/business'
     else

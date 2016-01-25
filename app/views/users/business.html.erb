@@ -25,19 +25,37 @@
                 <div class="ind-prof-pic">
                   <img src="<%= @user.avatar.blank? ? asset_path('profile-placeholder.jpg') : @user.avatar.thumb.url %>"/>
                 </div>
+                <% if @right_user %>
                  <a href="#" style="margin-left: 18px" data-toggle="modal" data-target="#add_avatar">Update Avatar</a>
+                <% end %>
               </div> 
               <div class="col-md-10">
                   <div class="prof-general-info">
                       <div class="col-md-5">
                       <h3>
-                        <% if !current_user.blank? && current_user.id == @user.id %>
+                        <% if @right_user %>
                         <%=best_in_place @user, :businessname , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Business Name Here", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>
-                        <% else %>
+                        <% elsif @user.businessname.blank? %>
+                        Business Name
+                        <% else  %>
                         <%= @user.businessname %>
                         <% end %>
                         </h3>
-                      <p><i class="fa fa-map-marker"></i><%=best_in_place @user, :city , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Add City", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%> ,<%=best_in_place @user, :country , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Add Country", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%></p>
+                      <p><i class="fa fa-map-marker"></i>
+                      <% if @right_user %>
+                      <%=best_in_place @user, :city , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Add City", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>,            <% elsif @user.city.blank? %>
+                      City
+                      <% else %>
+                      <%= @user.city %>,
+                      <% end %>
+                      
+                      <% if @right_user  %>
+                      <%=best_in_place @user, :country , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Add Country", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%></p>
+                      <% elsif @user.country.blank? %>
+                      Country
+                      <% else %>
+                      <%= @user.country %>  
+                      <% end %>
                       
                        <div class="col-md-8 nopadding">
                           <% totalrating = 0 %>
@@ -59,9 +77,11 @@
                             </fieldset>
                           <div class="start-rating-cover business-star-rating">
 
-        <div class="clearfix"></div>
+                    <div class="clearfix"></div>
                                                 </div> 
-                      <% unless current_user == @user.id %>  
+                      <% if @right_user %>
+                          <%= link_to "Conversation", new_conversation_path , class: "send-msg prof-send-msg", data: { no_turbolink: true } %>
+                      <% else %>
                         <%= link_to "Send a Message", new_conversation_path(:user => @user.id), class: "send-msg prof-send-msg", data: { no_turbolink: true } %>
                       <% end %>
                       </div>
@@ -112,7 +132,15 @@
                       <h3>About Us</h3> 
                       <div class="clearfix"></div>
                       <div class="profile-content-box">
-                      <p><%=best_in_place @user, :about , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Write something about you", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%></p>
+                      <p>
+                        <% if @right_user %>
+                        <%=best_in_place @user, :about , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Write something about you", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>
+                        <% elsif @user.about.blank? %>
+                        No Record Found
+                        <% else %>
+                        <%= @user.about %>
+                        <% end %>
+                        </p>
                       <div class="about-info-row">  
                         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 nopadding a-t-title">
                             Address:
@@ -259,7 +287,7 @@
                       <div class="staff-member-cover">                            
                       <a href="#" data-toggle="modal" class="btn btn-default button_center" data-target="#addemployee">Add Employees</a>
                       <div class="clearfix"></div></br>
-<%= render 'company_employees/index' %>
+                      <%= render 'company_employees/index' %>
 
                             <div class="clearfix"></div>
                         </div>
@@ -308,6 +336,7 @@
         </div>
     </section>
     
+<% if @right_user %>    
   <!--  all modals -->
   <!-- add picture modal -->
 <%= render 'pictures/form' %>	
@@ -376,5 +405,7 @@ window.location = "?back_to=location";
 
 <!-- add Video modal -->
 <%= render 'company_employees/form'%>
+
+<% end %>
 
 <%= render 'home/footer' %>

@@ -2,10 +2,10 @@ source 'http://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0'
+gem 'rails', '~> 4.2', '>= 4.2.5'
 
 # Use sqlite3 as the database for Active Record
-gem 'mysql2'
+gem 'mysql2', '~> 0.3.18'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -64,9 +64,9 @@ gem 'devise'
 gem "cancan"
 gem 'mailboxer'
 gem 'chosen-rails'
-gem 'carrierwave'
 gem 'best_in_place'
 gem 'remotipart'
+gem 'carrierwave', :github => 'satoruk/carrierwave' , :ref => '43179f94d6a4e62f69e812f5082d6447c9138480'
 gem 'rmagick', require: false
 
 group :development do

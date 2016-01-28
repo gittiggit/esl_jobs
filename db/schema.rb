@@ -192,7 +192,7 @@ ActiveRecord::Schema.define(version: 20160117181944) do
     t.text     "reviewpost"
     t.integer  "review_by"
     t.integer  "review_to"
-    t.integer  "rating",     null: false
+    t.integer  "rating"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -2,13 +2,19 @@ class ConversationsController < ApplicationController
   before_action :authenticate_user!
   helper_method :mailbox, :conversation
   def new
-    @recipient = User.find(params[:user]) 
-    @ongoing_conversation_sent = mailbox.sentbox.participant(@recipient).participant(current_user).first(1) 
-    @ongoing_conversation_inbox = mailbox.inbox.participant(current_user).participant(@recipient).first(1)
-    if !@ongoing_conversation_inbox.blank?
-    redirect_to mailbox_inbox_path(@ongoing_conversation_inbox)
-    elsif !@ongoing_conversation_sent.blank?
-    redirect_to mailbox_inbox_path(@ongoing_conversation_sent)
+     @recipient = User.find(params[:user])  
+     @ongoing_conversation = Mailboxer::Conversation.participant(current_user).where(
+                        'mailboxer_conversations.id in (?)',
+                        Mailboxer::Conversation.participant(@recipient).collect(&:id)
+                      ).first
+
+    if !@ongoing_conversation.blank?
+      @inbox_link = mailbox_inbox_path(@ongoing_conversation)
+      
+      if (/inbox.\d/ === @inbox_link )
+        @get_id = @inbox_link.scan(/\d+/).first 
+          redirect_to mailbox_inbox_path + '?id=' + @get_id.to_s
+      end
     end
   end
 

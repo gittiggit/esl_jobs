@@ -61,13 +61,11 @@
                         <div class="clearfix"></div>    
                         
                     </div>
-                    <% if params[:id].blank? %>
-                    <%   %>
+                   <% if params[:id].blank? %>
                     <meta http-equiv="refresh" content="0; url=<%= mailbox_inbox_path + '?id=' + @first_con_id.to_s  %>" />
                     <% else %>
                     <%= render 'conversations/show' %>
                     <% end %>
-                    
                 </div>
                 
             </div> 

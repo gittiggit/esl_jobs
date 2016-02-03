@@ -29,7 +29,8 @@
                             <div class="message-listing">
                                 <ul>
                                    <% if is_conversation %>
-            <%= render 'conversations/form' %>
+                                   Move to new conversation
+            <% render 'conversations/form' %>
         <% else %>
             <%= render partial: 'conversations/conversation', collection: messages %>
         <% end %>
@@ -61,10 +62,16 @@
                         <div class="clearfix"></div>    
                         
                     </div>
-                   <% if params[:id].blank? %>
-                    <meta http-equiv="refresh" content="0; url=<%= mailbox_inbox_path + '?id=' + @first_con_id.to_s  %>" />
+                    <% if is_conversation %>
+                    No Messages Found
                     <% else %>
-                    <%= render 'conversations/show' %>
+                       <% if params[:id].blank? && @first_con_id.blank? %>
+                        Move to new conversation
+                        <% elsif params[:id].blank? %>
+                        <meta http-equiv="refresh" content="0; url=<%= mailbox_inbox_path + '?id=' + @first_con_id.to_s  %>" />
+                        <% else %>
+                        <%= render 'conversations/show' %>
+                        <% end %>
                     <% end %>
                 </div>
                 

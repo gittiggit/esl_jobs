@@ -1,4 +1,4 @@
-root = "/home/mashpy/apps/esl_jobs/current"
+root = "/home/ubuntu/apps/esl_jobs/current"
 working_directory root
 pid "#{root}/tmp/pids/unicorn.pid"
 stderr_path "#{root}/log/unicorn.log"

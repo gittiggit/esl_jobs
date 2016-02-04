@@ -5,7 +5,7 @@ require 'capistrano/role'
 server "162.243.21.171", :web, :app, :db, primary: true
 
 set :application, "esl_jobs"
-set :user, "mashpy"
+set :user, "ubuntu"
 set :deploy_to, "/home/#{user}/apps/#{application}"
 set :deploy_via, :remote_cache
 set :use_sudo, false

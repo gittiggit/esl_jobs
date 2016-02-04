@@ -8,12 +8,12 @@ set :application, "esl_jobs"
 set :user, "ubuntu"
 set :deploy_to, "/home/#{user}/apps/#{application}"
 set :deploy_via, :remote_cache
-set :use_sudo, false
+set :use_sudo, true
 set :whenever_command, "bundle exec whenever"
 
 set :scm, "git"
-set :repository, "https://github.com/Mashpy/esl_jobs.git"
-set :branch, "master"
+set :repository, "https://bitbucket.org/Mashpy/esl_jobs.git"
+set :branch, "newsite"
 
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true

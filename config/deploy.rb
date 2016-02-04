@@ -2,13 +2,14 @@ require "bundler/capistrano"
 require "whenever/capistrano"
 require 'capistrano/server_definition'
 require 'capistrano/role'
-server "162.243.21.171", :web, :app, :db, primary: true
+server "54.148.72.120", :web, :app, :db, primary: true
 
 set :application, "esl_jobs"
-set :user, "mashpy"
+set :user, "ubuntu"
 set :deploy_to, "/home/#{user}/apps/#{application}"
 set :deploy_via, :remote_cache
 set :use_sudo, false
+set :whenever_command, "bundle exec whenever"
 
 set :scm, "git"
 set :repository, "https://github.com/Mashpy/esl_jobs.git"
@@ -16,6 +17,8 @@ set :branch, "master"
 
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
+ssh_options[:auth_methods] = ["publickey"]
+ssh_options[:keys] = ["/home/ubuntu/workspace/tmp/testesljobs.pem"]
 
 after "deploy", "deploy:cleanup" # keep only the last 5 releases
 

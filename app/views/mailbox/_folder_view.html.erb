@@ -30,10 +30,10 @@
                                 <ul>
                                    <% if is_conversation %>
                                    Move to new conversation
-            <% render 'conversations/form' %>
-        <% else %>
-            <%= render partial: 'conversations/conversation', collection: messages %>
-        <% end %>
+                                        <% render 'conversations/form' %>
+                                    <% else %>
+                                        <%= render partial: 'conversations/conversation', collection: messages %>
+                                    <% end %>
                                   
                                 </ul>                                
                             </div>                          
@@ -66,7 +66,7 @@
                     No Messages Found
                     <% else %>
                        <% if params[:id].blank? && @first_con_id.blank? %>
-                        Move to new conversation
+                        
                         <% elsif params[:id].blank? %>
                         <meta http-equiv="refresh" content="0; url=<%= mailbox_inbox_path + '?id=' + @first_con_id.to_s  %>" />
                         <% else %>

@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/gregbell/active_admin.git
-  revision: ca94d1ccb1894ccbaedc40f6a6b948d1423b90bb
+  revision: 7ffcc55544d0624c6a242315798bbeff2b1e9078
   specs:
     activeadmin (1.0.0.pre2)
       arbre (~> 1.0, >= 1.0.2)
@@ -104,7 +104,7 @@ GEM
       sass (~> 3.2.19)
     compass-rails (2.0.0)
       compass (>= 0.12.2)
-    devise (3.5.5)
+    devise (3.5.6)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
@@ -116,7 +116,7 @@ GEM
     execjs (2.6.0)
     factory_girl (4.5.0)
       activesupport (>= 3.0.0)
-    factory_girl_rails (4.5.0)
+    factory_girl_rails (4.6.0)
       factory_girl (~> 4.5.0)
       railties (>= 3.0.0)
     ffi (1.9.10)
@@ -246,7 +246,7 @@ GEM
       i18n
       polyamorous (~> 1.2)
     rb-fsevent (0.9.7)
-    rb-inotify (0.9.5)
+    rb-inotify (0.9.6)
       ffi (>= 0.5.0)
     rdoc (4.2.1)
     remotipart (1.2.1)
@@ -265,7 +265,7 @@ GEM
     rspec-mocks (3.4.1)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.4.0)
-    rspec-rails (3.4.1)
+    rspec-rails (3.4.2)
       actionpack (>= 3.0, < 4.3)
       activesupport (>= 3.0, < 4.3)
       railties (>= 3.0, < 4.3)
@@ -308,7 +308,7 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
-    warden (1.2.5)
+    warden (1.2.6)
       rack (>= 1.0)
     whenever (0.9.4)
       chronic (>= 0.6.3)
@@ -333,6 +333,7 @@ DEPENDENCIES
   jquery-rails
   mailboxer
   mysql2 (~> 0.3.18)
+  net-ssh (~> 3.0, >= 3.0.2)
   nokogiri
   pg
   puma

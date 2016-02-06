@@ -2,7 +2,7 @@ require "bundler/capistrano"
 require "whenever/capistrano"
 require 'capistrano/server_definition'
 require 'capistrano/role'
-server "54.149.151.136", :web, :app, :db, primary: true
+server "54.148.35.129", :web, :app, :db, primary: true
 
 set :application, "esl_jobs"
 set :user, "ubuntu"
@@ -12,8 +12,8 @@ set :use_sudo, true
 set :whenever_command, "bundle exec whenever"
 
 set :scm, "git"
-set :repository, "https://bitbucket.org/Mashpy/esl_jobs.git"
-set :branch, "master"
+set :repository, "https://github.com/Mashpy/esl_jobs.git"
+set :branch, "newsite"
 
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true

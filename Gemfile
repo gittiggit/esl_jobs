@@ -68,6 +68,7 @@ gem 'best_in_place'
 gem 'remotipart'
 gem 'carrierwave', :github => 'satoruk/carrierwave' , :ref => '43179f94d6a4e62f69e812f5082d6447c9138480'
 gem 'rmagick', require: false
+gem 'net-ssh', '~> 3.0', '>= 3.0.2'
 
 group :development do
   gem 'rspec-rails', '~> 3.0'

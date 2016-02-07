@@ -945,7 +945,7 @@ fieldset, label { margin: 0; padding: 0; }
 .remember-check, .remember-span {
     float: left;
     display: block;
-    width: 8% !Importnat;
+    width: 8% !Important;
     margin-bottom: 15px;
 }
 .remember-span  {

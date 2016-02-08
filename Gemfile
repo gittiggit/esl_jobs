@@ -70,6 +70,8 @@ gem 'carrierwave', :github => 'satoruk/carrierwave' , :ref => '43179f94d6a4e62f6
 gem 'rmagick', require: false
 gem 'net-ssh', '~> 2.6.5'
 
+gem "font-awesome-rails"
+
 group :development do
   gem 'rspec-rails', '~> 3.0'
   gem 'factory_girl_rails'

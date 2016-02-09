@@ -27,7 +27,7 @@ require 'open-uri'
       url = "http://www.esljobfeed.com/feedviewer/other"
       doc = Nokogiri::HTML(open(url))
       data = []
-      doc.css(".rss_item").first(5).each do |titlecss|
+      doc.css(".forum-listing a").first(5).each do |titlecss|
       country = "1"
       jobtype = "1"
       urlnext = titlecss.attr('href')

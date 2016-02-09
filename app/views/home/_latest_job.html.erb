@@ -24,7 +24,7 @@
                             <p class="job-description"><%= raw(strip_tags(job_post.description).split[0..28].join(" ")) %></p>
                             <div class="location">
                             	<i class="fa  fa-map-marker"></i>
-                                <%#= job_post.country.countryname %>
+                                <%= job_post.country.countryname %>
                             </div>
                             <div class="job-price">
                             	<%= job_post.created_at.strftime("%d %b, %Y") %>

@@ -2,7 +2,7 @@ task :vmi => :environment do
 require 'nokogiri'
 require 'open-uri'
 
-  if 1==1
+  if true
       url = "http://www.eslemployment.com/country/esl-jobs-Vietnam.html"
       doc = Nokogiri::HTML(open(url))
       data = []
@@ -26,7 +26,7 @@ require 'open-uri'
   end
   end
 
-  if 3==3
+  if true
       url = "http://www.eslemployment.com/country/esl-jobs-Mexico.html"
       doc = Nokogiri::HTML(open(url))
       data = []
@@ -51,7 +51,7 @@ require 'open-uri'
   end
 
 
-  if 4==4
+  if true
       url = "http://www.eslemployment.com/country/esl-jobs-Italy.html"
       doc = Nokogiri::HTML(open(url))
       data = []

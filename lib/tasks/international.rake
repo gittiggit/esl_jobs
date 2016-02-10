@@ -2,7 +2,7 @@ task :international => :environment do
 require 'nokogiri'
 require 'open-uri'
 
-  if 1==1
+  if true
       url = "http://www.eslcafe.com/joblist/"
       doc = Nokogiri::HTML(open(url))
       data = []
@@ -23,7 +23,7 @@ require 'open-uri'
   end
   end
 
-  if 2==2
+  if true
       url = "http://www.esljobfeed.com/feedviewer/other"
       doc = Nokogiri::HTML(open(url))
       data = []

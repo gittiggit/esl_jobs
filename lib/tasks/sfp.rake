@@ -2,7 +2,7 @@ task :sfp => :environment do
 require 'nokogiri'
 require 'open-uri'
 
-  if 1==1
+  if true
       url = "http://www.eslemployment.com/country/esl-jobs-Spain.html"
       doc = Nokogiri::HTML(open(url))
       data = []
@@ -26,7 +26,7 @@ require 'open-uri'
   end
   end
   
-    if 2==2
+    if true
       url = "http://www.eslemployment.com/country/esl-jobs-France.html"
       doc = Nokogiri::HTML(open(url))
       data = []
@@ -50,7 +50,7 @@ require 'open-uri'
   end
   end
   
-    if 3==3
+    if true
       url = "http://www.eslemployment.com/country/esl-jobs-Poland.html"
       doc = Nokogiri::HTML(open(url))
       data = []

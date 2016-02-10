@@ -2,7 +2,7 @@ task :japan_oceania => :environment do
 require 'nokogiri'
 require 'open-uri'
 
- if 1==1
+ if true
       url = "http://www.esljobfeed.com/feedviewer/japan"
       doc = Nokogiri::HTML(open(url))
       data = []
@@ -26,7 +26,7 @@ require 'open-uri'
   end
   
 
-  if 2==2
+  if true
       url = "http://www.eslemployment.com/country/esl-jobs-Japan.html"
       doc = Nokogiri::HTML(open(url))
       data = []
@@ -50,7 +50,7 @@ require 'open-uri'
   end
   end
 
- if 3==3
+ if true
       url = "http://www.esljobfeed.com/feedviewer/oceania"
       doc = Nokogiri::HTML(open(url))
       data = []
@@ -74,7 +74,7 @@ require 'open-uri'
   end
   
 
-  if 4==4
+  if true
       url = "http://www.eslemployment.com/esl-jobs/oceania/"
       doc = Nokogiri::HTML(open(url))
       data = []

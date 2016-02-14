@@ -29,10 +29,10 @@
                             <div class="message-listing">
                                 <ul>
                                    <% if is_conversation %>
-                                   Move to new conversation
-                                        <% render 'conversations/form' %>
+                                   No Previous conversation
+                                
                                     <% else %>
-                                        <%= render partial: 'conversations/conversation', collection: messages %>
+                                        <%= render 'conversations/conversation' %>
                                     <% end %>
                                   
                                 </ul>                                
@@ -63,7 +63,7 @@
                         
                     </div>
                     <% if is_conversation %>
-                    No Messages Found
+                        <%= render 'conversations/form' %>
                     <% else %>
                        <% if params[:id].blank? && @first_con_id.blank? %>
                         

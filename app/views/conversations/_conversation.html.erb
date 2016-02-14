@@ -1,12 +1,18 @@
   <li>
     <a href="<%= mailbox_inbox_path + '?id='+ conversation.id.to_s  %>" class="user-msg">
-    <% @first_con_id = conversation.id if @first_con_id.blank? %>    
+    <% @first_con_id = conversation.id if @first_con_id.blank? %>
+     <% conversation.participants.each do |participant| %>
+      <% if participant != current_user %>
     <div class="msg-user-prof">
-        <img src="<%= conversation.originator.avatar %>" width="50" height="50">
+        <img src="<%= participant.avatar.blank? ? asset_path('profile-placeholder.jpg') : participant.avatar %>" width="50" height="50">
         <div class="user-name-msg">
-            <h4><%= conversation.originator.username %></h4>
+          
+            
+              <h4><%= participant.username %></h4>
             <p><%= truncate conversation.messages.last.body, length: 145 %></p>
         </div> 
     </div>
+           <% end %>
+     <% end %> 
     </a> 
  </li>

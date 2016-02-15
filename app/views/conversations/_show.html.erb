@@ -3,7 +3,11 @@
                         <div class="msg-center-box">
                           <div class="msg-send-recevier-cover"> 
                             <div class="day-messages">
-                                Conversation
+            <% conversation.participants.each do |participant| %>
+            <% if participant != current_user %>
+                                Conversation with <%= participant.username %>
+            <% end %>
+            <% end %>
                             </div>  
                             <div class="clearfix"></div> 
                             

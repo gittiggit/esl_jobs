@@ -32,7 +32,7 @@
                                    No Previous conversation
                                 
                                     <% else %>
-                                        <%= render 'conversations/conversation' %>
+                                        <%= render partial: 'conversations/conversation', collection: messages %>
                                     <% end %>
                                   
                                 </ul>                                

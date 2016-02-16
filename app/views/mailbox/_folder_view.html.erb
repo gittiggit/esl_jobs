@@ -25,14 +25,15 @@
                                     <button type="text" class="search-button"><i class="fa fa-search"></i></button>
                                 </form>
 
-                            </div>  
+                            </div>
+                          
                             <div class="message-listing">
                                 <ul>
                                    <% if is_conversation %>
                                    No Previous conversation
                                 
                                     <% else %>
-                                        <%= render partial: 'conversations/conversation', collection: messages %>
+                                        <%= render partial: 'conversations/conversation' %>
                                     <% end %>
                                   
                                 </ul>                                

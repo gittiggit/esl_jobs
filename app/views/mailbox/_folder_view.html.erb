@@ -17,21 +17,14 @@
             <div class="row">
                 <div class="col-md-4 nopr">
                         <div class="col-left-side">
-                            <a class="newmsg"> + New message</a>
+                            <% unless params[:id].blank? %>
+                            <a class="newmsg"> + Conversation</a>
                             <div class="clearfix"></div>
-                            <div class="search-field">
-                                <form>
-                                    <input type="text" name="" id="">
-                                    <button type="text" class="search-button"><i class="fa fa-search"></i></button>
-                                </form>
-
-                            </div>
-                          
+                            <% end %>
                             <div class="message-listing">
                                 <ul>
                                    <% if is_conversation %>
-                                   No Previous conversation
-                                
+                                   <a class="newmsg" style="margin-top:5px"> + Send Message</a>
                                     <% else %>
                                         <%= render partial: 'conversations/conversation' %>
                                     <% end %>
@@ -41,33 +34,12 @@
                         </div>
                 </div>
                 <div class="col-md-8 nopl">
-                    <div class="new-message-cover">
-                    <form>
-                        <div class="input-msg">
-                        <span>To:</span><span class="new-msg-input"><input type="text" name="" id="" placeholder="Enter recepient name"></span>
-                        </div>
-                        <div class="msg-center-box">
-
-                        <div class="msg-form-cover">
-                            
-                                <textarea name="" cols="" rows=""></textarea>
-                                <div class="submit-btn-cover">
-                                    <button type="submit" class="pull-right">Send</button>
-                                </div>
-                            
-                        </div>
-
-                        <div class="clearfix"></div>
-                        </div>
-                        </form>
-                        <div class="clearfix"></div>    
-                        
-                    </div>
+      
                     <% if is_conversation %>
                         <%= render 'conversations/form' %>
                     <% else %>
                        <% if params[:id].blank? && @first_con_id.blank? %>
-                        
+                        No Conversation found
                         <% elsif params[:id].blank? %>
                         <meta http-equiv="refresh" content="0; url=<%= mailbox_inbox_path + '?id=' + @first_con_id.to_s  %>" />
                         <% else %>

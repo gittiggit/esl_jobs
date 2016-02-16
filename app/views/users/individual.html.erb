@@ -85,7 +85,7 @@
                             </fieldset>
                       
                       <% if @right_user %>
-                      <%= link_to "Conversation", new_conversation_path , class: "send-msg prof-send-msg", data: { no_turbolink: true } %>
+                      <% link_to "Conversation", new_conversation_path , class: "send-msg prof-send-msg", data: { no_turbolink: true } %>
                       <% else %>
                       <%= link_to "Send a Message", new_conversation_path(:user => @user.id), class: "send-msg prof-send-msg", data: { no_turbolink: true } %>
                       <% end %>                  

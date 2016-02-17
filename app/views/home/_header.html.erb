@@ -15,10 +15,15 @@
             <div class="col-md-8 col-sm-8 col-xs-12 small-right pull-right">
             <div class="col-md-2 col-xs-12 col-sm-3 pull-right login-signup-btn">
                 <% if user_signed_in? %>
-                    <a class="sign-in-login-btn green-btn" data-no-turbolink href="<%= destroy_user_session_path %>">
-                    <i class="fa fa-sign-in"></i> 
-                    Sign out                                      
+                    <a class="sign-in-login-btn green-btn dropdown-toggle"  data-toggle="dropdown" href="#">
+                    <i class="fa fa-user"></i> 
+                    <%= current_user.first_name + ' ' + current_user.last_name  %>
                     </a>
+                      <ul class="dropdown-menu">
+                        <li><a href="<%= user_path(current_user) %>">Profile</a></li>
+                        <li><a href="<%= mailbox_inbox_path %>">Inbox</a></li>
+                        <li><a href="<%= destroy_user_session_path %>">Sign out</a></li>
+                      </ul>
                 <% else %>
                 <a class="sign-in-login-btn green-btn" href="<%= new_user_registration_path %>">
                     <i class="fa fa-user-plus"></i> 
@@ -29,10 +34,10 @@
                 </div>
                 <div class="col-md-2 col-xs-12 col-sm-3 pull-right login-signup-btn">
                      <% if user_signed_in? %>
-                    <a class="sign-in-login-btn" data-no-turbolink href="<%= user_path(current_user) %>">
-                    <i class="fa fa-user-plus"></i> 
-                    Profile
-                    </a> 
+                    <!--<a class="sign-in-login-btn" data-no-turbolink href="<%= user_path(current_user) %>">-->
+                    <!--<i class="fa fa-user-plus"></i> -->
+                    <!--Profile-->
+                    <!--</a> -->
                     <% else %>
                     <a class="sign-in-login-btn" href="<%= new_user_session_path %>">
                     <i class="fa fa-sign-in"></i> 
@@ -44,12 +49,12 @@
                 
                 <% if user_signed_in? %>
                    <div class="col-md-2 col-xs-12 col-sm-3 pull-right login-signup-btn">                 
-                    <a class="sign-in-login-btn" data-no-turbolink href="<%= mailbox_inbox_path %>">
-                    <i class="fa fa-user-plus"></i> 
-                    Inbox
-                    </a> 
+                    <!--<a class="sign-in-login-btn" data-no-turbolink href="<%= mailbox_inbox_path %>">-->
+                    <!--<i class="fa fa-user-plus"></i> -->
+                    <!--Inbox-->
+                    <!--</a> -->
                     </div>
-                    <div class="col-md-6 col-xs-12 col-sm-6 pull-right login-signup-btn">
+                    <div class="col-md-7 col-xs-12 col-sm-6 pull-right login-signup-btn">
                 <% else %>
                 <div class="col-md-8 col-xs-12 col-sm-6 pull-right login-signup-btn">
                 <% end %>

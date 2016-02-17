@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :username
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :confirmable
   ROLES = %w[business individual]
   
   extend FriendlyId

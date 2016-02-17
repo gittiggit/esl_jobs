@@ -79,12 +79,12 @@ EslJobs::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
   
-  config.action_mailer.default_url_options = {:host => 'esljobslounge.com'}
+  config.action_mailer.default_url_options = {:host => '54.148.35.129'}
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     :address => "127.0.0.1",
     :port    => 25,
-    :domain  => 'esljobslounge.com'
+    :domain  => '54.148.35.129'
   }
   
 end

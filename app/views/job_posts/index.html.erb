@@ -6,6 +6,11 @@
  @container_title= "Latest ESL Teaching Jobs"
 %>
 <%= render 'home/header'%>	
+<% flash.each do |name, msg| %>
+  <div class="alert alert-info text-center"> 
+  <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+  </div>
+<% end %>
 <%= render 'home/subheader'%>
 <%= render 'home/latest_job'%>
 <%= render 'home/top_rated_school'%>

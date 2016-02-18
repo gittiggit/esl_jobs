@@ -3508,3 +3508,8 @@ div.bhoechie-tab-menu div.list-group > a.active::after {
     display:block;
     width: 30%
 }
+
+.alert{
+    margin-bottom: 4px;
+    padding: 7px;
+}

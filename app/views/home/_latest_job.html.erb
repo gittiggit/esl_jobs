@@ -17,7 +17,7 @@
             	
    <% @job_posts.each do |job_post| %>
                 <div class="col-md-4 lates-jobs-single-box">
-                    <a href="<%=job_post_path(job_post) %>">
+                    <a <%= job_post.jobslink.blank? ? '' : 'target="_blank"' %> href="<%=job_post_path(job_post) %>">
                     <div class="panel panel-default">
                         <div class="panel-body">
                         	<h3 class="job-title"><%= raw(strip_tags(job_post.title).split[0..5].join(" ")) %></h3>

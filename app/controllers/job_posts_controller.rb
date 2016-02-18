@@ -33,6 +33,9 @@ class JobPostsController < ApplicationController
   @countries = Country.all
   @job_types = JobType.all
   @job_post = JobPost.friendly.find(params[:id])
+  unless @job_post.jobslink.blank?
+    redirect_to @job_post.jobslink
+  end
   @userjobpost = JobPost.where(:user_id => @job_post.user_id)
   end
 

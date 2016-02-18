@@ -2710,6 +2710,7 @@ margin-bottom: 15px;
 #eduction2,#eduction3,#eduction4,#eduction5,#eduction2,#eduction6,*/
 .inline-edit-page {
 	position: relative;
+	cursor: pointer;
 }
 .inline-edit-page {
 	margin-bottom: 5px;
@@ -3407,7 +3408,7 @@ div.bhoechie-tab-menu div.list-group > a.active::after {
   /* the hidden clearer */
 }
 .star-cb-group * {
-  font-size: 1rem;
+  font-size: .8rem;
 }
 .star-cb-group > input {
   display: none;

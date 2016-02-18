@@ -5,7 +5,10 @@ class ApplicationController < ActionController::Base
   
    before_action :configure_permitted_parameters, if: :devise_controller?
   helper_method :mailbox, :conversation
-
+  
+  def after_sign_in_path_for(resource)
+    user_path(current_user) #your path
+  end
 
   private
 

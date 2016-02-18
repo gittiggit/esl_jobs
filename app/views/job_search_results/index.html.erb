@@ -126,7 +126,7 @@
                          <div class="col-md-2">
                         <div class="row">
                             <div class="col-md-11">
-                                <a href="<%= job_post_path(job_post) %>" class="btn  green-btn job-detail-btn">Job Details</a>
+                                <a <%= job_post.jobslink.blank? ? '' : 'target="_blank"' %> href="<%= job_post_path(job_post) %>" class="btn  green-btn job-detail-btn">Job Details</a>
                             </div>
                             <div class="col-md-12">                                
                                 <span class="job-location"><%= job_post.country.countryname %></span>

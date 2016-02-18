@@ -19,7 +19,7 @@ class CountriesController < ApplicationController
   def show
   @countries = Country.all
   @country = Country.friendly.find(params[:id])
-  @job_posts= @country.job_posts.paginate(:page => params[:page], :per_page => 10,:order => "updated_at DESC")
+  redirect_to job_search_results_path + '?countrysearch=' + @country.countryname
   end
   
   def edit

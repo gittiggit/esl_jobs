@@ -6,28 +6,31 @@
  @container_title= ""
 %>
 <%= render 'home/header'%>	
+</header>
 	<div class="home_wrapper">
 	<div class="container-fluid home_main_content">
 	<div class="row-fluid">
 	<div class="span9">
 		
-		<div class="row-fluid">
-			
-			<div class="span12">
+			<div class="row">
+			<div class="col-xs-6 col-md-offset-3">
 				<h2>Advertise With Us</h2>
 				<table class="table table-striped">
 					<tbody>
-				<%= render 'advertise/description' %>
-<h2>
-  <strong><a style="float:right" href="/">Back to homepage</a></strong>
-</h2>				
+					<%= render 'advertise/description' %>
+					<h4>
+					  <strong><a style="float:right" href="/">Back to homepage</a></strong>
+					</h4>				
 					</tbody>
 				</table>
 			</div>
-			
-		</div>
+			</div>
+		<br>
+		<br>
+		<br>
+		<br>
 	</div>	
-	<%= render 'home/leftsidebar'%>
+
 	</div>
 	</div>
 	</div> <!-- /container -->

@@ -6,29 +6,33 @@
  @container_title= ""
 %>
 <%= render 'home/header'%>	
+</header>
 	<div class="home_wrapper">
 	<div class="container-fluid home_main_content">
 	<div class="row-fluid">
 	<div class="span9">
 		
-		<div class="row-fluid">
-			
+		<div class="row">
+			<div class="col-xs-6 col-xs-offset-3">
 			<div class="span12">
 				<h2>About Us</h2>
 				<table class="table table-striped">
 					<tbody>
 				<%= render 'about/description' %>
 
-<h2>
-  <strong><a style="float:left" href="/">Back to homepage</a></strong>
-</h2>
+				<h4>
+				  <strong><a style="float:left" href="/">Back to homepage</a></strong>
+				</h4>
 					</tbody>
 				</table>
 			</div>
-			
+			</div>
 		</div>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
 	</div>	
-	<%= render 'home/leftsidebar'%>
 	</div>
 	</div>
 	</div> <!-- /container -->

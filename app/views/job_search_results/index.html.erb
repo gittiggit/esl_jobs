@@ -118,7 +118,7 @@
                             </div> -->
                             <div class="search-r-content-delete">
                             <span class="feature-color"><%= count == 1 ? 'Featured' : '' %></span>
-                                <h2><a href="<%=job_post_path(job_post) %>"><%= raw(strip_tags(job_post.title)[0,100]) %></a></h2>
+                                <h2><a <%= job_post.jobslink.blank? ? '' : 'target="_blank"' %> href="<%=job_post_path(job_post) %>"><%= raw(strip_tags(job_post.title)[0,100]) %></a></h2>
                                 <h4><%= raw(strip_tags(job_post.description)[0,200]) %>...</h4>
                         
                             </div>

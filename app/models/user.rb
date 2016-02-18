@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
   validates :username, format: { with: /\A[a-zA-Z0-9]+\Z/ }
   validates_uniqueness_of :username
-  validates :first_name, :last_name ,presence: true
+  validates :first_name, :last_name, :country ,presence: true
   include Mailboxer::Models::Messageable
   
   validates_uniqueness_of :username

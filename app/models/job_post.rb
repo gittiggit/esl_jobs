@@ -14,7 +14,7 @@ class JobPost < ActiveRecord::Base
   belongs_to :user
   validates_uniqueness_of :title
   validates :title, :city, :salary, :description, presence: true
-#  validates_length_of :description, :maximum => 5                  
+  validates_length_of :description, :minimum => 50                  
 
   def self.search(search, countrysearch = nil)
     

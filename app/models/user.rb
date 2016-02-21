@@ -9,11 +9,13 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :username
   validates :first_name, :last_name, :country ,presence: true
   include Mailboxer::Models::Messageable
+  validates_length_of :first_name, :last_name , :maximum => 30
+  validates_length_of :businessname, :maximum => 100
   
   validates_uniqueness_of :username
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :confirmable
+         :recoverable, :rememberable, :trackable, :validatable
   ROLES = %w[business individual]
   
   extend FriendlyId

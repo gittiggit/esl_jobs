@@ -103,7 +103,7 @@
             </div>
                 <div class="col-md-9 nopadding">
                 <div class="col-md-12 result-top-bar-counter nopl">                       
-                    <h2><%= @job_posts.count %> jobs found <%= ' under "'+ params[:keyword]  + '"' unless params[:keyword].blank? %></h2>
+                    <h2><%= @job_posts.count %> jobs found <%= ' under "<span class="search-result-item">'.html_safe+ params[:keyword]  + '</span>"'.html_safe unless params[:keyword].blank? %></h2>
                 </div>
                
                 <div class="clearfix"></div>
@@ -124,11 +124,11 @@
                             </div>
                         </div>                        
                          <div class="col-md-2">
-                        <div class="row">
+                        <div class="row top15">
                             <div class="col-md-11">
                                 <a <%= job_post.jobslink.blank? ? '' : 'target="_blank"' %> href="<%= job_post_path(job_post) %>" class="btn  green-btn job-detail-btn">Job Details</a>
                             </div>
-                            <div class="col-md-12">                                
+                            <div class="col-md-12 top10">                                
                                 <span class="job-location"><%= job_post.country.countryname %></span>
                                 <span class="job-date"><%= job_post.created_at.strftime("%d %b. %Y") %></span>
                             </div>

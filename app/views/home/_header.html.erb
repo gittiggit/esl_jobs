@@ -13,11 +13,11 @@
 			     <a class="navbar-brand" data-no-turbolink href="<%= root_path %>"><span>ESL</span> Jobs Lounge</a>
             </div>
             <div class="col-md-8 col-sm-8 col-xs-12 small-right pull-right">
-            <div class="col-md-2 col-xs-12 col-sm-3 pull-right login-signup-btn">
                 <% if user_signed_in? %>
-                    <a class="sign-in-login-btn green-btn dropdown-toggle"  data-toggle="dropdown" href="#">
+                 <div class="col-md-4 col-xs-12 col-sm-3 pull-right login-signup-btn">
+                    <a class="sign-in-login-btn green-btn dropdown-toggle camelcase"  data-toggle="dropdown" href="#">
                     <i class="fa fa-user"></i> 
-                    <%= current_user.first_name + ' ' + current_user.last_name  %>
+                    <%= current_user.first_name %>
                     </a>
                       <ul class="dropdown-menu">
                         <li><a href="<%= user_path(current_user) %>">Profile</a></li>
@@ -25,6 +25,7 @@
                         <li><a href="<%= destroy_user_session_path %>">Sign out</a></li>
                       </ul>
                 <% else %>
+                <div class="col-md-2 col-xs-12 col-sm-3 pull-right login-signup-btn">
                 <a class="sign-in-login-btn green-btn" href="<%= new_user_registration_path %>">
                     <i class="fa fa-user-plus"></i> 
                     Sign Up                                      

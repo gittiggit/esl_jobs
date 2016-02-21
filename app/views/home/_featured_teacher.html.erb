@@ -19,11 +19,11 @@
 				<div class="col-md-3 ft-single-box">
                 	<div class="teacher-img-cover">
                     	<img src="<%= indivuser.avatar.blank? ? asset_path('profile-placeholder.jpg') : indivuser.avatar.thumb.url %>" class="img-responsive">
-                        <a href="#"><span class="plus-icon">+</span></a>
+                        <a href="<%= user_path(indivuser) %>"><span class="plus-icon">+</span></a>
                     </div>
                     <div class="clearfix"></div>
                     <div class="teacher-text">
-                    	<h3><a href="<%= user_path(indivuser) %>"><%= indivuser.username %></a></h3>
+                    	<h3><a href="<%= user_path(indivuser) %>"><%= indivuser.first_name %> <%= indivuser.last_name %></a></h3>
                         <p>Teacher</p>
                         <div class="location">
                             	<i class="fa  fa-map-marker"></i>

@@ -20,7 +20,7 @@
                     <% @businessusers.each do |busiuser| %>
                     <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="top-rated-single-employe">
-                                                <h2><a href="<%= user_path(busiuser) %>"><%= busiuser.username %></a></h2>                      
+                                                <h2><a href="<%= user_path(busiuser) %>"><%= busiuser.businessname %></a></h2>                      
                                                 <div class="location">
                                                     <i class="fa  fa-map-marker"></i>
                                                       <%= busiuser.country %>
@@ -64,16 +64,11 @@
                     </div>
                     <% end %>
                 </div>
-               
-                
-               
-                
-                
                 
                 </div>
                 </div>
-                <a class="left carousel-control" href="#myCarousel" data-slide="prev"><i class="fa fa-angle-left"></i></a>
-                <a class="right carousel-control" href="#myCarousel" data-slide="next"><i class="fa fa-angle-right"></i></a>
+                <!--<a class="left carousel-control" href="#myCarousel" data-slide="prev"><i class="fa fa-angle-left"></i></a>-->
+                <!--<a class="right carousel-control" href="#myCarousel" data-slide="next"><i class="fa fa-angle-right"></i></a>-->
                 </div>
 
                     </div>

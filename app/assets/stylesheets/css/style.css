@@ -2227,7 +2227,9 @@ color: #ffffff;
 	color: #343434;
 	margin: 0 0 10px 0;
 	font-family: 'Lato', sans-serif; 
-	font-weight: 700;
+}
+.search-result-item{
+    font-weight: bold;
 }
 
 .featured-border {
@@ -2972,8 +2974,7 @@ background-color: rgba(0,0,0,0.05) !important;
 
 }
 .search-result-row {
-    padding-bottom: 30px;
-    padding-top: 30px;
+    height: 150px;
 }
 .leav-reply-button > h4 {
     font-size: 14px;
@@ -3654,4 +3655,8 @@ padding-right: 14px;
 padding-left: 14px;
 font-size: 20px;
 color: #51a32b;
+}
+
+.camelcase{
+    text-transform: capitalize;
 }

@@ -43,14 +43,14 @@
                         </h3>
                       <p><i class="fa fa-map-marker"></i>
                       <% if @right_user %>
-                      <%=best_in_place @user, :city , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Add City", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>,            <% elsif @user.city.blank? %>
+                      <%=best_in_place @user, :city , :html_attrs =>  { size: 15,:tabindex => 10 }, :place_holder => "Add City", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>,            <% elsif @user.city.blank? %>
                       City
                       <% else %>
                       <%= @user.city %>,
                       <% end %>
                       
                       <% if @right_user  %>
-                      <%=best_in_place @user, :country , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Add Country", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%></p>
+                      <%=best_in_place @user, :country , :html_attrs =>  { size: 15,:tabindex => 10 }, :place_holder => "Add Country", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%></p>
                       <% elsif @user.country.blank? %>
                       Country
                       <% else %>
@@ -134,7 +134,7 @@
                       <div class="profile-content-box">
                       <p>
                         <% if @right_user %>
-                        <%=best_in_place @user, :about , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Write something about you", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>
+                          <%=best_in_place @user, :about , :type => :textarea , :html_attrs =>  { :style => 'width:500px; height:100px;' }, :place_holder => "Write something about you", :class => "inline-edit-page" %>
                         <% else %>
                         <%= @user.about %>
                         
@@ -153,7 +153,7 @@
                         </div>
                         <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 cus-col">
                           <% if @right_user %>
-                          <%=best_in_place @user, :address , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Can you put your address?", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>
+                          <%=best_in_place @user, :address , :html_attrs =>  { size: 70,:tabindex => 10 }, :place_holder => "Can you put your address?", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>
                           <% else %>
                           <%= @user.address %>
                           <% end %>
@@ -168,7 +168,7 @@
                         </div>
                         <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 cus-col">
                           <% if @right_user %>
-                          <%=best_in_place @user, :telephone , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Input you phone no here", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>
+                          <%=best_in_place @user, :telephone , :html_attrs =>  { size: 20,:tabindex => 10 }, :place_holder => "Input you phone no here", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>
                            <% else %>
                           <%= @user.telephone %>
                           <% end %>
@@ -183,7 +183,7 @@
                         </div>
                         <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 cus-col">
                         <% if @right_user %>  
-                          <%=best_in_place @user, :website , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "http://www.example.com", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>
+                          <%=best_in_place @user, :website , :html_attrs =>  { size: 50,:tabindex => 10 }, :place_holder => "http://www.example.com", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>
                           <% else %>
                           <%= @user.website %>
                           <% end %>  
@@ -198,7 +198,7 @@
                         </div>
                         <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 cus-col">
                         <% if @right_user %>    
-                          <%=best_in_place @user, :otherlocation , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "If you have other location you can write", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>
+                          <%=best_in_place @user, :otherlocation , :html_attrs =>  { size: 80,:tabindex => 10 }, :place_holder => "If you have other location you can write", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>
                           <% else %>
                           <%= @user.otherlocation %>
                           <% end %>   
@@ -230,7 +230,7 @@
                   
                 <p> 
                 <% if @right_user %>  
-                <%=best_in_place @user, :introduction , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Give us introduction", :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>
+                <%=best_in_place @user, :introduction , :type => :textarea , :html_attrs =>  { :style => 'width:500px; height:100px;' ,:tabindex => 10 }, :place_holder => "Give us introduction", :class => "inline-edit-page" %>
                 <% elsif @user.introduction.blank? %>
                 No record found
                 <% else %>
@@ -370,7 +370,7 @@
                         <div class="col-md-5">
                           <p id="map-location">
                           <% if @right_user %>  
-                          <%=best_in_place @user, :locationdescription , :html_attrs =>  { size: 10,:tabindex => 10 }, :place_holder => "Write full address", :id => "location_tracker" , :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>    
+                          <%=best_in_place @user, :locationdescription , :html_attrs =>  { size: 40,:tabindex => 10 }, :place_holder => "Write full address", :id => "location_tracker" , :class => "inline-edit-page" , :ok_button_class => "btn btn-primary" , :ok_button => "ok"%>    
                           <% elsif @user.locationdescription.blank? %>
                           No Record
                           <% else %>

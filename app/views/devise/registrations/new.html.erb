@@ -25,16 +25,16 @@
 
      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:multipart => true}) do |f| %>
                         <div class="col-md-12">
-                            <%= f.text_field :businessname, :placeholder => 'Business or School Name' %> 
+                            <%= f.text_field :businessname, :required => true , :placeholder => 'Business or School Name' %> 
                         </div>
                         <div class="col-md-12">
-                            <%= f.text_field :first_name, :placeholder => 'First Name' %> 
+                            <%= f.text_field :first_name, :placeholder => 'First Name', :required => true  %> 
                         </div>
                         <div class="col-md-12">
-                            <%= f.text_field :last_name, :placeholder => 'Last Name' %> 
+                            <%= f.text_field :last_name, :placeholder => 'Last Name', :required => true  %> 
                         </div>
                         <div class="col-md-12">
-                             <%= f.text_field :city, :placeholder => 'City' %>
+                             <%= f.text_field :city, :placeholder => 'City', :required => true  %>
                         </div>
                         <div class="col-md-12">
                 <select name="user[country]" id="country-selector" autofocus="autofocus" autocorrect="off" placeholder="Country" autocomplete="off">
@@ -291,7 +291,7 @@
 </select>
                         </div>
                         <div class="col-md-12">
-                            <%= f.text_field :email, :placeholder => 'Email' %>
+                            <%= f.text_field :email, :placeholder => 'Email', :required => true  %>
                         </div>
                         <div class="col-md-12">
                             <%= f.password_field :password, autocomplete: "off", :placeholder => 'Password' %>
@@ -335,13 +335,13 @@
 
      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:multipart => true}) do |f| %>                    
                         <div class="col-md-12">
-                            <%= f.text_field :first_name, :placeholder => 'First Name' %> 
+                            <%= f.text_field :first_name, :placeholder => 'First Name', :required => true %> 
                         </div>
                         <div class="col-md-12">
-                            <%= f.text_field :last_name, :placeholder => 'Last Name' %> 
+                            <%= f.text_field :last_name, :placeholder => 'Last Name', :required => true  %> 
                         </div>
                         <div class="col-md-12">
-                             <%= f.text_field :city, :placeholder => 'City' %>
+                             <%= f.text_field :city, :placeholder => 'City', :required => true  %>
                         </div>
                         <div class="col-md-12">
                 <select name="user[country]" id="country-selector" autofocus="autofocus" autocorrect="off" placeholder="Country" autocomplete="off">

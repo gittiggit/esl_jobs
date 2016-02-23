@@ -34,11 +34,11 @@
                 <div class="post-job-form">
                 	<div class="single-field">
 	                	<div class="col-md-4"><label>Job Title <span class="required-field">*</span></label></div>
-	                	<div class="col-md-8"><%=f.text_field :title%></div>
+	                	<div class="col-md-8"><%=f.text_field :title , :required => true %></div>
                 	</div>
                 	<div class="single-field">
 	                	<div class="col-md-4"><label>City <span class="required-field">*</span></label></div>
-	                	<div class="col-md-8"><%=f.text_field :city%></div>
+	                	<div class="col-md-8"><%=f.text_field :city, :required => true%></div>
                 	</div>
 
                 	<div class="single-field">
@@ -47,13 +47,13 @@
                 	</div>
 					<div class="clearfix"></div>
                 	<div class="single-field">
-	                	<div class="col-md-4"><label>Salary </label></div>
-	                	<div class="col-md-8"><%=f.text_field :salary%></div>
+	                	<div class="col-md-4"><label>Salary <span class="required-field">*</span></label></div>
+	                	<div class="col-md-8"><%=f.text_field :salary, :required => true%></div>
                 	</div>
 
                 	<div class="single-field">
 	                	<div class="col-md-4"><label>Job Description <span class="required-field">*</span></label></div>
-	                	<div class="col-md-8"><%=f.text_area :description%></div>
+	                	<div class="col-md-8"><%=f.text_area :description, :required => true%></div>
                 	</div>
                 	
                 	<div class="single-field">

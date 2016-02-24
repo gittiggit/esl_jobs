@@ -99,19 +99,20 @@ ActiveRecord::Schema.define(version: 20160217201706) do
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
   create_table "job_posts", force: :cascade do |t|
-    t.string   "title",       limit: 255
-    t.text     "description", limit: 65535
-    t.string   "city",        limit: 255
-    t.string   "jobslink",    limit: 255
-    t.string   "salary",      limit: 255
-    t.string   "company",     limit: 255
+    t.text     "title",           limit: 65535
+    t.text     "description",     limit: 65535
+    t.string   "city",            limit: 255
+    t.string   "jobslink",        limit: 255
+    t.string   "salary",          limit: 255
+    t.string   "company",         limit: 255
+    t.text     "required_skills", limit: 65535
     t.date     "expire_date"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "country_id",  limit: 4
-    t.integer  "job_type_id", limit: 4
-    t.string   "slug",        limit: 255
-    t.integer  "user_id",     limit: 4
+    t.integer  "country_id",      limit: 4
+    t.integer  "job_type_id",     limit: 4
+    t.string   "slug",            limit: 255
+    t.integer  "user_id",         limit: 4
   end
 
   add_index "job_posts", ["country_id"], name: "index_job_posts_on_country_id", using: :btree

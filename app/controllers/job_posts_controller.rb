@@ -56,7 +56,7 @@ class JobPostsController < ApplicationController
 
   private
   def job_post_params
-  params.require(:job_post).permit(:title, :description, :city  , :jobslink, :salary, :company, :country_id , :job_type_id, :user_id).merge(:user_id => current_user.id)
+  params.require(:job_post).permit(:title, :description, :city  , :jobslink, :salary, :company, :country_id , :job_type_id, :user_id, :required_skills).merge(:user_id => current_user.id)
   end
   
 end

@@ -3660,3 +3660,7 @@ color: #51a32b;
 .camelcase{
     text-transform: capitalize;
 }
+.thumb-size{
+    height: 138px!important;
+    width: 138px !important;
+}

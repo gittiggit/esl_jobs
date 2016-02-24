@@ -18,7 +18,7 @@
             <% @individualusers.each do |indivuser| %>    
 				<div class="col-md-3 ft-single-box">
                 	<div class="teacher-img-cover">
-                    	<img src="<%= indivuser.avatar.blank? ? asset_path('profile-placeholder.jpg') : indivuser.avatar.thumb.url %>" class="img-responsive">
+                    	<img class="thumb-size" src="<%= indivuser.avatar.blank? ? asset_path('profile-placeholder.jpg') : indivuser.avatar.thumb.url %>" class="img-responsive">
                         <a href="<%= user_path(indivuser) %>"><span class="plus-icon">+</span></a>
                     </div>
                     <div class="clearfix"></div>

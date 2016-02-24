@@ -108,7 +108,7 @@
                <div class="job-des-profile">
                     <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12 nopadding">
                         <div class="job-profile-img">
-                            <img src="<%= @job_post.user.avatar.blank? ? asset_path('profile-placeholder.jpg') : @job_post.user.avatar.thumb.url  %>">
+                            <img class="thumb-size" src="<%= @job_post.user.avatar.blank? ? asset_path('profile-placeholder.jpg') : @job_post.user.avatar.thumb.url  %>">
                         </div>                        
                     </div>
                     <div class="col-lg-10 col-md-9 col-sm-8 col-xs-12">

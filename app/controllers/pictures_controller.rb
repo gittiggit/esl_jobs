@@ -28,6 +28,7 @@ class PicturesController < InheritedResources::Base
   def destroy
   @picture = Picture.find(params[:id])
   @picture.destroy
+  redirect_to user_path(current_user) + '?back_to=pictures', notice: 'Picture was successfully deleted.'
   @pictures = Picture.where(:user_id => current_user.id)
   end
 

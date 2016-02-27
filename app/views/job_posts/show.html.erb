@@ -98,10 +98,11 @@
                 <p><%= raw(@job_post.description) %>
 </p>
  
-
+<% if current_user.id != @job_post.user_id %>
 <div class="col-md-4 col-md-offset-4">
 <a href="<%=@job_post.jobslink.blank? ? new_conversation_path(:user => @job_post.user.id) : @job_post.jobslink  %>" class="green-button-common"><%= @job_post.jobslink.blank? ? 'Apply Job' : 'External Link'  %></a>
 </div>
+<% end %>
                 <div class="clearfix"></div>
                </div>
                <% unless @job_post.user.blank? %>
@@ -117,7 +118,7 @@
                             <span class="designation"> <%= @job_post.user.businessname + " | " unless @job_post.user.businessname.blank?  %> <b></b> <%= @job_post.user.country + "Location: | " unless @job_post.user.country.blank?  %>  <b>Since:</b> <%= @job_post.created_at.strftime("%d %b. %Y") %> </span>
                             <p><%= raw(strip_tags(@job_post.user.about)[0,100]) unless @job_post.user.about.blank? %> </p> 
                             <div class="start-rating-cover">
-        <fieldset class="rating">
+        <fieldset class="rating pull-left">
         <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
         <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
         <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>

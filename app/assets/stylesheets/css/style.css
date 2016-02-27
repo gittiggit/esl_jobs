@@ -1815,6 +1815,7 @@ img.quote-right {
     border-radius: 5px;
     padding: 15px;
     margin-bottom: 15px;
+    word-wrap: break-word;
 }
 .job-description-box h3 {
 	margin: 0;

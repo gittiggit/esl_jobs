@@ -7,7 +7,7 @@ require 'open-uri'
       doc = Nokogiri::HTML(open(url))
       data = []
       doc.css("dd strong a").first(5).each do |titlecss|
-      country = "118"
+      country = "173"
       jobtype = "1"
       urlnext = titlecss.attr('href')
       docnext = Nokogiri::HTML(open(urlnext))
@@ -28,7 +28,7 @@ require 'open-uri'
       doc = Nokogiri::HTML(open(url))
       data = []
       doc.css(".free_school a").first(5).each do |titlecss|
-      country = "118"
+      country = "173"
       jobtype = "1"
       urlnext ="http://www.esljobfind.com" +titlecss.attr('href')
       docnext = Nokogiri::HTML(open(urlnext))
@@ -52,7 +52,7 @@ require 'open-uri'
       doc = Nokogiri::HTML(open(url))
       data = []
       doc.css(".forum-listing a").first(5).each do |titlecss|
-      country = "118"
+      country = "173"
       jobtype = "1"
       urlnext = titlecss.attr('href')
       docnext = Nokogiri::HTML(open(urlnext))
@@ -76,7 +76,7 @@ require 'open-uri'
       doc = Nokogiri::HTML(open(url))
       data = []
       doc.css("#joblist td:nth-child(1) a").first(5).each do |titlecss|
-      country = "118"
+      country = "173"
       jobtype = "1"
       urlnext = titlecss.attr('href')
       docnext = Nokogiri::HTML(open(urlnext))

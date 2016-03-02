@@ -125,6 +125,11 @@ function showcountry(country_val){
         $("#country").attr( "disabled", "disabled" );
     }
 }
+
+if($('#location').val() == 2){
+   $("#country").removeAttr("disabled" ); 
+};
+
 /*----------------------*/
 /* fiel upload with image preview
 /*----------------------*/

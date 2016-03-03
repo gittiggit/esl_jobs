@@ -118,15 +118,15 @@
                             </div> -->
                             <div class="search-r-content-delete">
                             <span class="feature-color"><%= count == 1 ? 'Featured' : '' %></span>
-                                <h2><a <%= job_post.jobslink.blank? ? '' : 'target="_blank"' %> href="<%=job_post_path(job_post) %>"><%= raw(strip_tags(job_post.title)[0,100]) %></a></h2>
-                                <h4><%= raw(strip_tags(job_post.description)[0,200]) %>...</h4>
+                                <h2 <%= count == 1 ? 'style=margin-top:0px': '' %> ><a <%= job_post.jobslink.blank? ? '' : 'target="_blank"' %> href="<%=job_post_path(job_post) %>"><%= raw(strip_tags(job_post.title)[0,65]) %></a></h2>
+                                <h4><%= raw(strip_tags(job_post.description)[0,350]) %>...</h4>
                         
                             </div>
                         </div>                        
                          <div class="col-md-2">
                         <div class="row top15">
                             <div class="col-md-11">
-                                <a <%= job_post.jobslink.blank? ? '' : 'target="_blank"' %> href="<%= job_post_path(job_post) %>" class="btn  green-btn job-detail-btn">Job Details</a>
+                               
                             </div>
                             <div class="col-md-12 top10">                                
                                 <span class="job-location"><%= job_post.country.countryname %></span>

@@ -111,15 +111,15 @@
                 <% @job_posts.each do |job_post| %>
                     <% count = count + 1  %>
                    <div class="search-result-row featured-job">
-                    <div class="<%= count == 1 ? 'featured-border' : '' %>">
+                    <div class="<%= [1,2,3,8,9,10].include?(count) ? 'featured-border' : '' %>">
                         <div class="col-md-10">
                             <!-- <div class="search-result-img-cover">
                                 <img src="/assets/award-logo-23.jpg">
                             </div> -->
                             <div class="search-r-content-delete">
-                            <span class="feature-color"><%= count == 1 ? 'Featured' : '' %></span>
-                                <h2 <%= count == 1 ? 'style=margin-top:0px': '' %> ><a <%= job_post.jobslink.blank? ? '' : 'target="_blank"' %> href="<%=job_post_path(job_post) %>"><%= raw(strip_tags(job_post.title)[0,65]) %></a></h2>
-                                <h4><%= raw(strip_tags(job_post.description)[0,350]) %>...</h4>
+                            <span class="feature-color"><%= [1,2,3,8,9,10].include?(count) ? 'Featured' : '' %></span>
+                                <h2 <%= [1,2,3,8,9,10].include?(count) ? 'style=margin-top:0px': '' %> ><a <%= job_post.jobslink.blank? ? '' : 'target="_blank"' %> href="<%=job_post_path(job_post) %>"><%= raw(strip_tags(job_post.title)[0,65]) %></a></h2>
+                                <h4><%= raw(strip_tags(job_post.description)[0,150]) %>...</h4>
                         
                             </div>
                         </div>                        

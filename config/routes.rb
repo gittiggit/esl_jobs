@@ -1,4 +1,6 @@
 EslJobs::Application.routes.draw do
+  get 'account/index'
+
   resources :company_employees
 
   resources :experiences
